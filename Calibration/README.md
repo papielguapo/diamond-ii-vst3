@@ -78,3 +78,32 @@ La diferencia máxima entre el render C++ y el modelo numérico fue 5.92e-08. dy
 En esta revisión no se obtuvieron capturas originales nuevas: el control de AudioSuite rechazó la interacción con la ventana. La comparación sigue limitada a las capturas de 48 kHz mono, Input 0 dB y Process 100 para esta combinación; faltan otros trims, frecuencias, Process intermedio y material musical independiente. El estado de Pro Tools se conserva con la señal seca seleccionada.
 
 Se estrecharon los dos límites de referencia existentes de Iridescent/Sapphire. El archivo process-reference-fixtures.bin.gz conserva las 18 condiciones previas y añade tres capturas originales a Process 100 de Iridescent/Sapphire: 1 kHz/-6 dBFS, 1 kHz/-1 dBFS y bitono 19/20 kHz. Su cabecera PHXP contiene ahora 21 casos y cada caso indica Type, Brightness y Process. Los límites están congelados en Tests/ProcessReferenceLimits.h; no se generaron las referencias a partir del DSP nuevo.
+
+
+## Revisión: rama residual y validación nueva de Input Trim
+
+Se obtuvieron cuatro capturas nuevas del original: Dark Essence/Gold/Process 100 con Input +6, -6 y +3 dB; y Process 87.5 con Input 0 dB. Output permanece a -6 dB y se compensa +6 dB en el análisis. Son mono PCM24 a 48 kHz, sin muestras recortadas, alineadas con el margen de 96000 muestras. Los hashes/condiciones se guardan en trim-reference-metadata.json. La captura Process 100/Input 0 de la primera sesión sigue siendo la referencia de cero.
+
+La entrada +6 dB reveló que el saturador paramétrico anterior comprimía demasiado los niveles altos. Se ajustó una rama residual separada de la señal seca: `u=Hpre(x)`, `r=D(u)`, `c[n]=r[n]+m*u[n]^2/(1+u[n]^2)*(r[n]-r[n-1])`, `newResidual=Hpost(c)`, `wet=x+newResidual`. D es un spline cúbico impar con trece nudos positivos, residual cero fuera de |u|<1, extremos cero, segunda derivada cero en 0 y primera derivada cero en 1. No se atribuye esta arquitectura a Phoenix II: es una inferencia empírica que predice mejor estas capturas.
+
+El ajuste numérico usa solo las capturas Input 0/+6, las ventanas estacionarias de 1 kHz a siete niveles, 250 Hz, 8 kHz y bitono 19/20 kHz. La ponderación divide por RMS de referencia y por la raíz del error relativo del modelo anterior, con mínimo 0.005. La captura -6 se usó para seleccionar la variante y no se presenta como validación ciega. Se congelaron los parámetros antes de capturar +3 dB; esa captura no se usó para reajustarlos. El archivo residual-refinement.json conserva los parámetros congelados y las comparaciones de selección; residual-frozen-validation.json conserva las quince comparaciones nuevas a +3 dB.
+
+Mejoran las 60 señales a Process 100 (15 señales por cuatro trims). Las quince pruebas nuevas a +3 dB mejoran individualmente al menos 4.78 dB. La tabla compara renders C++ nuevos con un renderizador C++ aislado del commit anterior 4eae652:
+
+| Input | Process | Error RMS del archivo completo anterior | Nuevo |
+|---|---:|---:|---:|
+| -6 dB | 100% | 2.935% | 1.828% |
+| +0 dB | 100% | 6.055% | 2.922% |
+| +3 dB | 100% | 13.169% | 3.185% |
+| +6 dB | 100% | 25.279% | 3.285% |
+| +0 dB | 87.5% | 5.017% | 3.249% |
+
+El modelo nuevo por sí solo producía regresiones a Process bajo. Para evitarlas se conserva la rama anterior hasta 75% y se mezcla hacia la rama residual entre 75 y 100% con `w=clamp((p-.75)*4,0,1)`. Ambas ramas mantienen sus estados aunque su peso sea cero. La comprobación con el renderizador anterior verifica diferencias inferiores a 1e-6 a Process 25/50/75. La nueva captura 87.5% valida el punto intermedio con w=0.5; no se optimizó ese peso a posteriori. Los coeficientes previos de corrección de Process se conservan.
+
+Los coeficientes de la rama residual están en residual-dark-gold.json. Los campos paramétricos gain/drive/exponent/tailExponent de la fila Dark Essence/Gold ya no definen su curva: esa fila referencia residual-dark-gold.json. La tabla de 257 muestras positivas sobre [0,1], con derivadas Hermite, está en Source/ResidualCalibration.h; el resto de su tabla hasta 32 contiene ceros. La evaluación conserva el signo de los pequeños residuales negativos y aplica simetría impar. Esto reproduce el spline con diferencia máxima de aproximadamente 1.04e-7 frente al render C++ medido. La rama anterior conserva su tabla y sus dos filtros, por lo que esta combinación calcula dos ramas. No añade latencia ni asignaciones de memoria al callback.
+
+Tools/residual_reference.py permite ajustar candidatos del modelo residual con SciPy usando capturas propias. Tools/fit_reference.py conserva el ajuste de las curvas paramétricas y omite la fila residual. Ajustar un candidato no sustituye automáticamente el código de producción.
+
+Se añaden 15 tests con referencias originales sin metadatos BWF: tres señales (1 kHz/-1 dBFS, 4 kHz y ráfaga) por cada una de cinco condiciones. trim-reference-fixtures.bin.gz tiene formato little-endian: PHXT, uint32 frecuencia 48000, uint32 casos 15; por caso uint32 Type, uint32 Brightness, float32 Process en porcentaje, float32 Input dB, uint32 muestras, entrada float32[muestras] y referencia float32[muestras] normalizada por +6 dB de salida. Tests/TrimReferenceLimits.h fija los límites baseline*1.10+0.001. Se estrechan también los dos límites existentes de Dark Essence/Gold a Process 100.
+
+La mejora no certifica equivalencia 1:1: quedan errores medibles, música y señales nuevas sin medir, estéreo del original, otras frecuencias de muestreo, más trims, colores/modos y posiciones de Process. La identidad bit-accurate sigue aplicando exclusivamente a la ruta seca unitaria de DIAMOND II, no al procesamiento húmedo del original. La sesión de Pro Tools queda con el clip seco seleccionado, Input 0, Output -6 y Process 87.5.

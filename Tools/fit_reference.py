@@ -41,6 +41,8 @@ ss=json.loads((REF/'segments.json').read_text())['segments']; source=read(REF/'0
 for color in args.colors:
  for idx,entry in enumerate(gold):
   if 'color' in entry and entry['color']!=color: continue
+  if entry.get('residual_curve'):
+   print('Use residual_reference.py for',entry['type'],color,flush=True); continue
   name=entry['type']; path=REF/f'PhoenixII_48k_{name}_{color}_P100_In0_Outm6.wav'
   if not path.exists() or any(r['color']==color and r['type']==name for r in results):continue
   target=read(path)[96000:96000+len(source)]*10**(.3); train=[s for s in ss if (s['kind']=='sine' and s['frequency_hz'] in (1000,250,8000)) or s['name']=='two_tone_19000_20000Hz']; xx=[]; yy=[];ww=[]

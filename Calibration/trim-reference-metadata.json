@@ -1,0 +1,57 @@
+[
+  {
+    "file": "PhoenixII_48k_DarkEssence_Gold_P100_Inm6_Outm6.wav",
+    "sha256": "5a53a3c3976097085033413b2dddd9bd4079289ee504d16f3693b84621a6e1c2",
+    "sample_rate": 48000,
+    "channels": 1,
+    "format": "PCM24",
+    "alignment_samples": 96000,
+    "input_db": -6,
+    "output_db": -6,
+    "process": 100
+  },
+  {
+    "file": "PhoenixII_48k_DarkEssence_Gold_P100_In0_Outm6.wav",
+    "sha256": "f14bd59934fb935ffbca7fcfb38d40aaa52abaf78f7cf279bed48843e805e083",
+    "sample_rate": 48000,
+    "channels": 1,
+    "format": "PCM24",
+    "alignment_samples": 96000,
+    "input_db": 0,
+    "output_db": -6,
+    "process": 100
+  },
+  {
+    "file": "PhoenixII_48k_DarkEssence_Gold_P100_In3_Outm6.wav",
+    "sha256": "2c210d5a9124985825a0fc7dd90c89d53a485c8d524cc2c18f069c7f2767d887",
+    "sample_rate": 48000,
+    "channels": 1,
+    "format": "PCM24",
+    "alignment_samples": 96000,
+    "input_db": 3,
+    "output_db": -6,
+    "process": 100
+  },
+  {
+    "file": "PhoenixII_48k_DarkEssence_Gold_P100_In6_Outm6.wav",
+    "sha256": "6099b45834c5e45fe6c2b7202831da6169c1761588217ee76436a6b33ab1b5fe",
+    "sample_rate": 48000,
+    "channels": 1,
+    "format": "PCM24",
+    "alignment_samples": 96000,
+    "input_db": 6,
+    "output_db": -6,
+    "process": 100
+  },
+  {
+    "file": "PhoenixII_48k_DarkEssence_Gold_P087_50_In0_Outm6.wav",
+    "sha256": "c5dc47b7355b302fc3e507d0e3e70b1193234d7fa90be82460ce27bc283295b0",
+    "sample_rate": 48000,
+    "channels": 1,
+    "format": "PCM24",
+    "alignment_samples": 96000,
+    "input_db": 0,
+    "output_db": -6,
+    "process": 87.5
+  }
+]

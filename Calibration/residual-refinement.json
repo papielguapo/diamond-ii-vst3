@@ -1,0 +1,355 @@
+{
+  "alpha": 0.5,
+  "knots": [
+    0.0,
+    0.03,
+    0.07,
+    0.12,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "parameters": [
+    0.030923183223800173,
+    0.07218501117049073,
+    0.12366781164066856,
+    0.20611394793392632,
+    0.2908040495743755,
+    0.3397200554076487,
+    0.2909356031694608,
+    0.2285064707878735,
+    0.08050755783708906,
+    0.021339188506846324,
+    -0.009405513431689896,
+    969.9127374365744,
+    0.10688657228168556,
+    4735.02352154993,
+    -8.62898862058277,
+    0.30000000000000004,
+    2.357678294905872,
+    -1.959709988287405
+  ],
+  "metrics": [
+    {
+      "trim": 0,
+      "probe": "sine_1000Hz_-48dBFS",
+      "before_relative_rms": 0.010730880219342853,
+      "after_relative_rms": 0.0006492181307858306,
+      "improvement_db": 24.364894145669464
+    },
+    {
+      "trim": 0,
+      "probe": "sine_1000Hz_-36dBFS",
+      "before_relative_rms": 0.010724897197947818,
+      "after_relative_rms": 0.000636009306392268,
+      "improvement_db": 24.538593350125044
+    },
+    {
+      "trim": 0,
+      "probe": "sine_1000Hz_-24dBFS",
+      "before_relative_rms": 0.0106026410317436,
+      "after_relative_rms": 0.0006636162625353543,
+      "improvement_db": 24.069940753869194
+    },
+    {
+      "trim": 0,
+      "probe": "sine_1000Hz_-18dBFS",
+      "before_relative_rms": 0.010053459170560643,
+      "after_relative_rms": 0.0005260580710495379,
+      "improvement_db": 25.62563660677579
+    },
+    {
+      "trim": 0,
+      "probe": "sine_1000Hz_-12dBFS",
+      "before_relative_rms": 0.008961122244658812,
+      "after_relative_rms": 0.0029492075294337457,
+      "improvement_db": 9.653141357270187
+    },
+    {
+      "trim": 0,
+      "probe": "sine_1000Hz_-6dBFS",
+      "before_relative_rms": 0.013762026041384002,
+      "after_relative_rms": 0.004597224452570372,
+      "improvement_db": 9.523733345359473
+    },
+    {
+      "trim": 0,
+      "probe": "sine_1000Hz_-1dBFS",
+      "before_relative_rms": 0.0783016483263031,
+      "after_relative_rms": 0.01076345317317135,
+      "improvement_db": 17.236385574737337
+    },
+    {
+      "trim": 0,
+      "probe": "sine_62.5Hz_-12dBFS",
+      "before_relative_rms": 0.018470256298533397,
+      "after_relative_rms": 0.002811076802683113,
+      "improvement_db": 16.3520042110623
+    },
+    {
+      "trim": 0,
+      "probe": "sine_250Hz_-12dBFS",
+      "before_relative_rms": 0.01784746013202163,
+      "after_relative_rms": 0.006132685909145425,
+      "improvement_db": 9.278513960205188
+    },
+    {
+      "trim": 0,
+      "probe": "sine_4000Hz_-12dBFS",
+      "before_relative_rms": 0.082941284838775,
+      "after_relative_rms": 0.036326200389852834,
+      "improvement_db": 7.171015687119931
+    },
+    {
+      "trim": 0,
+      "probe": "sine_8000Hz_-12dBFS",
+      "before_relative_rms": 0.0702456595289387,
+      "after_relative_rms": 0.03770113763327555,
+      "improvement_db": 5.40530078289761
+    },
+    {
+      "trim": 0,
+      "probe": "two_tone_60_7000Hz",
+      "before_relative_rms": 0.07924213261807121,
+      "after_relative_rms": 0.03705793831054487,
+      "improvement_db": 6.601498020621671
+    },
+    {
+      "trim": 0,
+      "probe": "two_tone_19000_20000Hz",
+      "before_relative_rms": 0.12955051277331434,
+      "after_relative_rms": 0.11452858804194062,
+      "improvement_db": 1.0705045944597908
+    },
+    {
+      "trim": 0,
+      "probe": "hard_burst_1kHz",
+      "before_relative_rms": 0.08488894212292024,
+      "after_relative_rms": 0.02059452447874624,
+      "improvement_db": 12.301987056032054
+    },
+    {
+      "trim": 0,
+      "probe": "log_sweep_20_20000Hz",
+      "before_relative_rms": 0.04895468045820122,
+      "after_relative_rms": 0.03529191111505545,
+      "improvement_db": 2.8423808677124054
+    },
+    {
+      "trim": 6,
+      "probe": "sine_1000Hz_-48dBFS",
+      "before_relative_rms": 0.010731290217604623,
+      "after_relative_rms": 0.0006463484795736441,
+      "improvement_db": 24.40370417142063
+    },
+    {
+      "trim": 6,
+      "probe": "sine_1000Hz_-36dBFS",
+      "before_relative_rms": 0.010701907776997092,
+      "after_relative_rms": 0.0006324413531897125,
+      "improvement_db": 24.56881889842863
+    },
+    {
+      "trim": 6,
+      "probe": "sine_1000Hz_-24dBFS",
+      "before_relative_rms": 0.010053387932097575,
+      "after_relative_rms": 0.0005261228555638466,
+      "improvement_db": 25.624505449553922
+    },
+    {
+      "trim": 6,
+      "probe": "sine_1000Hz_-18dBFS",
+      "before_relative_rms": 0.008961102889030017,
+      "after_relative_rms": 0.0029491708261503028,
+      "improvement_db": 9.653230693846126
+    },
+    {
+      "trim": 6,
+      "probe": "sine_1000Hz_-12dBFS",
+      "before_relative_rms": 0.013762070094451875,
+      "after_relative_rms": 0.004597245387920839,
+      "improvement_db": 9.523721594689542
+    },
+    {
+      "trim": 6,
+      "probe": "sine_1000Hz_-6dBFS",
+      "before_relative_rms": 0.10658384432286876,
+      "after_relative_rms": 0.011910457483487876,
+      "improvement_db": 19.03525874790427
+    },
+    {
+      "trim": 6,
+      "probe": "sine_1000Hz_-1dBFS",
+      "before_relative_rms": 0.4217758014220122,
+      "after_relative_rms": 0.014081036774903275,
+      "improvement_db": 29.528940531677563
+    },
+    {
+      "trim": 6,
+      "probe": "sine_62.5Hz_-12dBFS",
+      "before_relative_rms": 0.029476585240487428,
+      "after_relative_rms": 0.005118709501343198,
+      "improvement_db": 15.206333751448431
+    },
+    {
+      "trim": 6,
+      "probe": "sine_250Hz_-12dBFS",
+      "before_relative_rms": 0.028194597975532587,
+      "after_relative_rms": 0.007650011032587789,
+      "improvement_db": 11.330076898401863
+    },
+    {
+      "trim": 6,
+      "probe": "sine_4000Hz_-12dBFS",
+      "before_relative_rms": 0.15834138281060658,
+      "after_relative_rms": 0.034390266743400295,
+      "improvement_db": 13.263177779502644
+    },
+    {
+      "trim": 6,
+      "probe": "sine_8000Hz_-12dBFS",
+      "before_relative_rms": 0.21621869538928265,
+      "after_relative_rms": 0.02565527460641334,
+      "improvement_db": 18.5143315003627
+    },
+    {
+      "trim": 6,
+      "probe": "two_tone_60_7000Hz",
+      "before_relative_rms": 0.21360429575243964,
+      "after_relative_rms": 0.054891169392497725,
+      "improvement_db": 11.80214998866636
+    },
+    {
+      "trim": 6,
+      "probe": "two_tone_19000_20000Hz",
+      "before_relative_rms": 0.33371524672582925,
+      "after_relative_rms": 0.12750964570458542,
+      "improvement_db": 8.35666020107157
+    },
+    {
+      "trim": 6,
+      "probe": "hard_burst_1kHz",
+      "before_relative_rms": 0.3647557922617926,
+      "after_relative_rms": 0.017336128961996256,
+      "improvement_db": 26.46100136282562
+    },
+    {
+      "trim": 6,
+      "probe": "log_sweep_20_20000Hz",
+      "before_relative_rms": 0.0894913069929281,
+      "after_relative_rms": 0.035474052374905855,
+      "improvement_db": 8.0374009594284
+    },
+    {
+      "trim": -6,
+      "probe": "sine_1000Hz_-48dBFS",
+      "before_relative_rms": 0.010733860497127283,
+      "after_relative_rms": 0.0006524304753310557,
+      "improvement_db": 24.324434154596027
+    },
+    {
+      "trim": -6,
+      "probe": "sine_1000Hz_-36dBFS",
+      "before_relative_rms": 0.010732427736261686,
+      "after_relative_rms": 0.0006470860081590909,
+      "improvement_db": 24.39471927444491
+    },
+    {
+      "trim": -6,
+      "probe": "sine_1000Hz_-24dBFS",
+      "before_relative_rms": 0.010702164404656416,
+      "after_relative_rms": 0.0006327011436334604,
+      "improvement_db": 24.565459975506975
+    },
+    {
+      "trim": -6,
+      "probe": "sine_1000Hz_-18dBFS",
+      "before_relative_rms": 0.010602609126078976,
+      "after_relative_rms": 0.0006636154128102488,
+      "improvement_db": 24.0699257379131
+    },
+    {
+      "trim": -6,
+      "probe": "sine_1000Hz_-12dBFS",
+      "before_relative_rms": 0.01005359107281735,
+      "after_relative_rms": 0.0005259926196340551,
+      "improvement_db": 25.626831319228515
+    },
+    {
+      "trim": -6,
+      "probe": "sine_1000Hz_-6dBFS",
+      "before_relative_rms": 0.008961141467914697,
+      "after_relative_rms": 0.0029491706187823787,
+      "improvement_db": 9.653268698555665
+    },
+    {
+      "trim": -6,
+      "probe": "sine_1000Hz_-1dBFS",
+      "before_relative_rms": 0.02180697079189685,
+      "after_relative_rms": 0.005781780319033596,
+      "improvement_db": 11.530675108479327
+    },
+    {
+      "trim": -6,
+      "probe": "sine_62.5Hz_-12dBFS",
+      "before_relative_rms": 0.009866796159054324,
+      "after_relative_rms": 0.0015012152159410035,
+      "improvement_db": 16.354663968371156
+    },
+    {
+      "trim": -6,
+      "probe": "sine_250Hz_-12dBFS",
+      "before_relative_rms": 0.009599499503521047,
+      "after_relative_rms": 0.0054954118775723,
+      "improvement_db": 4.844966848288815
+    },
+    {
+      "trim": -6,
+      "probe": "sine_4000Hz_-12dBFS",
+      "before_relative_rms": 0.07267193988513672,
+      "after_relative_rms": 0.03423005943773542,
+      "improvement_db": 6.539182000635105
+    },
+    {
+      "trim": -6,
+      "probe": "sine_8000Hz_-12dBFS",
+      "before_relative_rms": 0.0624036354279113,
+      "after_relative_rms": 0.048930808649102264,
+      "improvement_db": 2.112549956691352
+    },
+    {
+      "trim": -6,
+      "probe": "two_tone_60_7000Hz",
+      "before_relative_rms": 0.045810718369933015,
+      "after_relative_rms": 0.02797907735225276,
+      "improvement_db": 4.282674263378225
+    },
+    {
+      "trim": -6,
+      "probe": "two_tone_19000_20000Hz",
+      "before_relative_rms": 0.08600613004509951,
+      "after_relative_rms": 0.07156624825622819,
+      "improvement_db": 1.5964231168708785
+    },
+    {
+      "trim": -6,
+      "probe": "hard_burst_1kHz",
+      "before_relative_rms": 0.023929261078486114,
+      "after_relative_rms": 0.00451793747464686,
+      "improvement_db": 14.47978143585998
+    },
+    {
+      "trim": -6,
+      "probe": "log_sweep_20_20000Hz",
+      "before_relative_rms": 0.030528779299265136,
+      "after_relative_rms": 0.024925971351518014,
+      "improvement_db": 1.7611469548327539
+    }
+  ]
+}

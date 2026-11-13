@@ -21,7 +21,7 @@ struct Biquad {
     }
 };
 struct Engine {
-    struct Channel { Biquad modelPre,modelPost; double previousShaped=0; };
+    struct Channel { Biquad modelPre,modelPost,lowAmountPre,lowAmountPost; double previousShaped=0; };
     std::array<Channel,2> channels;
     double rate=48000;
     int brightness=-1,activeType=-1;
@@ -41,16 +41,27 @@ struct Engine {
         for(auto& c:channels) {
             c.modelPre.shelf(rate,std::min(p.preFrequency,rate*.45),p.preDb,p.preDamping);
             c.modelPost.shelf(rate,std::min(p.postFrequency,rate*.45),p.postDb,p.postDamping);
+            if(p.residualModel) {
+                const auto& legacy=lowAmountDarkGold;
+                c.lowAmountPre.shelf(rate,std::min(legacy.preFrequency,rate*.45),legacy.preDb,legacy.preDamping);
+                c.lowAmountPost.shelf(rate,std::min(legacy.postFrequency,rate*.45),legacy.postDb,legacy.postDamping);
+            }
         }
     }
-    double residual(double x, Channel& c, int type) {
+    double residual(double x, Channel& c, int type, float process) {
         const auto index=static_cast<size_t>(brightness*5+type);
         const double excitation=c.modelPre.tick(x);
         const double shaped=calibratedCurves[index].evaluate(excitation);
         const double square=excitation*excitation;
         const double corrected=shaped+modelCalibration[index].phaseMemory*(square/(1.+square))*(shaped-c.previousShaped);
         c.previousShaped=shaped;
-        return c.modelPost.tick(corrected)-x;
+        const double filtered=c.modelPost.tick(corrected);
+        if(modelCalibration[index].residualModel) {
+            const double legacy=c.lowAmountPost.tick(lowAmountDarkGoldCurve.evaluate(c.lowAmountPre.tick(x)))-x;
+            const double blend=std::clamp((static_cast<double>(process)-.75)*4.,0.,1.);
+            return legacy+blend*(filtered-legacy);
+        }
+        return filtered-x;
     }
     float tick(float input,int channel,float inputDb,float process,float outputDb,int type) {
         const double inGain=inputDb==0?1.:std::pow(10.,inputDb/20.);
@@ -61,7 +72,7 @@ struct Engine {
         type=std::clamp(type,0,4); setType(type);
         auto& c=channels[static_cast<size_t>(channel)];
         const double dry=static_cast<double>(input)*inGain;
-        const auto wet=residual(dry,c,type);
+        const auto wet=residual(dry,c,type,process);
         // Direct return preserves every finite input bit, including negative zero.
         if(unity) return input;
         double result=dry+process*wet;
