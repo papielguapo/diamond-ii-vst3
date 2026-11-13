@@ -21,7 +21,7 @@ struct Biquad {
     }
 };
 struct Engine {
-    struct Channel { Biquad modelPre,modelPost; };
+    struct Channel { Biquad modelPre,modelPost; double previousShaped=0; };
     std::array<Channel,2> channels;
     double rate=48000;
     int brightness=-1,activeType=-1;
@@ -44,8 +44,13 @@ struct Engine {
         }
     }
     double residual(double x, Channel& c, int type) {
-        const double shaped=calibratedCurves[static_cast<size_t>(brightness*5+type)].evaluate(c.modelPre.tick(x));
-        return c.modelPost.tick(shaped)-x;
+        const auto index=static_cast<size_t>(brightness*5+type);
+        const double excitation=c.modelPre.tick(x);
+        const double shaped=calibratedCurves[index].evaluate(excitation);
+        const double square=excitation*excitation;
+        const double corrected=shaped+modelCalibration[index].phaseMemory*(square/(1.+square))*(shaped-c.previousShaped);
+        c.previousShaped=shaped;
+        return c.modelPost.tick(corrected)-x;
     }
     float tick(float input,int channel,float inputDb,float process,float outputDb,int type) {
         const double inGain=inputDb==0?1.:std::pow(10.,inputDb/20.);

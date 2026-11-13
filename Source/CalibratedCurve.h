@@ -14,8 +14,9 @@ struct CurveTable {
     explicit CurveTable(const ModelCalibration& p) {
         for(size_t i=0;i<=intervals;++i) {
             const double x=i*step,t=1.+std::pow(p.drive*x,p.exponent);
-            values[i]=static_cast<float>(p.gain*x*std::pow(t,-1./p.exponent));
-            slopes[i]=static_cast<float>(step*p.gain*std::pow(t,-1./p.exponent-1.));
+            const double scale=p.gain*std::pow(t,-p.tailExponent/p.exponent);
+            values[i]=static_cast<float>(x*scale);
+            slopes[i]=static_cast<float>(step*scale*(1.-p.tailExponent+p.tailExponent/t));
         }
     }
     double evaluate(double input) const noexcept {

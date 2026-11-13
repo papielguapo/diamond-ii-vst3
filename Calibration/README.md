@@ -55,3 +55,26 @@ La mejora de Process se refiere al error total del archivo: hay pequeñas regres
 Se verificó el modelo compilado contra el numérico con diferencia máxima inferior a 1e-5. Los datos detallados están en luster-opal-refinement.json, process-refinement.json y process-compiled-verification.json. Los dos límites de regresión Luster/Opal de la suite anterior se han estrechado. Se añaden 18 comprobaciones de referencias originales de Process (dos señales por nueve condiciones), con límites congelados en Tests/ProcessReferenceLimits.h.
 
 process-reference-fixtures.bin.gz usa formato little-endian PHXP, uint32 frecuencia 48000, uint32 casos 18; por caso uint32 Type, uint32 Brightness, float32 Process en porcentaje, uint32 muestras, float32 entrada[muestras] y float32 referencia[muestras]. No contiene metadatos BWF. El null bit-accurate sigue correspondiendo únicamente a la ruta seca de DIAMOND II.
+
+
+## Revisión: fase dependiente del nivel en Iridescent/Sapphire
+
+Se compararon curvas con exponente de cola libre y correcciones causales de fase dependientes del nivel. La combinación seleccionada mejora el error RMS de las 15 señales ya medidas de Iridescent/Sapphire, sin regresiones en ese conjunto. El ajuste usa las mismas ventanas estacionarias de 1 kHz a siete niveles, 250 Hz, 8 kHz y bitono 19/20 kHz; ahora se ponderan por RMS de referencia para no relegar las señales saturadas. Las otras cinco señales sirven para selección de modelos, no para validación ciega. Se descartó la alternativa Luster/Gold porque empeoraba sus capturas a Process intermedio.
+
+El nuevo modelo es `v[n]=g*u[n]/(1+abs(k*u[n])^q)^(r/q)`, seguido de `c[n]=v[n]+m*u[n]^2/(1+u[n]^2)*(v[n]-v[n-1])` antes del filtro post. Es una corrección de fase empírica y causal de una muestra, sin retardo adicional de la señal seca, sin sobremuestreo y sin atribuir estas ecuaciones al original. Cada canal conserva su propio `v[n-1]`; prepare/reset lo pone a cero. La copia de estados para el fundido de 5 ms también copia esta memoria. No se añade asignación de memoria al callback.
+
+Los dos últimos parámetros de all-colors-48k-fit.json son ahora tailExponent y phaseMemory. Iridescent/Sapphire usa los coeficientes medidos; las otras 14 combinaciones mantienen r=1 y m=0. El exponente de cola no unitario extrapola fuera del intervalo medido, y el dominio de la tabla sigue limitado a |u|<=32. No se ha verificado esa extrapolación contra el original.
+
+| Iridescent/Sapphire, Process 100, Input 0 dB | Error RMS anterior | Nuevo |
+|---|---:|---:|
+| sine_1000Hz_-6dBFS | 2.426% | 0.926% |
+| sine_4000Hz_-12dBFS | 7.094% | 2.936% |
+| hard_burst_1kHz | 3.078% | 2.687% |
+| log_sweep_20_20000Hz | 7.065% | 4.794% |
+| two_tone_19000_20000Hz | 26.509% | 22.009% |
+
+La diferencia máxima entre el render C++ y el modelo numérico fue 5.92e-08. dynamic-compiled-verification.json conserva las 15 comparaciones; dynamic-refinement.json conserva el candidato y sus parámetros. La mejora de las cinco señales excluidas del ajuste abarca aproximadamente 1.18–8.17 dB, con media de 4.33 dB. No es un porcentaje de parecido auditivo. El bitono ultrasónico aún muestra una diferencia importante (aproximadamente 22% RMS relativo), por lo que no se afirma equivalencia 1:1.
+
+En esta revisión no se obtuvieron capturas originales nuevas: el control de AudioSuite rechazó la interacción con la ventana. La comparación sigue limitada a las capturas de 48 kHz mono, Input 0 dB y Process 100 para esta combinación; faltan otros trims, frecuencias, Process intermedio y material musical independiente. El estado de Pro Tools se conserva con la señal seca seleccionada.
+
+Se estrecharon los dos límites de referencia existentes de Iridescent/Sapphire. El archivo process-reference-fixtures.bin.gz conserva las 18 condiciones previas y añade tres capturas originales a Process 100 de Iridescent/Sapphire: 1 kHz/-6 dBFS, 1 kHz/-1 dBFS y bitono 19/20 kHz. Su cabecera PHXP contiene ahora 21 casos y cada caso indica Type, Brightness y Process. Los límites están congelados en Tests/ProcessReferenceLimits.h; no se generaron las referencias a partir del DSP nuevo.

@@ -10,13 +10,15 @@ A C++20 / JUCE 8 parallel tape-colour processor, with the supplied silver-metal 
 
 For input/output gains `gi`, `go` and Process `p` in [0,1]:
 
-`dry = gi*x; wet = Hpost(f(Hpre(dry))); residual = wet-dry; y = go*(dry + p*residual + correction)`.
+`dry = gi*x; u = Hpre(dry); wet = Hpost(c(u)); residual = wet-dry; y = go*(dry + p*residual + correction)`.
 
 For Luster and Dark Essence in Gold only, `correction = 4*p*(1-p)*(a*dry+b*residual)`, using the measured coefficients in `processCorrection`. It vanishes at Process 0 and 100. Other combinations use zero correction. The coefficients were fitted to original 50% captures using the original 100% endpoints, then checked at 25% and 75%. This is a small empirical correction, not the recovered original control law.
 
 Each of the 15 Type/Brightness combinations has its own fitted pre-shelf, nonlinear curve and post-shelf:
 
-$$f(u)=\frac{g u}{(1+|k u|^q)^{1/q}}.$$
+$$f(u)=\frac{g u}{(1+|k u|^q)^{r/q}}.$$
+
+The tail exponent `r` is 1 in 14 combinations. Iridescent/Sapphire has a separately fitted exponent and a causal amplitude-dependent phase correction: `v[n]=f(u[n]); c[n]=v[n]+m*u[n]^2/(1+u[n]^2)*(v[n]-v[n-1])`; `Hpost` receives `c`. Its previous shaped sample starts at zero and is independent per channel. The other 14 combinations have `m=0`. This empirical one-sample state is not a recovered physical tape model.
 
 The exact fitted coefficients are in [Source/CalibrationData.h](Source/CalibrationData.h) and [Calibration/all-colors-48k-fit.json](Calibration/all-colors-48k-fit.json). This odd-symmetric curve replaces the prototype's invented even-harmonic additions. Cubic Hermite tables with 8192 intervals over [0,32] evaluate it during audio processing; the table input magnitude clamps at 32. Tables are built once at module load. No per-sample transcendental calls, allocations, oversampling, lookahead or added latency are used.
 
@@ -36,7 +38,7 @@ The helper functions remain unit-tested, with clamps at ±3 and ±4. They are no
 
 $$T_2(t)=2t^2-1,\quad T_3(t)=4t^3-3t,\quad T_5(t)=16t^5-20t^3+5t.$$
 
-Its one-state memory was `m[n]=(1-alpha)*x[n]+alpha*m[n-1]`, `alpha=exp(-1/(30e-6*fs))`, `u[n]=x[n]+0.035*(m[n-1]-x[n])`. These polynomial additions and that magnetic-memory approximation were removed after measuring the original. Current memory consists of pre/post IIR filter states. None of these historical formulas is established as Phoenix II's proprietary algorithm.
+Its one-state memory was `m[n]=(1-alpha)*x[n]+alpha*m[n-1]`, `alpha=exp(-1/(30e-6*fs))`, `u[n]=x[n]+0.035*(m[n-1]-x[n])`. These polynomial additions and that magnetic-memory approximation were removed after measuring the original. Current memory consists of pre/post IIR states plus the measured one-sample shaped-signal state in Iridescent/Sapphire. None of these historical formulas is established as Phoenix II's proprietary algorithm.
 
 ## Build
 
@@ -74,7 +76,7 @@ Find plugins under `build/DiamondII_artefacts/Release/VST3/` and the executable 
 
 ## Verification
 
-`DspVerificationTest` tests the actual AudioProcessor, not a separate mock. The finite randomized null test covers all 5 types × 3 brightness settings × 5 sample rates (44.1, 48, 88.2, 96 and 192 kHz), including positive and negative zero, using bitwise IEEE-754 comparisons. Thirty captured-reference checks cover two synthetic probes across all 15 combinations at full Process; 18 more cover intermediate Gold Process values. Per-case regression limits equal the measured baseline relative RMS times 1.10 plus 0.001; passing them guards this approximation against regression, not against all audible differences. Additional tests stress maximum trims (+10 dB input / +6 dB output) and full processing, channel isolation, reset silence, active nonlinearity, rational unit slopes, UI resize bounds, state round-trip, and exact unity after an active wet state. Release checks throw on failure; they do not depend on disabled `assert()` macros. Passing a finite test suite does not prove every possible input or host is supported.
+`DspVerificationTest` tests the actual AudioProcessor, not a separate mock. The finite randomized null test covers all 5 types × 3 brightness settings × 5 sample rates (44.1, 48, 88.2, 96 and 192 kHz), including positive and negative zero, using bitwise IEEE-754 comparisons. Thirty captured-reference checks cover two synthetic probes across all 15 combinations at full Process; 18 more cover intermediate Gold Process values and three more cover strong-level/ultrasonic Iridescent/Sapphire probes. Per-case regression limits equal the measured baseline relative RMS times 1.10 plus 0.001; passing them guards this approximation against regression, not against all audible differences. Additional tests stress maximum trims (+10 dB input / +6 dB output) and full processing, channel isolation, reset silence, active nonlinearity, rational unit slopes, UI resize bounds, state round-trip, and exact unity after an active wet state. Release checks throw on failure; they do not depend on disabled `assert()` macros. Passing a finite test suite does not prove every possible input or host is supported.
 
 `GeneratePluginScreenshot` initializes `ScopedJuceInitialiser_GUI`, instantiates the actual processor/editor, sets +2.50 dB / 48% / −1.20 dB / Gold / Iridescent, and captures a 980×300 logical component at 2×. The reference skin fits proportionally with narrow black letterboxing because its aspect ratio differs slightly from 1960×600. The tool fails unless the PNG is 1960×600 and exceeds 50 KiB. Additional PNGs record each resize preset. It is an offscreen render of the real component, not a photograph of a DAW window. Host resize negotiation and interaction in third-party DAWs have not been tested.
 

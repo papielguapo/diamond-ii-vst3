@@ -15,13 +15,21 @@ def read(path):
 def shelf(fc,db,d=np.sqrt(2)):
     k=np.tan(np.pi*fc/48000); v=10**(db/20); n=1/(1+d*k+k*k)
     return np.array([v+np.sqrt(v)*d*k+k*k,2*(k*k-v),v-np.sqrt(v)*d*k+k*k])*n,np.array([1,2*(k*k-1)*n,(1-d*k+k*k)*n])
-def model(x,p,family):
-    g,k,q,fc,db,postfc,postdb=p[:7]; d1,d2=p[7:] if len(p)==9 else (np.sqrt(2),np.sqrt(2)); b,a=shelf(fc,db,d1); u=lfilter(b,a,x)
-    if family=='general': y=g*u/(1+np.abs(k*u)**q)**(1/q)
-    elif family=='tanh': y=g*np.tanh(k*u)/k
-    elif family=='atan': y=g*np.arctan(k*u)/k
+def model(x,p,family='general'):
+    g,k,q,fc,db,postfc,postdb=p[:7]
+    d1,d2=p[7:9] if len(p)>=9 else (np.sqrt(2),np.sqrt(2))
+    tail,memory=p[9:11] if len(p)==11 else (1.,0.)
+    b,a=shelf(fc,db,d1); u=lfilter(b,a,x)
+    if family=='general':
+        bounded=np.clip(u,-32.,32.)
+        shaped=g*bounded/(1+np.abs(k*bounded)**q)**(tail/q)
+    elif family=='tanh': shaped=g*np.tanh(k*u)/k
+    elif family=='atan': shaped=g*np.arctan(k*u)/k
+    else: raise ValueError('Unknown curve family')
+    previous=np.concatenate(([0.],shaped[:-1]))
+    corrected=shaped+memory*(u*u/(1+u*u))*(shaped-previous)
     postb,posta=shelf(postfc,postdb,d2)
-    return lfilter(postb,posta,y)
+    return lfilter(postb,posta,corrected)
 
 parser=argparse.ArgumentParser(description="Fit user-owned PCM24 48 kHz reference captures; see Calibration/README.md")
 parser.add_argument("reference_dir",type=Path)
@@ -37,11 +45,13 @@ for color in args.colors:
   if not path.exists() or any(r['color']==color and r['type']==name for r in results):continue
   target=read(path)[96000:96000+len(source)]*10**(.3); train=[s for s in ss if (s['kind']=='sine' and s['frequency_hz'] in (1000,250,8000)) or s['name']=='two_tone_19000_20000Hz']; xx=[]; yy=[];ww=[]
   for s in train:
-   start=s['start_sample']; xx.append(source[start:start+14400]);yy.append(target[start+12000:start+14400]);ww.append(np.full(2400,10**(-s['peak_dbfs']/20) if s['kind']=='sine' else 5))
+   start=s['start_sample']; xx.append(source[start:start+14400]);yy.append(target[start+12000:start+14400]);ww.append(np.full(2400,1/max(np.sqrt(np.mean(yy[-1]*yy[-1])),1e-5)))
   y=np.concatenate(yy);w=np.concatenate(ww)
   def residual(p):return (np.concatenate([model(x,p,'general')[12000:] for x in xx])-y)*w
-  initial=entry['parameters'] if len(entry['parameters'])==9 else entry['parameters']+[np.sqrt(2),np.sqrt(2)]
-  fit=least_squares(residual,initial,bounds=([.3,.01,1.1,30,-12,30,-48,.3,.3],[5,12,16,22000,36,22000,12,5,5]),diff_step=1e-4,max_nfev=400)
+  initial=list(entry['parameters'])
+  if len(initial)==7: initial += [np.sqrt(2),np.sqrt(2)]
+  if len(initial)==9: initial += [1.,0.]
+  fit=least_squares(residual,initial,bounds=([.3,.01,1.1,30,-12,30,-48,.3,.3,.25,-4],[5,12,16,22000,36,22000,12,5,5,2,8]),diff_step=1e-4,max_nfev=400)
   pred=model(source,fit.x,'general'); metrics=[]
   for s in ss:
    a=s['analysis_start_sample'] if s['kind']=='sine' else s['start_sample'];b=a+(30720 if s['kind']=='sine' else s['length_samples']);metrics.append(dict(probe=s['name'],training=s in train,error_db=float(20*np.log10(np.linalg.norm(pred[a:b]-target[a:b])/np.linalg.norm(target[a:b])))))

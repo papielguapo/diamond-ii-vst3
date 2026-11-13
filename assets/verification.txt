@@ -28,7 +28,7 @@ test 1
 1: PASS: captured reference probe 0, type 3, brightness 1, relative RMS 0.0801943
 1: PASS: captured reference probe 0, type 4, brightness 1, relative RMS 0.0829207
 1: PASS: captured reference probe 0, type 0, brightness 2, relative RMS 0.0989255
-1: PASS: captured reference probe 0, type 1, brightness 2, relative RMS 0.0708907
+1: PASS: captured reference probe 0, type 1, brightness 2, relative RMS 0.0293491
 1: PASS: captured reference probe 0, type 2, brightness 2, relative RMS 0.0381946
 1: PASS: captured reference probe 0, type 3, brightness 2, relative RMS 0.004611
 1: PASS: captured reference probe 0, type 4, brightness 2, relative RMS 0.00739053
@@ -43,7 +43,7 @@ test 1
 1: PASS: captured reference probe 1, type 3, brightness 1, relative RMS 0.107476
 1: PASS: captured reference probe 1, type 4, brightness 1, relative RMS 0.0848889
 1: PASS: captured reference probe 1, type 0, brightness 2, relative RMS 0.0519176
-1: PASS: captured reference probe 1, type 1, brightness 2, relative RMS 0.0307804
+1: PASS: captured reference probe 1, type 1, brightness 2, relative RMS 0.0268704
 1: PASS: captured reference probe 1, type 2, brightness 2, relative RMS 0.0254589
 1: PASS: captured reference probe 1, type 3, brightness 2, relative RMS 0.135345
 1: PASS: captured reference probe 1, type 4, brightness 2, relative RMS 0.0941747
@@ -65,8 +65,11 @@ test 1
 1: PASS: Process reference 15, type 4, amount 50, relative RMS 0.0257169
 1: PASS: Process reference 16, type 4, amount 75, relative RMS 0.0403951
 1: PASS: Process reference 17, type 4, amount 75, relative RMS 0.0500248
-1: PASS: 1581935 checks, 100% passed. Null difference exactly 0.0f (-inf dBFS); signed zero preserved.
-1/2 Test #1: DSP ..............................   Passed    2.64 sec
+1: PASS: Process reference 18, type 1, amount 100, relative RMS 0.00925693
+1: PASS: Process reference 19, type 1, amount 100, relative RMS 0.0360442
+1: PASS: Process reference 20, type 1, amount 100, relative RMS 0.220085
+1: PASS: 1581941 checks, 100% passed. Null difference exactly 0.0f (-inf dBFS); signed zero preserved.
+1/2 Test #1: DSP ..............................   Passed    3.08 sec
 test 2
     Start 2: Screenshot
 
@@ -74,8 +77,8 @@ test 2
 2: Working Directory: ./build
 2: Test timeout computed to be: 10000000
 2: .\assets\screenshot.png 1960x600 455848 bytes
-2/2 Test #2: Screenshot .......................   Passed    2.47 sec
+2/2 Test #2: Screenshot .......................   Passed    2.78 sec
 
 100% tests passed out of 2
 
-Total Test time (real) =   5.25 sec
+Total Test time (real) =   5.99 sec
