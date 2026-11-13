@@ -2,9 +2,9 @@
 #include "PluginEditor.h"
 static juce::AudioProcessorValueTreeState::ParameterLayout layout() {
     juce::AudioProcessorValueTreeState::ParameterLayout l;
-    l.add(std::make_unique<juce::AudioParameterFloat>(juce::ParameterID{"input",1},"Input",juce::NormalisableRange<float>{-18,18,.01f},0.f));
+    l.add(std::make_unique<juce::AudioParameterFloat>(juce::ParameterID{"input",1},"Input",juce::NormalisableRange<float>{-10,10,.01f},0.f));
     l.add(std::make_unique<juce::AudioParameterFloat>(juce::ParameterID{"process",1},"Process",juce::NormalisableRange<float>{0,100,.01f},0.f));
-    l.add(std::make_unique<juce::AudioParameterFloat>(juce::ParameterID{"output",1},"Output",juce::NormalisableRange<float>{-18,18,.01f},0.f));
+    l.add(std::make_unique<juce::AudioParameterFloat>(juce::ParameterID{"output",1},"Output",juce::NormalisableRange<float>{-6,6,.01f},0.f));
     l.add(std::make_unique<juce::AudioParameterChoice>(juce::ParameterID{"brightness",1},"Brightness",juce::StringArray{"Opal","Gold","Sapphire"},1));
     l.add(std::make_unique<juce::AudioParameterChoice>(juce::ParameterID{"type",1},"Type",juce::StringArray{"Luminscnt","Iridescnt","Radiant","Luster","DarkEssnc"},0));
     return l;
@@ -35,6 +35,6 @@ void DiamondIIAudioProcessor::getStateInformation(juce::MemoryBlock& b) {
 void DiamondIIAudioProcessor::setStateInformation(const void* d,int n) {
     auto xml=getXmlFromBinary(d,n); if(!xml || !xml->hasTagName("DiamondII")) return;
     auto s=juce::ValueTree::fromXml(*xml); state.replaceState(s);
-    editorWidth=juce::jlimit(588,1960,(int)s.getProperty("width",980)); editorHeight=juce::roundToInt(editorWidth.load()*300./980.);
+    editorWidth=juce::jlimit(751,2504,(int)s.getProperty("width",1252)); editorHeight=juce::roundToInt(editorWidth.load()*380./1252.);
 }
 juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter() { return new DiamondIIAudioProcessor; }

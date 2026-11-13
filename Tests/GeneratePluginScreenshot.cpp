@@ -12,6 +12,11 @@ int main(int argc,char** argv) {
     { juce::FileOutputStream stream(file); if(!stream.openedOk()) return 1; stream.setPosition(0); stream.truncate(); juce::PNGImageFormat png; if(!png.writeImageToStream(image,stream)) return 2; }
     std::cout<<file.getFullPathName()<<" "<<image.getWidth()<<"x"<<image.getHeight()<<" "<<file.getSize()<<" bytes\n";
     if(image.getWidth()!=1960 || image.getHeight()!=600 || file.getSize()<=50*1024) return 3;
-    for(auto size:{588,735,980,1225,1470,1960}) { editor.setSize(size,juce::roundToInt(size*300./980.)); auto preview=editor.createComponentSnapshot(editor.getLocalBounds()); juce::FileOutputStream out(file.getSiblingFile("screenshot-"+juce::String(size)+".png")); juce::PNGImageFormat{}.writeImageToStream(preview,out); }
+    for(auto size:{751,939,1252,1565,1878,2504}) { editor.setSize(size,juce::roundToInt(size*380./1252.)); auto preview=editor.createComponentSnapshot(editor.getLocalBounds()); juce::FileOutputStream out(file.getSiblingFile("screenshot-"+juce::String(size)+".png")); out.setPosition(0); out.truncate(); juce::PNGImageFormat{}.writeImageToStream(preview,out); }
+    DiamondIIAudioProcessor defaults;
+    DiamondIIAudioProcessorEditor reference(defaults); reference.setSize(1252,380);
+    auto defaultImage=reference.createComponentSnapshot(reference.getLocalBounds());
+    juce::FileOutputStream defaultFile(file.getSiblingFile("screenshot-default.png")); defaultFile.setPosition(0); defaultFile.truncate();
+    if(!juce::PNGImageFormat{}.writeImageToStream(defaultImage,defaultFile)) return 4;
     return 0;
 }

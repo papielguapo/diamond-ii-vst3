@@ -5,7 +5,7 @@ class DiamondIIAudioProcessor : public juce::AudioProcessor {
 public:
     DiamondIIAudioProcessor();
     juce::AudioProcessorValueTreeState state;
-    std::atomic<int> editorWidth{980},editorHeight{300};
+    std::atomic<int> editorWidth{1252},editorHeight{380};
     diamond::Engine engine;
     const juce::String getName() const override { return "DIAMOND II"; }
     void prepareToPlay(double,int) override;

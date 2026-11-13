@@ -1,65 +1,79 @@
 #include "PluginEditor.h"
+#include <BinaryData.h>
 DiamondLook::DiamondLook() {
-    setColour(juce::Slider::textBoxTextColourId,juce::Colour(0xffeee2ff));
-    setColour(juce::Slider::textBoxOutlineColourId,juce::Colours::transparentBlack);
-    setColour(juce::Slider::textBoxBackgroundColourId,juce::Colour(0xff191124));
-    setColour(juce::ComboBox::backgroundColourId,juce::Colour(0xff20162e));
-    setColour(juce::ComboBox::outlineColourId,juce::Colour(0xff79558f));
-    setColour(juce::ComboBox::textColourId,juce::Colour(0xfff0e4ff));
+    skin=juce::ImageCache::getFromMemory(BinaryData::skinreference_png,BinaryData::skinreference_pngSize);
+    setColour(juce::Slider::textBoxTextColourId,juce::Colours::white);
+    setColour(juce::Slider::textBoxOutlineColourId,juce::Colour(0xff777777));
+    setColour(juce::Slider::textBoxBackgroundColourId,juce::Colours::black);
+    setColour(juce::TextEditor::backgroundColourId,juce::Colours::black);
+    setColour(juce::TextEditor::textColourId,juce::Colours::white);
 }
-void DiamondLook::drawRotarySlider(juce::Graphics& g,int x,int y,int w,int h,float pos,float start,float end,juce::Slider&) {
-    auto r=juce::Rectangle<float>((float)x,(float)y,(float)w,(float)h).reduced(17);
-    float size=juce::jmin(r.getWidth(),r.getHeight()); r=r.withSizeKeepingCentre(size,size);
-    const auto centre=r.getCentre(); float radius=size*.5f;
-    for(int i=0;i<=40;++i) { auto a=start+(end-start)*i/40.f; g.setColour(i<=pos*40?juce::Colour(0xffd8a4ff):juce::Colour(0xff5b426d)); g.drawLine(centre.x+std::sin(a)*(radius+7),centre.y-std::cos(a)*(radius+7),centre.x+std::sin(a)*(radius+11),centre.y-std::cos(a)*(radius+11),1.4f); }
-    g.setGradientFill(juce::ColourGradient(juce::Colour(0xff8c639f),r.getTopLeft(),juce::Colour(0xff18111e),r.getBottomRight(),false));
-    g.fillEllipse(r); g.setColour(juce::Colour(0xffbda4cf)); g.drawEllipse(r,1.2f);
-    g.setGradientFill(juce::ColourGradient(juce::Colour(0xff493453),r.getTopLeft(),juce::Colour(0xff211729),r.getBottomRight(),false)); g.fillEllipse(r.reduced(6));
-    auto a=start+pos*(end-start); g.setColour(juce::Colour(0xfff5e1ff));
-    g.drawLine(centre.x+std::sin(a)*radius*.35f,centre.y-std::cos(a)*radius*.35f,centre.x+std::sin(a)*radius*.8f,centre.y-std::cos(a)*radius*.8f,3.f);
-    g.setColour(juce::Colours::white.withAlpha(.08f)); g.drawEllipse(r.reduced(10),.7f);
+juce::Slider::SliderLayout DiamondLook::getSliderLayout(juce::Slider& s) {
+    return {juce::Rectangle<int>(0,0,s.getWidth(),112),juce::Rectangle<int>(0,186,s.getWidth(),37)};
+}
+void DiamondLook::drawRotarySlider(juce::Graphics& g,int,int,int,int,float pos,float,float,juce::Slider& slider) {
+    // The supplied artwork is the actual texture, preserving its lettering and knobs.
+    const float sx=(float)slider.getProperties()["sx"],cx=(float)slider.getProperties()["cx"]-sx;
+    const float cy=(float)slider.getProperties()["cy"]-143.f;
+    const float neutral=(float)slider.getProperties()["neutral"],sweep=(float)slider.getProperties()["sweep"];
+    juce::Graphics::ScopedSaveState save(g); juce::Path clip;
+    clip.addEllipse(cx-52.5f,cy-52.5f,105.f,105.f); g.reduceClipRegion(clip);
+    g.addTransform(juce::AffineTransform::rotation((pos-neutral)*sweep,cx,cy));
+    g.drawImageAt(skin,-juce::roundToInt(sx),-143);
 }
 DiamondIIAudioProcessorEditor::DiamondIIAudioProcessorEditor(DiamondIIAudioProcessor& p):AudioProcessorEditor(p),processor(p) {
-    setLookAndFeel(&look); addAndMakeVisible(panel); panel.setSize(980,300);
-    int i=0; for(auto id:{"input","process","output"}) {
-        auto& k=knobs[i]; panel.addAndMakeVisible(k); k.setSliderStyle(juce::Slider::RotaryHorizontalVerticalDrag); k.setTextBoxStyle(juce::Slider::TextBoxBelow,false,110,24); k.setNumDecimalPlacesToDisplay(2); k.setTextValueSuffix(i==1?" %":" dB"); k.setName(id); k.setDoubleClickReturnValue(true,0);
-        attachments[i]=std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(p.state,id,k); ++i;
+    setLookAndFeel(&look); addAndMakeVisible(panel); panel.setSize(1252,380); panel.setInterceptsMouseClicks(false,true);
+    const float xs[]={92,324,556,788,992},cx[]={161.5f,393.5f,625.5f,858.f,1062.5f};
+    const char* ids[]={"input","process","output","brightness","type"};
+    for(int i=0;i<5;++i) {
+        auto& k=knobs[i]; panel.addAndMakeVisible(k); k.setSliderStyle(juce::Slider::RotaryHorizontalVerticalDrag);
+        k.setTextBoxStyle(juce::Slider::TextBoxBelow,false,140,37); k.setName(ids[i]);
+        k.getProperties().set("sx",xs[i]); k.getProperties().set("cx",cx[i]); k.getProperties().set("cy",i<3?199.5f:195.5f);
+        k.getProperties().set("neutral",i==1||i==4?0.f:.5f); k.getProperties().set("sweep",i==3?1.3f:juce::MathConstants<float>::pi*1.5f);
+        attachments[i]=std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(p.state,ids[i],k);
+        k.textFromValueFunction=[i](double value) {
+            if(i==3) return juce::StringArray{"Opal","Gold","Sapphire"}[juce::jlimit(0,2,juce::roundToInt(value))];
+            if(i==4) return juce::StringArray{"Luminscnt","Iridescnt","Radiant","Luster","DarkEssnc"}[juce::jlimit(0,4,juce::roundToInt(value))];
+            if(value==0 && i!=1) return juce::String("-0.00"); return juce::String(value,2);
+        };
+        k.valueFromTextFunction=[i](const juce::String& text) {
+            const juce::StringArray names=i==3?juce::StringArray{"Opal","Gold","Sapphire"}:juce::StringArray{"Luminscnt","Iridescnt","Radiant","Luster","DarkEssnc"};
+            if(i>=3) return (double)juce::jmax(0,names.indexOf(text,true)); return text.getDoubleValue();
+        };
+        k.onValueChange=[this]{ repaint(); };
+        k.updateText();
+        k.setDoubleClickReturnValue(true,i==3?1:0);
+        k.setTooltip("Drag to adjust; double-click to reset. Right-click the panel for interface size.");
     }
-    panel.addAndMakeVisible(brightness); brightness.addItemList({"Opal","Gold","Sapphire"},1); brightness.setName("Brightness");
-    panel.addAndMakeVisible(type); type.addItemList({"Luminscnt","Iridescnt","Radiant","Luster","DarkEssnc"},1); type.setName("Type");
-    panel.addAndMakeVisible(zoom); zoom.addItemList({"60 %","75 %","100 %","125 %","150 %","200 %"},1); zoom.setSelectedId(3); zoom.setName("Interface size");
-    zoom.onChange=[this] { const double s[]={.6,.75,1,1.25,1.5,2}; int n=zoom.getSelectedItemIndex(); if(n>=0) setSize(juce::roundToInt(980*s[n]),juce::roundToInt(300*s[n])); };
-    ba=std::make_unique<juce::AudioProcessorValueTreeState::ComboBoxAttachment>(p.state,"brightness",brightness);
-    ta=std::make_unique<juce::AudioProcessorValueTreeState::ComboBoxAttachment>(p.state,"type",type);
-    setResizable(true,true); setResizeLimits(588,180,1960,600); getConstrainer()->setFixedAspectRatio(980./300.);
+    setResizable(true,true); setResizeLimits(751,228,2504,760); getConstrainer()->setFixedAspectRatio(1252./380.);
     int width=p.editorWidth.load();
-    if(auto* display=juce::Desktop::getInstance().getDisplays().getPrimaryDisplay()) width=juce::jlimit(588,1960,juce::jmin(width,display->userArea.getWidth()-40,juce::roundToInt((display->userArea.getHeight()-80)*980./300.)));
-    setSize(width,juce::roundToInt(width*300./980.));
+    if(auto* display=juce::Desktop::getInstance().getDisplays().getPrimaryDisplay()) width=juce::jlimit(751,2504,juce::jmin(width,display->userArea.getWidth()-40,juce::roundToInt((display->userArea.getHeight()-80)*1252./380.)));
+    setSize(width,juce::roundToInt(width*380./1252.));
 }
 DiamondIIAudioProcessorEditor::~DiamondIIAudioProcessorEditor() { setLookAndFeel(nullptr); }
 void DiamondIIAudioProcessorEditor::resized() {
     processor.editorWidth=getWidth(); processor.editorHeight=getHeight();
-    const int widths[]={588,735,980,1225,1470,1960}; int selected=0;
-    for(int i=0;i<6;++i) if(getWidth()==widths[i]) selected=i+1;
-    zoom.setSelectedId(selected,juce::dontSendNotification);
-    if(selected==0) zoom.setText(juce::String(getWidth()*100./980.,0)+" %",juce::dontSendNotification);
-    panel.setTransform(juce::AffineTransform::scale(juce::jmin(getWidth()/980.f,getHeight()/300.f)));
-    for(int i=0;i<3;++i) knobs[i].setBounds(300+i*180,84,154,174);
-    brightness.setBounds(53,151,181,32); type.setBounds(53,217,181,32); zoom.setBounds(852,24,94,25);
+    const float scale=juce::jmin(getWidth()/1252.f,getHeight()/380.f);
+    panel.setTransform(juce::AffineTransform::scale(scale).translated((getWidth()-1252*scale)*.5f,(getHeight()-380*scale)*.5f));
+    const int xs[]={92,324,556,788,992}; for(int i=0;i<5;++i) knobs[i].setBounds(xs[i],143,140,223);
 }
-void DiamondIIAudioProcessorEditor::paint(juce::Graphics& actual) {
-    juce::Graphics::ScopedSaveState saved(actual); auto& g=actual;
-    g.addTransform(juce::AffineTransform::scale(juce::jmin(getWidth()/980.f,getHeight()/300.f)));
-    g.setGradientFill(juce::ColourGradient(juce::Colour(0xff4d265e),0,0,juce::Colour(0xff100d18),980,300,false)); g.fillRect(0,0,980,300);
-    // Fine brushed-metal engraving, rendered procedurally at any DPI.
-    juce::Random noise(71); for(int i=0;i<6500;++i) { g.setColour(juce::Colours::white.withAlpha(noise.nextFloat()*.035f)); float x=noise.nextFloat()*980,y=noise.nextFloat()*300; g.drawLine(x,y,x+noise.nextFloat()*20,y,.5f); }
-    g.setColour(juce::Colour(0xffa977c6)); g.drawRoundedRectangle(12,12,956,276,9,1);
-    g.setColour(juce::Colour(0xffcf9ce9)); g.drawLine(34,69,946,69,.7f);
-    g.setFont(juce::FontOptions(31.f,juce::Font::bold)); g.drawText("DIAMOND II",35,20,300,38,juce::Justification::centredLeft);
-    g.setFont(juce::FontOptions(11.f)); g.setColour(juce::Colour(0xffc1a6cf)); g.drawText("P A P I E L G U A P O   E D I T I O N",343,29,380,20,juce::Justification::centredLeft);
-    g.setFont(juce::FontOptions(12.f,juce::Font::bold));
-    for(int i=0;i<3;++i) g.drawText(juce::StringArray{"INPUT","PROCESS","OUTPUT"}[i],300+i*180,74,154,16,juce::Justification::centred);
-    g.drawText("BRIGHTNESS",53,125,181,20,juce::Justification::centredLeft); g.drawText("TAPE CHARACTER",53,191,181,20,juce::Justification::centredLeft);
-    g.setFont(juce::FontOptions(10.f)); g.drawText("PARALLEL HARMONIC COLOUR  /  NATIVE RATE",300,264,600,16,juce::Justification::centred);
-    for(auto pt:{juce::Point<float>(25,25),{955,25},{25,275},{955,275}}) { g.setColour(juce::Colour(0xff160f1d)); g.fillEllipse(pt.x-4,pt.y-4,8,8); g.setColour(juce::Colour(0xff9673a9)); g.drawLine(pt.x-2,pt.y-2,pt.x+2,pt.y+2,1); }
+void DiamondIIAudioProcessorEditor::paint(juce::Graphics& g) {
+    g.fillAll(juce::Colours::black); juce::Graphics::ScopedSaveState saved(g);
+    const float scale=juce::jmin(getWidth()/1252.f,getHeight()/380.f);
+    g.addTransform(juce::AffineTransform::scale(scale).translated((getWidth()-1252*scale)*.5f,(getHeight()-380*scale)*.5f));
+    g.drawImageAt(look.skin,0,0);
+    // Keep the reference's exact type lettering and its outer border.
+    // Only erase the original selection underline, then move it to the active type.
+    g.drawImage(look.skin,1124,142,125,5,6,142,76,5);
+    const int chosen=juce::roundToInt((float)knobs[4].getValue());
+    g.setColour(juce::Colour(0xff64168a)); g.drawLine(1124.f,143.f+chosen*26.f,1249.f,143.f+chosen*26.f,1.f);
+}
+void DiamondIIAudioProcessorEditor::mouseDown(const juce::MouseEvent& event) {
+    if(!event.mods.isPopupMenu()) return;
+    juce::PopupMenu menu; menu.addSectionHeader("Interface size");
+    const int percentages[]={60,75,100,125,150,200}; for(int i=0;i<6;++i) menu.addItem(i+1,juce::String(percentages[i])+" %");
+    menu.showMenuAsync(juce::PopupMenu::Options().withTargetComponent(this),[safe=juce::Component::SafePointer<DiamondIIAudioProcessorEditor>(this)](int result) {
+        if(!safe || result<1 || result>6) return; const double sizes[]={.6,.75,1,1.25,1.5,2};
+        safe->setSize(juce::roundToInt(1252*sizes[result-1]),juce::roundToInt(380*sizes[result-1]));
+    });
 }

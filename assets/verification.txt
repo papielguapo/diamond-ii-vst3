@@ -17,17 +17,17 @@ test 1
 1: PASS: 88200 Hz, all 5 types x 3 brightness, bitwise null and stress
 1: PASS: 96000 Hz, all 5 types x 3 brightness, bitwise null and stress
 1: PASS: 192000 Hz, all 5 types x 3 brightness, bitwise null and stress
-1: PASS: 1581827 checks, 100% passed. Null difference exactly 0.0f (-inf dBFS); signed zero preserved.
-1/2 Test #1: DSP ..............................   Passed    1.20 sec
+1: PASS: 1581832 checks, 100% passed. Null difference exactly 0.0f (-inf dBFS); signed zero preserved.
+1/2 Test #1: DSP ..............................   Passed    1.07 sec
 test 2
     Start 2: Screenshot
 
 2: Test command: C:\Users\anton\Documents\Codex\2026-11-13\ap\outputs\diamond-ii-vst3\build\GeneratePluginScreenshot_artefacts\Release\GeneratePluginScreenshot.exe "C:/Users/anton/Documents/Codex/2026-11-13/ap/outputs/diamond-ii-vst3/assets/screenshot.png"
 2: Working Directory: C:/Users/anton/Documents/Codex/2026-11-13/ap/outputs/diamond-ii-vst3/build
 2: Test timeout computed to be: 10000000
-2: C:\Users\anton\Documents\Codex\2026-11-13\ap\outputs\diamond-ii-vst3\assets\screenshot.png 1960x600 243465 bytes
-2/2 Test #2: Screenshot .......................   Passed    3.56 sec
+2: C:\Users\anton\Documents\Codex\2026-11-13\ap\outputs\diamond-ii-vst3\assets\screenshot.png 1960x600 457270 bytes
+2/2 Test #2: Screenshot .......................   Passed    1.78 sec
 
 100% tests passed out of 2
 
-Total Test time (real) =   5.01 sec
+Total Test time (real) =   2.98 sec

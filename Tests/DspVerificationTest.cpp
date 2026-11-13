@@ -6,6 +6,11 @@
 int checks=0;
 void require(bool ok,const char* what) { ++checks; if(!ok) throw std::runtime_error(what); }
 void set(DiamondIIAudioProcessor& p,const char* id,float v) { auto* a=p.state.getParameter(id); a->setValueNotifyingHost(a->convertTo0to1(v)); }
+juce::Slider* findSlider(juce::Component& root,const juce::String& name) {
+    if(auto* slider=dynamic_cast<juce::Slider*>(&root); slider && slider->getName()==name) return slider;
+    for(auto* child:root.getChildren()) if(auto* slider=findSlider(*child,name)) return slider;
+    return nullptr;
+}
 int main() { try {
     juce::ScopedJuceInitialiser_GUI gui;
     std::mt19937 rng(2026); std::uniform_real_distribution<float> noise(-1,1);
@@ -19,7 +24,7 @@ int main() { try {
                 p.processBlock(b,midi);
                 for(int c=0;c<2;++c) for(int n=0;n<257;++n) require(std::bit_cast<uint32_t>(b.getSample(c,n))==std::bit_cast<uint32_t>(original.getSample(c,n)),"bit-accurate null");
             }
-            set(p,"process",100); set(p,"input",18); set(p,"output",18);
+            set(p,"process",100); set(p,"input",10); set(p,"output",6);
             p.prepareToPlay(fs,257);
             double energy=0;
             for(int block=0;block<32;++block) {
@@ -60,10 +65,17 @@ int main() { try {
     }
     DiamondIIAudioProcessor p; set(p,"input",2.5f); set(p,"process",48); set(p,"output",-1.2f); set(p,"type",1);
     { DiamondIIAudioProcessorEditor ed(p); require(ed.isResizable(),"resizable");
-      for(int w:{588,735,980,1225,1470,1960}) { ed.setSize(w,juce::roundToInt(w*300./980.)); require(p.editorWidth==w,"resize persisted"); }
+      for(int w:{751,939,1252,1565,1878,2504}) { ed.setSize(w,juce::roundToInt(w*380./1252.)); require(p.editorWidth==w,"resize persisted"); }
+      auto* brightness=findSlider(ed,"brightness"); auto* type=findSlider(ed,"type");
+      require(brightness && type,"skin choice knobs present");
+      brightness->setValue(2,juce::sendNotificationSync); type->setValue(4,juce::sendNotificationSync);
+      require(p.state.getRawParameterValue("brightness")->load()==2,"brightness knob updates DSP");
+      require(p.state.getRawParameterValue("type")->load()==4,"type knob updates DSP");
+      require(brightness->getTextFromValue(2)=="Sapphire" && type->getTextFromValue(4)=="DarkEssnc","skin choice readouts");
+      set(p,"type",2); require(type->getValue()==2,"automation updates skin knob");
     }
     juce::MemoryBlock state; p.getStateInformation(state); DiamondIIAudioProcessor restored; restored.setStateInformation(state.getData(),(int)state.getSize());
-    require(restored.editorWidth==1960,"restore width"); require(restored.state.getRawParameterValue("process")->load()==48,"restore parameter");
+    require(restored.editorWidth==2504,"restore width"); require(restored.state.getRawParameterValue("process")->load()==48,"restore parameter");
     juce::MemoryBlock again; restored.getStateInformation(again);
     require(state==again,"state round trip");
     // Warm state must not leak into a later exact-unity block.
