@@ -1,0 +1,33 @@
+UpdateCTestConfiguration  from :C:/Users/anton/Documents/Codex/2026-11-13/ap/outputs/diamond-ii-vst3/build/DartConfiguration.tcl
+Test project C:/Users/anton/Documents/Codex/2026-11-13/ap/outputs/diamond-ii-vst3/build
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: DSP
+
+1: Test command: C:\Users\anton\Documents\Codex\2026-11-13\ap\outputs\diamond-ii-vst3\build\DspVerificationTest_artefacts\Release\DspVerificationTest.exe
+1: Working Directory: C:/Users/anton/Documents/Codex/2026-11-13/ap/outputs/diamond-ii-vst3/build
+1: Test timeout computed to be: 10000000
+1: PASS: 44100 Hz, all 5 types x 3 brightness, bitwise null and stress
+1: PASS: 48000 Hz, all 5 types x 3 brightness, bitwise null and stress
+1: PASS: 88200 Hz, all 5 types x 3 brightness, bitwise null and stress
+1: PASS: 96000 Hz, all 5 types x 3 brightness, bitwise null and stress
+1: PASS: 192000 Hz, all 5 types x 3 brightness, bitwise null and stress
+1: PASS: 1581827 checks, 100% passed. Null difference exactly 0.0f (-inf dBFS); signed zero preserved.
+1/2 Test #1: DSP ..............................   Passed    1.20 sec
+test 2
+    Start 2: Screenshot
+
+2: Test command: C:\Users\anton\Documents\Codex\2026-11-13\ap\outputs\diamond-ii-vst3\build\GeneratePluginScreenshot_artefacts\Release\GeneratePluginScreenshot.exe "C:/Users/anton/Documents/Codex/2026-11-13/ap/outputs/diamond-ii-vst3/assets/screenshot.png"
+2: Working Directory: C:/Users/anton/Documents/Codex/2026-11-13/ap/outputs/diamond-ii-vst3/build
+2: Test timeout computed to be: 10000000
+2: C:\Users\anton\Documents\Codex\2026-11-13\ap\outputs\diamond-ii-vst3\assets\screenshot.png 1960x600 243465 bytes
+2/2 Test #2: Screenshot .......................   Passed    3.56 sec
+
+100% tests passed out of 2
+
+Total Test time (real) =   5.01 sec
