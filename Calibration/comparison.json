@@ -1,0 +1,602 @@
+[
+  {
+    "type": "Luminescent",
+    "probe": "sine_1000Hz_-48dBFS",
+    "training": true,
+    "before_error_db": -8.087863157419948,
+    "after_error_db": -48.40090308491761,
+    "improvement_db": 40.31303992749766
+  },
+  {
+    "type": "Luminescent",
+    "probe": "sine_1000Hz_-36dBFS",
+    "training": true,
+    "before_error_db": -8.088308264821414,
+    "after_error_db": -48.278298925206215,
+    "improvement_db": 40.1899906603848
+  },
+  {
+    "type": "Luminescent",
+    "probe": "sine_1000Hz_-24dBFS",
+    "training": true,
+    "before_error_db": -8.096081013602399,
+    "after_error_db": -47.37168652444186,
+    "improvement_db": 39.27560551083946
+  },
+  {
+    "type": "Luminescent",
+    "probe": "sine_1000Hz_-18dBFS",
+    "training": true,
+    "before_error_db": -8.120892508588547,
+    "after_error_db": -46.11052030593175,
+    "improvement_db": 37.9896277973432
+  },
+  {
+    "type": "Luminescent",
+    "probe": "sine_1000Hz_-12dBFS",
+    "training": true,
+    "before_error_db": -8.220548494803293,
+    "after_error_db": -45.58195254439723,
+    "improvement_db": 37.36140404959394
+  },
+  {
+    "type": "Luminescent",
+    "probe": "sine_1000Hz_-6dBFS",
+    "training": true,
+    "before_error_db": -8.620415407247716,
+    "after_error_db": -36.27313717010874,
+    "improvement_db": 27.652721762861024
+  },
+  {
+    "type": "Luminescent",
+    "probe": "sine_1000Hz_-1dBFS",
+    "training": true,
+    "before_error_db": -9.56857464980818,
+    "after_error_db": -23.487742881603978,
+    "improvement_db": 13.919168231795798
+  },
+  {
+    "type": "Luminescent",
+    "probe": "sine_62.5Hz_-12dBFS",
+    "training": false,
+    "before_error_db": -8.218538918241336,
+    "after_error_db": -45.75370531933612,
+    "improvement_db": 37.535166401094784
+  },
+  {
+    "type": "Luminescent",
+    "probe": "sine_250Hz_-12dBFS",
+    "training": true,
+    "before_error_db": -8.216921046682163,
+    "after_error_db": -45.83090027239061,
+    "improvement_db": 37.61397922570845
+  },
+  {
+    "type": "Luminescent",
+    "probe": "sine_4000Hz_-12dBFS",
+    "training": false,
+    "before_error_db": -8.578783839724665,
+    "after_error_db": -27.208565280736067,
+    "improvement_db": 18.629781441011403
+  },
+  {
+    "type": "Luminescent",
+    "probe": "sine_8000Hz_-12dBFS",
+    "training": true,
+    "before_error_db": -10.364126128009588,
+    "after_error_db": -24.412735904122577,
+    "improvement_db": 14.04860977611299
+  },
+  {
+    "type": "Luminescent",
+    "probe": "two_tone_60_7000Hz",
+    "training": false,
+    "before_error_db": -9.953423238988957,
+    "after_error_db": -27.667040054743595,
+    "improvement_db": 17.713616815754637
+  },
+  {
+    "type": "Luminescent",
+    "probe": "two_tone_19000_20000Hz",
+    "training": true,
+    "before_error_db": -9.073891036979209,
+    "after_error_db": -12.20901616237647,
+    "improvement_db": 3.135125125397261
+  },
+  {
+    "type": "Luminescent",
+    "probe": "hard_burst_1kHz",
+    "training": false,
+    "before_error_db": -9.34768843777845,
+    "after_error_db": -25.232134134482806,
+    "improvement_db": 15.884445696704356
+  },
+  {
+    "type": "Luminescent",
+    "probe": "log_sweep_20_20000Hz",
+    "training": false,
+    "before_error_db": -8.448518147086284,
+    "after_error_db": -28.626242369103384,
+    "improvement_db": 20.177724222017098
+  },
+  {
+    "type": "Iridescent",
+    "probe": "sine_1000Hz_-48dBFS",
+    "training": true,
+    "before_error_db": -8.451157205610643,
+    "after_error_db": -42.34016233152084,
+    "improvement_db": 33.889005125910195
+  },
+  {
+    "type": "Iridescent",
+    "probe": "sine_1000Hz_-36dBFS",
+    "training": true,
+    "before_error_db": -8.450718880246972,
+    "after_error_db": -42.28198183493599,
+    "improvement_db": 33.83126295468902
+  },
+  {
+    "type": "Iridescent",
+    "probe": "sine_1000Hz_-24dBFS",
+    "training": true,
+    "before_error_db": -8.444363542183535,
+    "after_error_db": -41.953957954792365,
+    "improvement_db": 33.509594412608834
+  },
+  {
+    "type": "Iridescent",
+    "probe": "sine_1000Hz_-18dBFS",
+    "training": true,
+    "before_error_db": -8.424683731968429,
+    "after_error_db": -41.75004332285667,
+    "improvement_db": 33.32535959088824
+  },
+  {
+    "type": "Iridescent",
+    "probe": "sine_1000Hz_-12dBFS",
+    "training": true,
+    "before_error_db": -8.354198555015236,
+    "after_error_db": -43.19278962073663,
+    "improvement_db": 34.838591065721396
+  },
+  {
+    "type": "Iridescent",
+    "probe": "sine_1000Hz_-6dBFS",
+    "training": true,
+    "before_error_db": -8.168887999407604,
+    "after_error_db": -36.87753176775201,
+    "improvement_db": 28.70864376834441
+  },
+  {
+    "type": "Iridescent",
+    "probe": "sine_1000Hz_-1dBFS",
+    "training": true,
+    "before_error_db": -8.010058729990085,
+    "after_error_db": -23.616712230540763,
+    "improvement_db": 15.606653500550678
+  },
+  {
+    "type": "Iridescent",
+    "probe": "sine_62.5Hz_-12dBFS",
+    "training": false,
+    "before_error_db": -8.445376970041861,
+    "after_error_db": -54.131257242367184,
+    "improvement_db": 45.68588027232532
+  },
+  {
+    "type": "Iridescent",
+    "probe": "sine_250Hz_-12dBFS",
+    "training": true,
+    "before_error_db": -8.436450041690854,
+    "after_error_db": -50.98228977534532,
+    "improvement_db": 42.54583973365447
+  },
+  {
+    "type": "Iridescent",
+    "probe": "sine_4000Hz_-12dBFS",
+    "training": false,
+    "before_error_db": -8.368931097520422,
+    "after_error_db": -25.491432910052588,
+    "improvement_db": 17.122501812532164
+  },
+  {
+    "type": "Iridescent",
+    "probe": "sine_8000Hz_-12dBFS",
+    "training": true,
+    "before_error_db": -10.211745620666328,
+    "after_error_db": -24.71309838171072,
+    "improvement_db": 14.50135276104439
+  },
+  {
+    "type": "Iridescent",
+    "probe": "two_tone_60_7000Hz",
+    "training": false,
+    "before_error_db": -9.632827076411937,
+    "after_error_db": -27.57909406963182,
+    "improvement_db": 17.946266993219886
+  },
+  {
+    "type": "Iridescent",
+    "probe": "two_tone_19000_20000Hz",
+    "training": true,
+    "before_error_db": -9.206190548982143,
+    "after_error_db": -12.009555758062923,
+    "improvement_db": 2.8033652090807806
+  },
+  {
+    "type": "Iridescent",
+    "probe": "hard_burst_1kHz",
+    "training": false,
+    "before_error_db": -8.019241771296446,
+    "after_error_db": -25.482666489244746,
+    "improvement_db": 17.4634247179483
+  },
+  {
+    "type": "Iridescent",
+    "probe": "log_sweep_20_20000Hz",
+    "training": false,
+    "before_error_db": -8.54764652688157,
+    "after_error_db": -27.054230631794066,
+    "improvement_db": 18.5065841049125
+  },
+  {
+    "type": "Radiant",
+    "probe": "sine_1000Hz_-48dBFS",
+    "training": true,
+    "before_error_db": -8.654581725608837,
+    "after_error_db": -40.565249812728375,
+    "improvement_db": 31.91066808711954
+  },
+  {
+    "type": "Radiant",
+    "probe": "sine_1000Hz_-36dBFS",
+    "training": true,
+    "before_error_db": -8.643678650404937,
+    "after_error_db": -40.567929320141445,
+    "improvement_db": 31.92425066973651
+  },
+  {
+    "type": "Radiant",
+    "probe": "sine_1000Hz_-24dBFS",
+    "training": true,
+    "before_error_db": -8.475795399203793,
+    "after_error_db": -40.59180766561905,
+    "improvement_db": 32.116012266415254
+  },
+  {
+    "type": "Radiant",
+    "probe": "sine_1000Hz_-18dBFS",
+    "training": true,
+    "before_error_db": -7.995257378151699,
+    "after_error_db": -40.64337418620692,
+    "improvement_db": 32.64811680805522
+  },
+  {
+    "type": "Radiant",
+    "probe": "sine_1000Hz_-12dBFS",
+    "training": true,
+    "before_error_db": -6.641929390210556,
+    "after_error_db": -40.87583814473249,
+    "improvement_db": 34.233908754521934
+  },
+  {
+    "type": "Radiant",
+    "probe": "sine_1000Hz_-6dBFS",
+    "training": true,
+    "before_error_db": -4.606505493583218,
+    "after_error_db": -43.24738082381625,
+    "improvement_db": 38.64087533023303
+  },
+  {
+    "type": "Radiant",
+    "probe": "sine_1000Hz_-1dBFS",
+    "training": true,
+    "before_error_db": -4.017813524945056,
+    "after_error_db": -25.35026932890481,
+    "improvement_db": 21.332455803959757
+  },
+  {
+    "type": "Radiant",
+    "probe": "sine_62.5Hz_-12dBFS",
+    "training": false,
+    "before_error_db": -6.5339942237122575,
+    "after_error_db": -38.70495247215291,
+    "improvement_db": 32.170958248440655
+  },
+  {
+    "type": "Radiant",
+    "probe": "sine_250Hz_-12dBFS",
+    "training": true,
+    "before_error_db": -6.5316642684353035,
+    "after_error_db": -38.98192114575927,
+    "improvement_db": 32.450256877323966
+  },
+  {
+    "type": "Radiant",
+    "probe": "sine_4000Hz_-12dBFS",
+    "training": false,
+    "before_error_db": -7.810453899838274,
+    "after_error_db": -23.780855768981976,
+    "improvement_db": 15.970401869143702
+  },
+  {
+    "type": "Radiant",
+    "probe": "sine_8000Hz_-12dBFS",
+    "training": true,
+    "before_error_db": -9.178380611077856,
+    "after_error_db": -26.51017863634426,
+    "improvement_db": 17.331798025266405
+  },
+  {
+    "type": "Radiant",
+    "probe": "two_tone_60_7000Hz",
+    "training": false,
+    "before_error_db": -6.332285620937791,
+    "after_error_db": -27.677212007855182,
+    "improvement_db": 21.344926386917393
+  },
+  {
+    "type": "Radiant",
+    "probe": "two_tone_19000_20000Hz",
+    "training": true,
+    "before_error_db": -8.986323377171185,
+    "after_error_db": -29.6955531933612,
+    "improvement_db": 20.709229816190014
+  },
+  {
+    "type": "Radiant",
+    "probe": "hard_burst_1kHz",
+    "training": false,
+    "before_error_db": -4.074323866030027,
+    "after_error_db": -27.496034972464862,
+    "improvement_db": 23.421711106434834
+  },
+  {
+    "type": "Radiant",
+    "probe": "log_sweep_20_20000Hz",
+    "training": false,
+    "before_error_db": -6.970944990394015,
+    "after_error_db": -31.188006882034056,
+    "improvement_db": 24.217061891640043
+  },
+  {
+    "type": "Luster",
+    "probe": "sine_1000Hz_-48dBFS",
+    "training": true,
+    "before_error_db": -4.7333279310774286,
+    "after_error_db": -38.503305707156,
+    "improvement_db": 33.769977776078576
+  },
+  {
+    "type": "Luster",
+    "probe": "sine_1000Hz_-36dBFS",
+    "training": true,
+    "before_error_db": -4.732916926817182,
+    "after_error_db": -38.50959897592771,
+    "improvement_db": 33.776682049110526
+  },
+  {
+    "type": "Luster",
+    "probe": "sine_1000Hz_-24dBFS",
+    "training": true,
+    "before_error_db": -4.7255815009072375,
+    "after_error_db": -38.56666754461238,
+    "improvement_db": 33.84108604370514
+  },
+  {
+    "type": "Luster",
+    "probe": "sine_1000Hz_-18dBFS",
+    "training": true,
+    "before_error_db": -4.699546756666938,
+    "after_error_db": -38.600959436588816,
+    "improvement_db": 33.901412679921876
+  },
+  {
+    "type": "Luster",
+    "probe": "sine_1000Hz_-12dBFS",
+    "training": true,
+    "before_error_db": -4.603963817465935,
+    "after_error_db": -39.44755940321361,
+    "improvement_db": 34.84359558574768
+  },
+  {
+    "type": "Luster",
+    "probe": "sine_1000Hz_-6dBFS",
+    "training": true,
+    "before_error_db": -4.982597378338881,
+    "after_error_db": -34.2396897049901,
+    "improvement_db": 29.257092326651218
+  },
+  {
+    "type": "Luster",
+    "probe": "sine_1000Hz_-1dBFS",
+    "training": true,
+    "before_error_db": -4.973991701985474,
+    "after_error_db": -20.96865967827021,
+    "improvement_db": 15.994667976284736
+  },
+  {
+    "type": "Luster",
+    "probe": "sine_62.5Hz_-12dBFS",
+    "training": false,
+    "before_error_db": -4.523961896675868,
+    "after_error_db": -36.82253935128638,
+    "improvement_db": 32.29857745461051
+  },
+  {
+    "type": "Luster",
+    "probe": "sine_250Hz_-12dBFS",
+    "training": true,
+    "before_error_db": -4.5278533731286466,
+    "after_error_db": -37.07663775166242,
+    "improvement_db": 32.54878437853377
+  },
+  {
+    "type": "Luster",
+    "probe": "sine_4000Hz_-12dBFS",
+    "training": false,
+    "before_error_db": -5.435534268443246,
+    "after_error_db": -21.9147231977824,
+    "improvement_db": 16.479188929339156
+  },
+  {
+    "type": "Luster",
+    "probe": "sine_8000Hz_-12dBFS",
+    "training": true,
+    "before_error_db": -6.716441673276176,
+    "after_error_db": -21.802985108213896,
+    "improvement_db": 15.08654343493772
+  },
+  {
+    "type": "Luster",
+    "probe": "two_tone_60_7000Hz",
+    "training": false,
+    "before_error_db": -5.477271727464208,
+    "after_error_db": -19.640848124153585,
+    "improvement_db": 14.163576396689377
+  },
+  {
+    "type": "Luster",
+    "probe": "two_tone_19000_20000Hz",
+    "training": true,
+    "before_error_db": -9.442484563678404,
+    "after_error_db": -14.295425896914157,
+    "improvement_db": 4.852941333235753
+  },
+  {
+    "type": "Luster",
+    "probe": "hard_burst_1kHz",
+    "training": false,
+    "before_error_db": -5.484433090139157,
+    "after_error_db": -19.373738723730504,
+    "improvement_db": 13.889305633591349
+  },
+  {
+    "type": "Luster",
+    "probe": "log_sweep_20_20000Hz",
+    "training": false,
+    "before_error_db": -4.832035071467646,
+    "after_error_db": -24.77757788962464,
+    "improvement_db": 19.945542818156994
+  },
+  {
+    "type": "DarkEssence",
+    "probe": "sine_1000Hz_-48dBFS",
+    "training": true,
+    "before_error_db": -5.988605165845864,
+    "after_error_db": -39.38726570189687,
+    "improvement_db": 33.39866053605101
+  },
+  {
+    "type": "DarkEssence",
+    "probe": "sine_1000Hz_-36dBFS",
+    "training": true,
+    "before_error_db": -5.977810627391116,
+    "after_error_db": -39.39214649937133,
+    "improvement_db": 33.414335871980214
+  },
+  {
+    "type": "DarkEssence",
+    "probe": "sine_1000Hz_-24dBFS",
+    "training": true,
+    "before_error_db": -5.813545103099964,
+    "after_error_db": -39.49171218243765,
+    "improvement_db": 33.67816707933769
+  },
+  {
+    "type": "DarkEssence",
+    "probe": "sine_1000Hz_-18dBFS",
+    "training": true,
+    "before_error_db": -5.365210899843841,
+    "after_error_db": -39.95368897907482,
+    "improvement_db": 34.58847807923098
+  },
+  {
+    "type": "DarkEssence",
+    "probe": "sine_1000Hz_-12dBFS",
+    "training": true,
+    "before_error_db": -4.260399589924462,
+    "after_error_db": -40.95275919921147,
+    "improvement_db": 36.69235960928701
+  },
+  {
+    "type": "DarkEssence",
+    "probe": "sine_1000Hz_-6dBFS",
+    "training": true,
+    "before_error_db": -3.2150782604311696,
+    "after_error_db": -37.2263450773679,
+    "improvement_db": 34.01126681693673
+  },
+  {
+    "type": "DarkEssence",
+    "probe": "sine_1000Hz_-1dBFS",
+    "training": true,
+    "before_error_db": -3.3111549224778565,
+    "after_error_db": -22.124581568671914,
+    "improvement_db": 18.813426646194056
+  },
+  {
+    "type": "DarkEssence",
+    "probe": "sine_62.5Hz_-12dBFS",
+    "training": false,
+    "before_error_db": -4.197420636610464,
+    "after_error_db": -34.670538649691196,
+    "improvement_db": 30.473118013080732
+  },
+  {
+    "type": "DarkEssence",
+    "probe": "sine_250Hz_-12dBFS",
+    "training": true,
+    "before_error_db": -4.193235480918639,
+    "after_error_db": -34.9684670093916,
+    "improvement_db": 30.775231528472965
+  },
+  {
+    "type": "DarkEssence",
+    "probe": "sine_4000Hz_-12dBFS",
+    "training": false,
+    "before_error_db": -4.944716879514454,
+    "after_error_db": -21.624585461585916,
+    "improvement_db": 16.679868582071464
+  },
+  {
+    "type": "DarkEssence",
+    "probe": "sine_8000Hz_-12dBFS",
+    "training": true,
+    "before_error_db": -5.81506513288776,
+    "after_error_db": -23.06760998367292,
+    "improvement_db": 17.25254485078516
+  },
+  {
+    "type": "DarkEssence",
+    "probe": "two_tone_60_7000Hz",
+    "training": false,
+    "before_error_db": -4.22147672681066,
+    "after_error_db": -22.020877092387266,
+    "improvement_db": 17.799400365576606
+  },
+  {
+    "type": "DarkEssence",
+    "probe": "two_tone_19000_20000Hz",
+    "training": true,
+    "before_error_db": -7.250143971311578,
+    "after_error_db": -17.75121735631126,
+    "improvement_db": 10.50107338499968
+  },
+  {
+    "type": "DarkEssence",
+    "probe": "hard_burst_1kHz",
+    "training": false,
+    "before_error_db": -3.3848693801855196,
+    "after_error_db": -21.42297719582826,
+    "improvement_db": 18.03810781564274
+  },
+  {
+    "type": "DarkEssence",
+    "probe": "log_sweep_20_20000Hz",
+    "training": false,
+    "before_error_db": -4.477735796085439,
+    "after_error_db": -26.204115389759263,
+    "improvement_db": 21.726379593673823
+  }
+]

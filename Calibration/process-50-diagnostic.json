@@ -1,0 +1,18 @@
+[
+  {
+    "type": "Luminescent",
+    "color": "Gold",
+    "process": 50,
+    "linear_half_relative_rms": 0.011586417048709455,
+    "best_scalar_mix": 0.47974143931390467,
+    "best_scalar_relative_rms": 0.009274677035921719
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Gold",
+    "process": 50,
+    "linear_half_relative_rms": 0.038163708602020424,
+    "best_scalar_mix": 0.4551339847630026,
+    "best_scalar_relative_rms": 0.031197252453990826
+  }
+]

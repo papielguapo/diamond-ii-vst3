@@ -23,5 +23,6 @@ juce_add_console_app(GeneratePluginScreenshot PRODUCT_NAME "GeneratePluginScreen
 target_sources(GeneratePluginScreenshot PRIVATE Tests/GeneratePluginScreenshot.cpp)
 target_link_libraries(GeneratePluginScreenshot PRIVATE DiamondII)
 enable_testing()
-add_test(NAME DSP COMMAND DspVerificationTest)
+add_executable(DspReferenceRender Tests/DspReferenceRender.cpp)
+add_test(NAME DSP COMMAND DspVerificationTest "${CMAKE_CURRENT_SOURCE_DIR}/Calibration/reference-fixtures.bin.gz")
 add_test(NAME Screenshot COMMAND GeneratePluginScreenshot "${CMAKE_CURRENT_SOURCE_DIR}/assets/screenshot.png")

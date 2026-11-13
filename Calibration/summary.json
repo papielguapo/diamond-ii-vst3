@@ -1,0 +1,27 @@
+[
+  {
+    "type": "Luminescent",
+    "minimum_improvement_db": 15.884445696704356,
+    "mean_improvement_db": 21.988146915316456
+  },
+  {
+    "type": "Iridescent",
+    "minimum_improvement_db": 17.122501812532164,
+    "mean_improvement_db": 23.34493158018763
+  },
+  {
+    "type": "Radiant",
+    "minimum_improvement_db": 15.970401869143702,
+    "mean_improvement_db": 23.425011900515322
+  },
+  {
+    "type": "Luster",
+    "minimum_improvement_db": 13.889305633591349,
+    "mean_improvement_db": 19.355238246477477
+  },
+  {
+    "type": "DarkEssence",
+    "minimum_improvement_db": 16.679868582071464,
+    "mean_improvement_db": 20.943374874009073
+  }
+]

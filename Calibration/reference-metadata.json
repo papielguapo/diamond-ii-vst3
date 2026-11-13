@@ -1,0 +1,152 @@
+[
+  {
+    "file": "PhoenixII_48k_Luminescent_Opal_P100_In0_Outm6.wav",
+    "sha256": "1c600c9cd86f356d6363bf46053df42baea889fbc6b18077aa7427083dc74c60",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000,
+    "inputDb": 0,
+    "outputDb": -6,
+    "process": 100
+  },
+  {
+    "file": "PhoenixII_48k_Iridescent_Opal_P100_In0_Outm6.wav",
+    "sha256": "266a1f4899aa7ff2bf9c8e473d40bac0ffe1cc57e1b575fb55b4807a3f92b868",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000,
+    "inputDb": 0,
+    "outputDb": -6,
+    "process": 100
+  },
+  {
+    "file": "PhoenixII_48k_Radiant_Opal_P100_In0_Outm6.wav",
+    "sha256": "edf72ea4f0ba785a4acb1bd3b7a447372eda1855b62054a980aaabae3730a291",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000,
+    "inputDb": 0,
+    "outputDb": -6,
+    "process": 100
+  },
+  {
+    "file": "PhoenixII_48k_Luster_Opal_P100_In0_Outm6.wav",
+    "sha256": "e2e3e52f6564a50a7132b457dbc30bc6db5306832b00e403f0d858d89305540b",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000,
+    "inputDb": 0,
+    "outputDb": -6,
+    "process": 100
+  },
+  {
+    "file": "PhoenixII_48k_DarkEssence_Opal_P100_In0_Outm6.wav",
+    "sha256": "c6b25330afb459a00c5520d02d8265bc0fef303d3517ddd7caad1fcf2d8f1637",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000,
+    "inputDb": 0,
+    "outputDb": -6,
+    "process": 100
+  },
+  {
+    "file": "PhoenixII_48k_Luminescent_Gold_P100_In0_Outm6.wav",
+    "sha256": "44ab223909cc1990c3b180f77793239ddef7a66809f3ef2290d4069faae368fb",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000,
+    "inputDb": 0,
+    "outputDb": -6,
+    "process": 100
+  },
+  {
+    "file": "PhoenixII_48k_Iridescent_Gold_P100_In0_Outm6.wav",
+    "sha256": "216ae0da79e6947ed34f8d03cc63b542c02968e14468e5d645574d1d524fd092",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000,
+    "inputDb": 0,
+    "outputDb": -6,
+    "process": 100
+  },
+  {
+    "file": "PhoenixII_48k_Radiant_Gold_P100_In0_Outm6.wav",
+    "sha256": "00698f805eb0df29ddda485c8cfbb0dcffd9549d1f971f3e48eb2a135d9fc2a8",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000,
+    "inputDb": 0,
+    "outputDb": -6,
+    "process": 100
+  },
+  {
+    "file": "PhoenixII_48k_Luster_Gold_P100_In0_Outm6.wav",
+    "sha256": "2ec8864cd9d69fed1b08ac119f9e29c92553e80b8125c60cb331de1917159e78",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000,
+    "inputDb": 0,
+    "outputDb": -6,
+    "process": 100
+  },
+  {
+    "file": "PhoenixII_48k_DarkEssence_Gold_P100_In0_Outm6.wav",
+    "sha256": "f14bd59934fb935ffbca7fcfb38d40aaa52abaf78f7cf279bed48843e805e083",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000,
+    "inputDb": 0,
+    "outputDb": -6,
+    "process": 100
+  },
+  {
+    "file": "PhoenixII_48k_Luminescent_Sapphire_P100_In0_Outm6.wav",
+    "sha256": "82752a0a1341e4740a8d855781e60a9e21a0d065319ad97389039fdf7bad7bd0",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000,
+    "inputDb": 0,
+    "outputDb": -6,
+    "process": 100
+  },
+  {
+    "file": "PhoenixII_48k_Iridescent_Sapphire_P100_In0_Outm6.wav",
+    "sha256": "1d8c67563eb89339c280d2232aaa34697fc46811327cf8d22c0b2ba66d348ce6",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000,
+    "inputDb": 0,
+    "outputDb": -6,
+    "process": 100
+  },
+  {
+    "file": "PhoenixII_48k_Radiant_Sapphire_P100_In0_Outm6.wav",
+    "sha256": "ae91bd2565925d7224140f8bc047a2f5c539bf2fa42a47e5468a88fea777cffc",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000,
+    "inputDb": 0,
+    "outputDb": -6,
+    "process": 100
+  },
+  {
+    "file": "PhoenixII_48k_Luster_Sapphire_P100_In0_Outm6.wav",
+    "sha256": "a92110789ae718999729919962e69868e30a14b31f0d001a80bc82331951ec2b",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000,
+    "inputDb": 0,
+    "outputDb": -6,
+    "process": 100
+  },
+  {
+    "file": "PhoenixII_48k_DarkEssence_Sapphire_P100_In0_Outm6.wav",
+    "sha256": "4d9d40e50e48c353db766f2f9214f7e695835e6acd49f1b4b81b8d2dc53deee1",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000,
+    "inputDb": 0,
+    "outputDb": -6,
+    "process": 100
+  }
+]

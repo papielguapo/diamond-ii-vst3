@@ -1,0 +1,607 @@
+[
+  {
+    "type": "Luminescent",
+    "family": "general",
+    "parameters": [
+      1.6438253888646686,
+      0.9525085396404056,
+      1.8000000000000003,
+      9216.656777985547,
+      14.939375450056849,
+      4385.133465272082,
+      -14.338279542948396
+    ],
+    "score": 0.0077714626017885,
+    "metrics": [
+      {
+        "name": "sine_1000Hz_-48dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -8.087863157419948,
+        "fitted_error_db": -48.401001781629375
+      },
+      {
+        "name": "sine_1000Hz_-36dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -8.088308264821414,
+        "fitted_error_db": -48.27830869373084
+      },
+      {
+        "name": "sine_1000Hz_-24dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -8.096081013602399,
+        "fitted_error_db": -47.37168763841367
+      },
+      {
+        "name": "sine_1000Hz_-18dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -8.120892508588547,
+        "fitted_error_db": -46.11052307157179
+      },
+      {
+        "name": "sine_1000Hz_-12dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -8.220548494803293,
+        "fitted_error_db": -45.58197561437723
+      },
+      {
+        "name": "sine_1000Hz_-6dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -8.620415407247716,
+        "fitted_error_db": -36.2731461768866
+      },
+      {
+        "name": "sine_1000Hz_-1dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -9.56857464980818,
+        "fitted_error_db": -23.4877452562031
+      },
+      {
+        "name": "sine_62.5Hz_-12dBFS",
+        "kind": "sine",
+        "training": false,
+        "before_error_db": -8.218538918241336,
+        "fitted_error_db": -45.753711243934106
+      },
+      {
+        "name": "sine_250Hz_-12dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -8.216921046682163,
+        "fitted_error_db": -45.830897913036175
+      },
+      {
+        "name": "sine_4000Hz_-12dBFS",
+        "kind": "sine",
+        "training": false,
+        "before_error_db": -8.578783839724665,
+        "fitted_error_db": -27.208562575738476
+      },
+      {
+        "name": "sine_8000Hz_-12dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -10.364126128009588,
+        "fitted_error_db": -24.41273092127147
+      },
+      {
+        "name": "two_tone_60_7000Hz",
+        "kind": "two_tone",
+        "training": false,
+        "before_error_db": -9.953423238988957,
+        "fitted_error_db": -27.667040722658022
+      },
+      {
+        "name": "two_tone_19000_20000Hz",
+        "kind": "two_tone",
+        "training": true,
+        "before_error_db": -9.073891036979209,
+        "fitted_error_db": -12.20901628028982
+      },
+      {
+        "name": "hard_burst_1kHz",
+        "kind": "burst",
+        "training": false,
+        "before_error_db": -9.34768843777845,
+        "fitted_error_db": -25.232133978247845
+      },
+      {
+        "name": "log_sweep_20_20000Hz",
+        "kind": "log_sweep",
+        "training": false,
+        "before_error_db": -8.448518147086284,
+        "fitted_error_db": -28.626242711664194
+      }
+    ]
+  },
+  {
+    "type": "Iridescent",
+    "family": "general",
+    "parameters": [
+      1.5928448401681699,
+      0.8283940425488895,
+      1.8000000000000003,
+      8910.240492883991,
+      15.960367969125953,
+      4096.468667887976,
+      -15.159408082178393
+    ],
+    "score": 0.00807110903832396,
+    "metrics": [
+      {
+        "name": "sine_1000Hz_-48dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -8.451157205610643,
+        "fitted_error_db": -42.34022603905462
+      },
+      {
+        "name": "sine_1000Hz_-36dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -8.450718880246972,
+        "fitted_error_db": -42.28197968002688
+      },
+      {
+        "name": "sine_1000Hz_-24dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -8.444363542183535,
+        "fitted_error_db": -41.95397714607335
+      },
+      {
+        "name": "sine_1000Hz_-18dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -8.424683731968429,
+        "fitted_error_db": -41.75003916190252
+      },
+      {
+        "name": "sine_1000Hz_-12dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -8.354198555015236,
+        "fitted_error_db": -43.19277023091706
+      },
+      {
+        "name": "sine_1000Hz_-6dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -8.168887999407604,
+        "fitted_error_db": -36.87753036581999
+      },
+      {
+        "name": "sine_1000Hz_-1dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -8.010058729990085,
+        "fitted_error_db": -23.61671224201777
+      },
+      {
+        "name": "sine_62.5Hz_-12dBFS",
+        "kind": "sine",
+        "training": false,
+        "before_error_db": -8.445376970041861,
+        "fitted_error_db": -54.13122782813478
+      },
+      {
+        "name": "sine_250Hz_-12dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -8.436450041690854,
+        "fitted_error_db": -50.982265458977324
+      },
+      {
+        "name": "sine_4000Hz_-12dBFS",
+        "kind": "sine",
+        "training": false,
+        "before_error_db": -8.368931097520422,
+        "fitted_error_db": -25.49143455333334
+      },
+      {
+        "name": "sine_8000Hz_-12dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -10.211745620666328,
+        "fitted_error_db": -24.713102501311305
+      },
+      {
+        "name": "two_tone_60_7000Hz",
+        "kind": "two_tone",
+        "training": false,
+        "before_error_db": -9.632827076411937,
+        "fitted_error_db": -27.579094328571387
+      },
+      {
+        "name": "two_tone_19000_20000Hz",
+        "kind": "two_tone",
+        "training": true,
+        "before_error_db": -9.206190548982143,
+        "fitted_error_db": -12.0095557280518
+      },
+      {
+        "name": "hard_burst_1kHz",
+        "kind": "burst",
+        "training": false,
+        "before_error_db": -8.019241771296446,
+        "fitted_error_db": -25.482663362583242
+      },
+      {
+        "name": "log_sweep_20_20000Hz",
+        "kind": "log_sweep",
+        "training": false,
+        "before_error_db": -8.54764652688157,
+        "fitted_error_db": -27.054230697380163
+      }
+    ]
+  },
+  {
+    "type": "Radiant",
+    "family": "general",
+    "parameters": [
+      1.5839755316950896,
+      1.7260195771392182,
+      4.913723085949489,
+      3799.8971433387287,
+      1.896852903016303,
+      3169.3138829341656,
+      -4.456150539370778
+    ],
+    "score": 0.0005781504577346626,
+    "metrics": [
+      {
+        "name": "sine_1000Hz_-48dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -8.654581725608837,
+        "fitted_error_db": -40.56525854328275
+      },
+      {
+        "name": "sine_1000Hz_-36dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -8.643678650404937,
+        "fitted_error_db": -40.567931601537914
+      },
+      {
+        "name": "sine_1000Hz_-24dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -8.475795399203793,
+        "fitted_error_db": -40.59180734602709
+      },
+      {
+        "name": "sine_1000Hz_-18dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -7.995257378151699,
+        "fitted_error_db": -40.64336921326034
+      },
+      {
+        "name": "sine_1000Hz_-12dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -6.641929390210556,
+        "fitted_error_db": -40.87584124276069
+      },
+      {
+        "name": "sine_1000Hz_-6dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -4.606505493583218,
+        "fitted_error_db": -43.247378106960134
+      },
+      {
+        "name": "sine_1000Hz_-1dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -4.017813524945056,
+        "fitted_error_db": -25.350270736585443
+      },
+      {
+        "name": "sine_62.5Hz_-12dBFS",
+        "kind": "sine",
+        "training": false,
+        "before_error_db": -6.5339942237122575,
+        "fitted_error_db": -38.70495693378387
+      },
+      {
+        "name": "sine_250Hz_-12dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -6.5316642684353035,
+        "fitted_error_db": -38.98192804417144
+      },
+      {
+        "name": "sine_4000Hz_-12dBFS",
+        "kind": "sine",
+        "training": false,
+        "before_error_db": -7.810453899838274,
+        "fitted_error_db": -23.78085580536259
+      },
+      {
+        "name": "sine_8000Hz_-12dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -9.178380611077856,
+        "fitted_error_db": -26.510178803437505
+      },
+      {
+        "name": "two_tone_60_7000Hz",
+        "kind": "two_tone",
+        "training": false,
+        "before_error_db": -6.332285620937791,
+        "fitted_error_db": -27.677213323981924
+      },
+      {
+        "name": "two_tone_19000_20000Hz",
+        "kind": "two_tone",
+        "training": true,
+        "before_error_db": -8.986323377171185,
+        "fitted_error_db": -29.695555434302964
+      },
+      {
+        "name": "hard_burst_1kHz",
+        "kind": "burst",
+        "training": false,
+        "before_error_db": -4.074323866030027,
+        "fitted_error_db": -27.496034292784238
+      },
+      {
+        "name": "log_sweep_20_20000Hz",
+        "kind": "log_sweep",
+        "training": false,
+        "before_error_db": -6.970944990394015,
+        "fitted_error_db": -31.188007277794778
+      }
+    ]
+  },
+  {
+    "type": "Luster",
+    "family": "general",
+    "parameters": [
+      2.3835706327952244,
+      2.9457459876976704,
+      6.097852911570933,
+      4843.902251063727,
+      3.669150072732894,
+      3410.0263733214033,
+      -6.508346342224147
+    ],
+    "score": 0.0077499182388372665,
+    "metrics": [
+      {
+        "name": "sine_1000Hz_-48dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -4.7333279310774286,
+        "fitted_error_db": -38.50331056726502
+      },
+      {
+        "name": "sine_1000Hz_-36dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -4.732916926817182,
+        "fitted_error_db": -38.50959697951274
+      },
+      {
+        "name": "sine_1000Hz_-24dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -4.7255815009072375,
+        "fitted_error_db": -38.56666977186936
+      },
+      {
+        "name": "sine_1000Hz_-18dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -4.699546756666938,
+        "fitted_error_db": -38.60096355285825
+      },
+      {
+        "name": "sine_1000Hz_-12dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -4.603963817465935,
+        "fitted_error_db": -39.4475587571764
+      },
+      {
+        "name": "sine_1000Hz_-6dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -4.982597378338881,
+        "fitted_error_db": -34.23969310261083
+      },
+      {
+        "name": "sine_1000Hz_-1dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -4.973991701985474,
+        "fitted_error_db": -20.968659369040576
+      },
+      {
+        "name": "sine_62.5Hz_-12dBFS",
+        "kind": "sine",
+        "training": false,
+        "before_error_db": -4.523961896675868,
+        "fitted_error_db": -36.82254077695279
+      },
+      {
+        "name": "sine_250Hz_-12dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -4.5278533731286466,
+        "fitted_error_db": -37.076638723754044
+      },
+      {
+        "name": "sine_4000Hz_-12dBFS",
+        "kind": "sine",
+        "training": false,
+        "before_error_db": -5.435534268443246,
+        "fitted_error_db": -21.914722969754607
+      },
+      {
+        "name": "sine_8000Hz_-12dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -6.716441673276176,
+        "fitted_error_db": -21.80298223701396
+      },
+      {
+        "name": "two_tone_60_7000Hz",
+        "kind": "two_tone",
+        "training": false,
+        "before_error_db": -5.477271727464208,
+        "fitted_error_db": -19.64084808545071
+      },
+      {
+        "name": "two_tone_19000_20000Hz",
+        "kind": "two_tone",
+        "training": true,
+        "before_error_db": -9.442484563678404,
+        "fitted_error_db": -14.29542603735462
+      },
+      {
+        "name": "hard_burst_1kHz",
+        "kind": "burst",
+        "training": false,
+        "before_error_db": -5.484433090139157,
+        "fitted_error_db": -19.373738626825077
+      },
+      {
+        "name": "log_sweep_20_20000Hz",
+        "kind": "log_sweep",
+        "training": false,
+        "before_error_db": -4.832035071467646,
+        "fitted_error_db": -24.777577770561138
+      }
+    ]
+  },
+  {
+    "type": "DarkEssence",
+    "family": "general",
+    "parameters": [
+      2.0133999832886995,
+      2.3249956082491363,
+      4.098822187344791,
+      4300.408028204532,
+      3.006633109143769,
+      3316.0076113695304,
+      -5.731210698311336
+    ],
+    "score": 0.003656488465330477,
+    "metrics": [
+      {
+        "name": "sine_1000Hz_-48dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -5.988605165845864,
+        "fitted_error_db": -39.38729305606836
+      },
+      {
+        "name": "sine_1000Hz_-36dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -5.977810627391116,
+        "fitted_error_db": -39.39213723988661
+      },
+      {
+        "name": "sine_1000Hz_-24dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -5.813545103099964,
+        "fitted_error_db": -39.49171884065077
+      },
+      {
+        "name": "sine_1000Hz_-18dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -5.365210899843841,
+        "fitted_error_db": -39.953689630137305
+      },
+      {
+        "name": "sine_1000Hz_-12dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -4.260399589924462,
+        "fitted_error_db": -40.952751962689135
+      },
+      {
+        "name": "sine_1000Hz_-6dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -3.2150782604311696,
+        "fitted_error_db": -37.226352493782244
+      },
+      {
+        "name": "sine_1000Hz_-1dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -3.3111549224778565,
+        "fitted_error_db": -22.1245819104419
+      },
+      {
+        "name": "sine_62.5Hz_-12dBFS",
+        "kind": "sine",
+        "training": false,
+        "before_error_db": -4.197420636610464,
+        "fitted_error_db": -34.67054156248213
+      },
+      {
+        "name": "sine_250Hz_-12dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -4.193235480918639,
+        "fitted_error_db": -34.96847159006264
+      },
+      {
+        "name": "sine_4000Hz_-12dBFS",
+        "kind": "sine",
+        "training": false,
+        "before_error_db": -4.944716879514454,
+        "fitted_error_db": -21.624584825770334
+      },
+      {
+        "name": "sine_8000Hz_-12dBFS",
+        "kind": "sine",
+        "training": true,
+        "before_error_db": -5.81506513288776,
+        "fitted_error_db": -23.06761011197876
+      },
+      {
+        "name": "two_tone_60_7000Hz",
+        "kind": "two_tone",
+        "training": false,
+        "before_error_db": -4.22147672681066,
+        "fitted_error_db": -22.020876898965327
+      },
+      {
+        "name": "two_tone_19000_20000Hz",
+        "kind": "two_tone",
+        "training": true,
+        "before_error_db": -7.250143971311578,
+        "fitted_error_db": -17.75121727391355
+      },
+      {
+        "name": "hard_burst_1kHz",
+        "kind": "burst",
+        "training": false,
+        "before_error_db": -3.3848693801855196,
+        "fitted_error_db": -21.42297757033162
+      },
+      {
+        "name": "log_sweep_20_20000Hz",
+        "kind": "log_sweep",
+        "training": false,
+        "before_error_db": -4.477735796085439,
+        "fitted_error_db": -26.204115597137015
+      }
+    ]
+  }
+]

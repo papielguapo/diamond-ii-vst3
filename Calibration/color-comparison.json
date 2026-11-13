@@ -1,0 +1,2027 @@
+[
+  {
+    "type": "Luminescent",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-48dBFS",
+    "training": true,
+    "error_db": -36.02318041596097,
+    "previous_color_model_error_db": -18.25810432066282,
+    "improvement_db": 17.765076095298152
+  },
+  {
+    "type": "Luminescent",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-36dBFS",
+    "training": true,
+    "error_db": -36.04325677376687,
+    "previous_color_model_error_db": -18.261413851946433,
+    "improvement_db": 17.781842921820438
+  },
+  {
+    "type": "Luminescent",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-24dBFS",
+    "training": true,
+    "error_db": -36.431559158568675,
+    "previous_color_model_error_db": -18.351848635824812,
+    "improvement_db": 18.079710522743863
+  },
+  {
+    "type": "Luminescent",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-18dBFS",
+    "training": true,
+    "error_db": -37.865632348582686,
+    "previous_color_model_error_db": -18.703352797499097,
+    "improvement_db": 19.16227955108359
+  },
+  {
+    "type": "Luminescent",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-12dBFS",
+    "training": true,
+    "error_db": -45.52739232369617,
+    "previous_color_model_error_db": -20.33640696003317,
+    "improvement_db": 25.190985363663
+  },
+  {
+    "type": "Luminescent",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-6dBFS",
+    "training": true,
+    "error_db": -29.23874656942211,
+    "previous_color_model_error_db": -22.19319774444937,
+    "improvement_db": 7.045548824972737
+  },
+  {
+    "type": "Luminescent",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-1dBFS",
+    "training": true,
+    "error_db": -19.48379439755229,
+    "previous_color_model_error_db": -13.20251953763953,
+    "improvement_db": 6.281274859912761
+  },
+  {
+    "type": "Luminescent",
+    "color": "Opal",
+    "probe": "sine_62.5Hz_-12dBFS",
+    "training": false,
+    "error_db": -25.802723872784075,
+    "previous_color_model_error_db": -18.599532643484377,
+    "improvement_db": 7.203191229299698
+  },
+  {
+    "type": "Luminescent",
+    "color": "Opal",
+    "probe": "sine_250Hz_-12dBFS",
+    "training": true,
+    "error_db": -26.36184769711808,
+    "previous_color_model_error_db": -18.713415073235296,
+    "improvement_db": 7.648432623882783
+  },
+  {
+    "type": "Luminescent",
+    "color": "Opal",
+    "probe": "sine_4000Hz_-12dBFS",
+    "training": false,
+    "error_db": -17.044022382810194,
+    "previous_color_model_error_db": -24.10158968086605,
+    "improvement_db": -7.057567298055854
+  },
+  {
+    "type": "Luminescent",
+    "color": "Opal",
+    "probe": "sine_8000Hz_-12dBFS",
+    "training": true,
+    "error_db": -26.320293865584414,
+    "previous_color_model_error_db": -22.67574233605497,
+    "improvement_db": 3.644551529529444
+  },
+  {
+    "type": "Luminescent",
+    "color": "Opal",
+    "probe": "two_tone_60_7000Hz",
+    "training": false,
+    "error_db": -23.715381295420713,
+    "previous_color_model_error_db": -24.552384369648422,
+    "improvement_db": -0.8370030742277095
+  },
+  {
+    "type": "Luminescent",
+    "color": "Opal",
+    "probe": "two_tone_19000_20000Hz",
+    "training": true,
+    "error_db": -10.526873461390334,
+    "previous_color_model_error_db": -14.114559325473309,
+    "improvement_db": -3.5876858640829745
+  },
+  {
+    "type": "Luminescent",
+    "color": "Opal",
+    "probe": "hard_burst_1kHz",
+    "training": false,
+    "error_db": -20.426371783338375,
+    "previous_color_model_error_db": -13.952411667776266,
+    "improvement_db": 6.473960115562109
+  },
+  {
+    "type": "Luminescent",
+    "color": "Opal",
+    "probe": "log_sweep_20_20000Hz",
+    "training": false,
+    "error_db": -21.80570622099029,
+    "previous_color_model_error_db": -19.391333282025712,
+    "improvement_db": 2.414372938964579
+  },
+  {
+    "type": "Iridescent",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-48dBFS",
+    "training": true,
+    "error_db": -36.30251682179405,
+    "previous_color_model_error_db": -15.242344108623595,
+    "improvement_db": 21.060172713170456
+  },
+  {
+    "type": "Iridescent",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-36dBFS",
+    "training": true,
+    "error_db": -36.33357308300846,
+    "previous_color_model_error_db": -15.248132496776773,
+    "improvement_db": 21.085440586231687
+  },
+  {
+    "type": "Iridescent",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-24dBFS",
+    "training": true,
+    "error_db": -36.84868312804024,
+    "previous_color_model_error_db": -15.362200815241923,
+    "improvement_db": 21.48648231279832
+  },
+  {
+    "type": "Iridescent",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-18dBFS",
+    "training": true,
+    "error_db": -38.657103685320834,
+    "previous_color_model_error_db": -15.768420207410918,
+    "improvement_db": 22.888683477909915
+  },
+  {
+    "type": "Iridescent",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-12dBFS",
+    "training": true,
+    "error_db": -47.28730095519208,
+    "previous_color_model_error_db": -17.629996775229138,
+    "improvement_db": 29.657304179962942
+  },
+  {
+    "type": "Iridescent",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-6dBFS",
+    "training": true,
+    "error_db": -26.70566893396995,
+    "previous_color_model_error_db": -21.141917443233243,
+    "improvement_db": 5.563751490736706
+  },
+  {
+    "type": "Iridescent",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-1dBFS",
+    "training": true,
+    "error_db": -17.974334623978727,
+    "previous_color_model_error_db": -11.996148593445849,
+    "improvement_db": 5.9781860305328784
+  },
+  {
+    "type": "Iridescent",
+    "color": "Opal",
+    "probe": "sine_62.5Hz_-12dBFS",
+    "training": false,
+    "error_db": -25.1572070168411,
+    "previous_color_model_error_db": -16.01841127360171,
+    "improvement_db": 9.138795743239388
+  },
+  {
+    "type": "Iridescent",
+    "color": "Opal",
+    "probe": "sine_250Hz_-12dBFS",
+    "training": true,
+    "error_db": -25.73647076273724,
+    "previous_color_model_error_db": -16.125540177087927,
+    "improvement_db": 9.610930585649314
+  },
+  {
+    "type": "Iridescent",
+    "color": "Opal",
+    "probe": "sine_4000Hz_-12dBFS",
+    "training": false,
+    "error_db": -16.890408117509555,
+    "previous_color_model_error_db": -21.423710835650517,
+    "improvement_db": -4.533302718140963
+  },
+  {
+    "type": "Iridescent",
+    "color": "Opal",
+    "probe": "sine_8000Hz_-12dBFS",
+    "training": true,
+    "error_db": -28.28631743651804,
+    "previous_color_model_error_db": -21.44766633987483,
+    "improvement_db": 6.838651096643211
+  },
+  {
+    "type": "Iridescent",
+    "color": "Opal",
+    "probe": "two_tone_60_7000Hz",
+    "training": false,
+    "error_db": -20.518250507889245,
+    "previous_color_model_error_db": -22.76576327997448,
+    "improvement_db": -2.2475127720852335
+  },
+  {
+    "type": "Iridescent",
+    "color": "Opal",
+    "probe": "two_tone_19000_20000Hz",
+    "training": true,
+    "error_db": -10.521521277539938,
+    "previous_color_model_error_db": -13.847489243618003,
+    "improvement_db": -3.325967966078066
+  },
+  {
+    "type": "Iridescent",
+    "color": "Opal",
+    "probe": "hard_burst_1kHz",
+    "training": false,
+    "error_db": -18.4563305775444,
+    "previous_color_model_error_db": -11.80618808179309,
+    "improvement_db": 6.650142495751309
+  },
+  {
+    "type": "Iridescent",
+    "color": "Opal",
+    "probe": "log_sweep_20_20000Hz",
+    "training": false,
+    "error_db": -21.410058329691665,
+    "previous_color_model_error_db": -16.76702935318153,
+    "improvement_db": 4.643028976510134
+  },
+  {
+    "type": "Radiant",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-48dBFS",
+    "training": true,
+    "error_db": -36.70885060413014,
+    "previous_color_model_error_db": -15.205746446219504,
+    "improvement_db": 21.503104157910638
+  },
+  {
+    "type": "Radiant",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-36dBFS",
+    "training": true,
+    "error_db": -36.70599402374717,
+    "previous_color_model_error_db": -15.205800063832616,
+    "improvement_db": 21.50019395991455
+  },
+  {
+    "type": "Radiant",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-24dBFS",
+    "training": true,
+    "error_db": -36.68851386634036,
+    "previous_color_model_error_db": -15.207882362826535,
+    "improvement_db": 21.480631503513823
+  },
+  {
+    "type": "Radiant",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-18dBFS",
+    "training": true,
+    "error_db": -36.54978349741604,
+    "previous_color_model_error_db": -15.211878810104496,
+    "improvement_db": 21.337904687311543
+  },
+  {
+    "type": "Radiant",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-12dBFS",
+    "training": true,
+    "error_db": -35.05960921335527,
+    "previous_color_model_error_db": -15.226876160925599,
+    "improvement_db": 19.832733052429674
+  },
+  {
+    "type": "Radiant",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-6dBFS",
+    "training": true,
+    "error_db": -31.318192959312434,
+    "previous_color_model_error_db": -16.0268062895524,
+    "improvement_db": 15.291386669760033
+  },
+  {
+    "type": "Radiant",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-1dBFS",
+    "training": true,
+    "error_db": -16.678562566387928,
+    "previous_color_model_error_db": -23.305456326232413,
+    "improvement_db": -6.626893759844485
+  },
+  {
+    "type": "Radiant",
+    "color": "Opal",
+    "probe": "sine_62.5Hz_-12dBFS",
+    "training": false,
+    "error_db": -40.072324710890996,
+    "previous_color_model_error_db": -29.976305625593135,
+    "improvement_db": 10.096019085297861
+  },
+  {
+    "type": "Radiant",
+    "color": "Opal",
+    "probe": "sine_250Hz_-12dBFS",
+    "training": true,
+    "error_db": -47.803131812575245,
+    "previous_color_model_error_db": -24.583333986946606,
+    "improvement_db": 23.21979782562864
+  },
+  {
+    "type": "Radiant",
+    "color": "Opal",
+    "probe": "sine_4000Hz_-12dBFS",
+    "training": false,
+    "error_db": -25.132063460895267,
+    "previous_color_model_error_db": -19.99879982834593,
+    "improvement_db": 5.133263632549337
+  },
+  {
+    "type": "Radiant",
+    "color": "Opal",
+    "probe": "sine_8000Hz_-12dBFS",
+    "training": true,
+    "error_db": -28.802191549829793,
+    "previous_color_model_error_db": -25.454760566341157,
+    "improvement_db": 3.3474309834886355
+  },
+  {
+    "type": "Radiant",
+    "color": "Opal",
+    "probe": "two_tone_60_7000Hz",
+    "training": false,
+    "error_db": -26.41033177094802,
+    "previous_color_model_error_db": -29.50304135382244,
+    "improvement_db": -3.09270958287442
+  },
+  {
+    "type": "Radiant",
+    "color": "Opal",
+    "probe": "two_tone_19000_20000Hz",
+    "training": true,
+    "error_db": -26.52444099488307,
+    "previous_color_model_error_db": -24.344589299887215,
+    "improvement_db": 2.179851694995854
+  },
+  {
+    "type": "Radiant",
+    "color": "Opal",
+    "probe": "hard_burst_1kHz",
+    "training": false,
+    "error_db": -19.051236540272047,
+    "previous_color_model_error_db": -21.655038069064553,
+    "improvement_db": -2.6038015287925056
+  },
+  {
+    "type": "Radiant",
+    "color": "Opal",
+    "probe": "log_sweep_20_20000Hz",
+    "training": false,
+    "error_db": -30.83744358899759,
+    "previous_color_model_error_db": -20.42345034168715,
+    "improvement_db": 10.41399324731044
+  },
+  {
+    "type": "Luster",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-48dBFS",
+    "training": true,
+    "error_db": -32.9727161540966,
+    "previous_color_model_error_db": -11.426216619296437,
+    "improvement_db": 21.546499534800166
+  },
+  {
+    "type": "Luster",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-36dBFS",
+    "training": true,
+    "error_db": -33.0318541107909,
+    "previous_color_model_error_db": -11.426453302411122,
+    "improvement_db": 21.60540080837978
+  },
+  {
+    "type": "Luster",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-24dBFS",
+    "training": true,
+    "error_db": -33.792046138350834,
+    "previous_color_model_error_db": -11.429616821153811,
+    "improvement_db": 22.362429317197023
+  },
+  {
+    "type": "Luster",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-18dBFS",
+    "training": true,
+    "error_db": -32.48603381343857,
+    "previous_color_model_error_db": -11.424817054405029,
+    "improvement_db": 21.061216759033538
+  },
+  {
+    "type": "Luster",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-12dBFS",
+    "training": true,
+    "error_db": -24.879079815365674,
+    "previous_color_model_error_db": -11.353790424219405,
+    "improvement_db": 13.52528939114627
+  },
+  {
+    "type": "Luster",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-6dBFS",
+    "training": true,
+    "error_db": -16.528223859015533,
+    "previous_color_model_error_db": -12.557861640243217,
+    "improvement_db": 3.9703622187723155
+  },
+  {
+    "type": "Luster",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-1dBFS",
+    "training": true,
+    "error_db": -10.302135905683148,
+    "previous_color_model_error_db": -19.297334660252954,
+    "improvement_db": -8.995198754569806
+  },
+  {
+    "type": "Luster",
+    "color": "Opal",
+    "probe": "sine_62.5Hz_-12dBFS",
+    "training": false,
+    "error_db": -30.472321062989923,
+    "previous_color_model_error_db": -19.568705140782438,
+    "improvement_db": 10.903615922207486
+  },
+  {
+    "type": "Luster",
+    "color": "Opal",
+    "probe": "sine_250Hz_-12dBFS",
+    "training": true,
+    "error_db": -29.35596401807868,
+    "previous_color_model_error_db": -18.04577233682341,
+    "improvement_db": 11.310191681255269
+  },
+  {
+    "type": "Luster",
+    "color": "Opal",
+    "probe": "sine_4000Hz_-12dBFS",
+    "training": false,
+    "error_db": -15.862557823751004,
+    "previous_color_model_error_db": -13.840486262602585,
+    "improvement_db": 2.022071561148419
+  },
+  {
+    "type": "Luster",
+    "color": "Opal",
+    "probe": "sine_8000Hz_-12dBFS",
+    "training": true,
+    "error_db": -22.8030264078529,
+    "previous_color_model_error_db": -15.344772823958142,
+    "improvement_db": 7.458253583894759
+  },
+  {
+    "type": "Luster",
+    "color": "Opal",
+    "probe": "two_tone_60_7000Hz",
+    "training": false,
+    "error_db": -17.764315724050356,
+    "previous_color_model_error_db": -18.113568435307794,
+    "improvement_db": -0.3492527112574386
+  },
+  {
+    "type": "Luster",
+    "color": "Opal",
+    "probe": "two_tone_19000_20000Hz",
+    "training": true,
+    "error_db": -15.792112348191484,
+    "previous_color_model_error_db": -13.061085697647128,
+    "improvement_db": 2.731026650544356
+  },
+  {
+    "type": "Luster",
+    "color": "Opal",
+    "probe": "hard_burst_1kHz",
+    "training": false,
+    "error_db": -11.725288907077939,
+    "previous_color_model_error_db": -19.256855241110326,
+    "improvement_db": -7.531566334032387
+  },
+  {
+    "type": "Luster",
+    "color": "Opal",
+    "probe": "log_sweep_20_20000Hz",
+    "training": false,
+    "error_db": -22.764937897460204,
+    "previous_color_model_error_db": -15.270944141314365,
+    "improvement_db": 7.493993756145839
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-48dBFS",
+    "training": true,
+    "error_db": -32.15361657894042,
+    "previous_color_model_error_db": -13.058619309350451,
+    "improvement_db": 19.09499726958997
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-36dBFS",
+    "training": true,
+    "error_db": -32.17164952621276,
+    "previous_color_model_error_db": -13.058883971239936,
+    "improvement_db": 19.112765554972825
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-24dBFS",
+    "training": true,
+    "error_db": -32.285724466702035,
+    "previous_color_model_error_db": -13.063377975736048,
+    "improvement_db": 19.22234649096599
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-18dBFS",
+    "training": true,
+    "error_db": -31.487557039302665,
+    "previous_color_model_error_db": -13.081940242552738,
+    "improvement_db": 18.405616796749925
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-12dBFS",
+    "training": true,
+    "error_db": -27.43494092520333,
+    "previous_color_model_error_db": -13.238949809870306,
+    "improvement_db": 14.195991115333022
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-6dBFS",
+    "training": true,
+    "error_db": -21.557230742236158,
+    "previous_color_model_error_db": -14.643346176683039,
+    "improvement_db": 6.9138845655531185
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Opal",
+    "probe": "sine_1000Hz_-1dBFS",
+    "training": true,
+    "error_db": -12.733431168983415,
+    "previous_color_model_error_db": -21.723876724165127,
+    "improvement_db": -8.990445555181712
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Opal",
+    "probe": "sine_62.5Hz_-12dBFS",
+    "training": false,
+    "error_db": -38.892494211997175,
+    "previous_color_model_error_db": -21.233830604809082,
+    "improvement_db": 17.658663607188092
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Opal",
+    "probe": "sine_250Hz_-12dBFS",
+    "training": true,
+    "error_db": -40.90302494670474,
+    "previous_color_model_error_db": -19.711312388988706,
+    "improvement_db": 21.191712557716034
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Opal",
+    "probe": "sine_4000Hz_-12dBFS",
+    "training": false,
+    "error_db": -19.070009274763418,
+    "previous_color_model_error_db": -17.14363299705718,
+    "improvement_db": 1.9263762777062396
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Opal",
+    "probe": "sine_8000Hz_-12dBFS",
+    "training": true,
+    "error_db": -26.03283645997154,
+    "previous_color_model_error_db": -19.80842256993964,
+    "improvement_db": 6.224413890031901
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Opal",
+    "probe": "two_tone_60_7000Hz",
+    "training": false,
+    "error_db": -22.4677626428211,
+    "previous_color_model_error_db": -22.441324206969405,
+    "improvement_db": 0.02643843585169492
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Opal",
+    "probe": "two_tone_19000_20000Hz",
+    "training": true,
+    "error_db": -19.617542269269652,
+    "previous_color_model_error_db": -17.093606471185726,
+    "improvement_db": 2.523935798083926
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Opal",
+    "probe": "hard_burst_1kHz",
+    "training": false,
+    "error_db": -14.421028692439178,
+    "previous_color_model_error_db": -21.909327042500898,
+    "improvement_db": -7.48829835006172
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Opal",
+    "probe": "log_sweep_20_20000Hz",
+    "training": false,
+    "error_db": -25.224658879458225,
+    "previous_color_model_error_db": -17.254958575840757,
+    "improvement_db": 7.9697003036174685
+  },
+  {
+    "type": "Luminescent",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-48dBFS",
+    "training": true,
+    "error_db": -48.40090308491761,
+    "previous_color_model_error_db": -48.40090308491761,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luminescent",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-36dBFS",
+    "training": true,
+    "error_db": -48.278298925206215,
+    "previous_color_model_error_db": -48.278298925206215,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luminescent",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-24dBFS",
+    "training": true,
+    "error_db": -47.371686524441856,
+    "previous_color_model_error_db": -47.371686524441856,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luminescent",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-18dBFS",
+    "training": true,
+    "error_db": -46.11052030593175,
+    "previous_color_model_error_db": -46.11052030593175,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luminescent",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-12dBFS",
+    "training": true,
+    "error_db": -45.58195254439723,
+    "previous_color_model_error_db": -45.58195254439723,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luminescent",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-6dBFS",
+    "training": true,
+    "error_db": -36.27313717010873,
+    "previous_color_model_error_db": -36.27313717010873,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luminescent",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-1dBFS",
+    "training": true,
+    "error_db": -23.487742881603985,
+    "previous_color_model_error_db": -23.487742881603985,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luminescent",
+    "color": "Gold",
+    "probe": "sine_62.5Hz_-12dBFS",
+    "training": false,
+    "error_db": -45.75370531933611,
+    "previous_color_model_error_db": -45.75370531933611,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luminescent",
+    "color": "Gold",
+    "probe": "sine_250Hz_-12dBFS",
+    "training": true,
+    "error_db": -45.83090027239061,
+    "previous_color_model_error_db": -45.83090027239061,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luminescent",
+    "color": "Gold",
+    "probe": "sine_4000Hz_-12dBFS",
+    "training": false,
+    "error_db": -27.208565280736074,
+    "previous_color_model_error_db": -27.208565280736074,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luminescent",
+    "color": "Gold",
+    "probe": "sine_8000Hz_-12dBFS",
+    "training": true,
+    "error_db": -24.412735904122567,
+    "previous_color_model_error_db": -24.412735904122567,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luminescent",
+    "color": "Gold",
+    "probe": "two_tone_60_7000Hz",
+    "training": false,
+    "error_db": -27.667040054743595,
+    "previous_color_model_error_db": -27.667040054743595,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luminescent",
+    "color": "Gold",
+    "probe": "two_tone_19000_20000Hz",
+    "training": true,
+    "error_db": -12.209016162376471,
+    "previous_color_model_error_db": -12.209016162376471,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luminescent",
+    "color": "Gold",
+    "probe": "hard_burst_1kHz",
+    "training": false,
+    "error_db": -25.232134134482813,
+    "previous_color_model_error_db": -25.232134134482813,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luminescent",
+    "color": "Gold",
+    "probe": "log_sweep_20_20000Hz",
+    "training": false,
+    "error_db": -28.62624236910338,
+    "previous_color_model_error_db": -28.62624236910338,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Iridescent",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-48dBFS",
+    "training": true,
+    "error_db": -42.34016233152084,
+    "previous_color_model_error_db": -42.34016233152084,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Iridescent",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-36dBFS",
+    "training": true,
+    "error_db": -42.28198183493599,
+    "previous_color_model_error_db": -42.28198183493599,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Iridescent",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-24dBFS",
+    "training": true,
+    "error_db": -41.95395795479236,
+    "previous_color_model_error_db": -41.95395795479236,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Iridescent",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-18dBFS",
+    "training": true,
+    "error_db": -41.75004332285667,
+    "previous_color_model_error_db": -41.75004332285667,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Iridescent",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-12dBFS",
+    "training": true,
+    "error_db": -43.19278962073663,
+    "previous_color_model_error_db": -43.19278962073663,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Iridescent",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-6dBFS",
+    "training": true,
+    "error_db": -36.87753176775201,
+    "previous_color_model_error_db": -36.87753176775201,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Iridescent",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-1dBFS",
+    "training": true,
+    "error_db": -23.616712230540763,
+    "previous_color_model_error_db": -23.616712230540763,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Iridescent",
+    "color": "Gold",
+    "probe": "sine_62.5Hz_-12dBFS",
+    "training": false,
+    "error_db": -54.131257242367184,
+    "previous_color_model_error_db": -54.131257242367184,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Iridescent",
+    "color": "Gold",
+    "probe": "sine_250Hz_-12dBFS",
+    "training": true,
+    "error_db": -50.98228977534532,
+    "previous_color_model_error_db": -50.98228977534532,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Iridescent",
+    "color": "Gold",
+    "probe": "sine_4000Hz_-12dBFS",
+    "training": false,
+    "error_db": -25.491432910052584,
+    "previous_color_model_error_db": -25.491432910052584,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Iridescent",
+    "color": "Gold",
+    "probe": "sine_8000Hz_-12dBFS",
+    "training": true,
+    "error_db": -24.713098381710722,
+    "previous_color_model_error_db": -24.713098381710722,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Iridescent",
+    "color": "Gold",
+    "probe": "two_tone_60_7000Hz",
+    "training": false,
+    "error_db": -27.57909406963182,
+    "previous_color_model_error_db": -27.57909406963182,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Iridescent",
+    "color": "Gold",
+    "probe": "two_tone_19000_20000Hz",
+    "training": true,
+    "error_db": -12.009555758062922,
+    "previous_color_model_error_db": -12.009555758062922,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Iridescent",
+    "color": "Gold",
+    "probe": "hard_burst_1kHz",
+    "training": false,
+    "error_db": -25.482666489244743,
+    "previous_color_model_error_db": -25.482666489244743,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Iridescent",
+    "color": "Gold",
+    "probe": "log_sweep_20_20000Hz",
+    "training": false,
+    "error_db": -27.054230631794066,
+    "previous_color_model_error_db": -27.054230631794066,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Radiant",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-48dBFS",
+    "training": true,
+    "error_db": -40.565249812728375,
+    "previous_color_model_error_db": -40.565249812728375,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Radiant",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-36dBFS",
+    "training": true,
+    "error_db": -40.567929320141445,
+    "previous_color_model_error_db": -40.567929320141445,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Radiant",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-24dBFS",
+    "training": true,
+    "error_db": -40.59180766561905,
+    "previous_color_model_error_db": -40.59180766561905,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Radiant",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-18dBFS",
+    "training": true,
+    "error_db": -40.64337418620692,
+    "previous_color_model_error_db": -40.64337418620692,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Radiant",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-12dBFS",
+    "training": true,
+    "error_db": -40.87583814473249,
+    "previous_color_model_error_db": -40.87583814473249,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Radiant",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-6dBFS",
+    "training": true,
+    "error_db": -43.24738082381625,
+    "previous_color_model_error_db": -43.24738082381625,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Radiant",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-1dBFS",
+    "training": true,
+    "error_db": -25.350269328904808,
+    "previous_color_model_error_db": -25.350269328904808,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Radiant",
+    "color": "Gold",
+    "probe": "sine_62.5Hz_-12dBFS",
+    "training": false,
+    "error_db": -38.70495247215291,
+    "previous_color_model_error_db": -38.70495247215291,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Radiant",
+    "color": "Gold",
+    "probe": "sine_250Hz_-12dBFS",
+    "training": true,
+    "error_db": -38.981921145759266,
+    "previous_color_model_error_db": -38.981921145759266,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Radiant",
+    "color": "Gold",
+    "probe": "sine_4000Hz_-12dBFS",
+    "training": false,
+    "error_db": -23.780855768981972,
+    "previous_color_model_error_db": -23.780855768981972,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Radiant",
+    "color": "Gold",
+    "probe": "sine_8000Hz_-12dBFS",
+    "training": true,
+    "error_db": -26.510178636344254,
+    "previous_color_model_error_db": -26.510178636344254,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Radiant",
+    "color": "Gold",
+    "probe": "two_tone_60_7000Hz",
+    "training": false,
+    "error_db": -27.677212007855182,
+    "previous_color_model_error_db": -27.677212007855182,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Radiant",
+    "color": "Gold",
+    "probe": "two_tone_19000_20000Hz",
+    "training": true,
+    "error_db": -29.6955531933612,
+    "previous_color_model_error_db": -29.6955531933612,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Radiant",
+    "color": "Gold",
+    "probe": "hard_burst_1kHz",
+    "training": false,
+    "error_db": -27.496034972464866,
+    "previous_color_model_error_db": -27.496034972464866,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Radiant",
+    "color": "Gold",
+    "probe": "log_sweep_20_20000Hz",
+    "training": false,
+    "error_db": -31.18800688203406,
+    "previous_color_model_error_db": -31.18800688203406,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luster",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-48dBFS",
+    "training": true,
+    "error_db": -38.503305707156,
+    "previous_color_model_error_db": -38.503305707156,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luster",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-36dBFS",
+    "training": true,
+    "error_db": -38.5095989759277,
+    "previous_color_model_error_db": -38.5095989759277,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luster",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-24dBFS",
+    "training": true,
+    "error_db": -38.56666754461238,
+    "previous_color_model_error_db": -38.56666754461238,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luster",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-18dBFS",
+    "training": true,
+    "error_db": -38.600959436588816,
+    "previous_color_model_error_db": -38.600959436588816,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luster",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-12dBFS",
+    "training": true,
+    "error_db": -39.44755940321361,
+    "previous_color_model_error_db": -39.44755940321361,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luster",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-6dBFS",
+    "training": true,
+    "error_db": -34.2396897049901,
+    "previous_color_model_error_db": -34.2396897049901,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luster",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-1dBFS",
+    "training": true,
+    "error_db": -20.96865967827021,
+    "previous_color_model_error_db": -20.96865967827021,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luster",
+    "color": "Gold",
+    "probe": "sine_62.5Hz_-12dBFS",
+    "training": false,
+    "error_db": -36.82253935128638,
+    "previous_color_model_error_db": -36.82253935128638,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luster",
+    "color": "Gold",
+    "probe": "sine_250Hz_-12dBFS",
+    "training": true,
+    "error_db": -37.07663775166242,
+    "previous_color_model_error_db": -37.07663775166242,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luster",
+    "color": "Gold",
+    "probe": "sine_4000Hz_-12dBFS",
+    "training": false,
+    "error_db": -21.914723197782404,
+    "previous_color_model_error_db": -21.914723197782404,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luster",
+    "color": "Gold",
+    "probe": "sine_8000Hz_-12dBFS",
+    "training": true,
+    "error_db": -21.802985108213896,
+    "previous_color_model_error_db": -21.802985108213896,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luster",
+    "color": "Gold",
+    "probe": "two_tone_60_7000Hz",
+    "training": false,
+    "error_db": -19.640848124153585,
+    "previous_color_model_error_db": -19.640848124153585,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luster",
+    "color": "Gold",
+    "probe": "two_tone_19000_20000Hz",
+    "training": true,
+    "error_db": -14.29542589691416,
+    "previous_color_model_error_db": -14.29542589691416,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luster",
+    "color": "Gold",
+    "probe": "hard_burst_1kHz",
+    "training": false,
+    "error_db": -19.373738723730504,
+    "previous_color_model_error_db": -19.373738723730504,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luster",
+    "color": "Gold",
+    "probe": "log_sweep_20_20000Hz",
+    "training": false,
+    "error_db": -24.77757788962464,
+    "previous_color_model_error_db": -24.77757788962464,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-48dBFS",
+    "training": true,
+    "error_db": -39.38726570189687,
+    "previous_color_model_error_db": -39.38726570189687,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-36dBFS",
+    "training": true,
+    "error_db": -39.39214649937133,
+    "previous_color_model_error_db": -39.39214649937133,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-24dBFS",
+    "training": true,
+    "error_db": -39.49171218243765,
+    "previous_color_model_error_db": -39.49171218243765,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-18dBFS",
+    "training": true,
+    "error_db": -39.95368897907482,
+    "previous_color_model_error_db": -39.95368897907482,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-12dBFS",
+    "training": true,
+    "error_db": -40.952759199211485,
+    "previous_color_model_error_db": -40.952759199211485,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-6dBFS",
+    "training": true,
+    "error_db": -37.2263450773679,
+    "previous_color_model_error_db": -37.2263450773679,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Gold",
+    "probe": "sine_1000Hz_-1dBFS",
+    "training": true,
+    "error_db": -22.12458156867192,
+    "previous_color_model_error_db": -22.12458156867192,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Gold",
+    "probe": "sine_62.5Hz_-12dBFS",
+    "training": false,
+    "error_db": -34.67053864969119,
+    "previous_color_model_error_db": -34.67053864969119,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Gold",
+    "probe": "sine_250Hz_-12dBFS",
+    "training": true,
+    "error_db": -34.9684670093916,
+    "previous_color_model_error_db": -34.9684670093916,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Gold",
+    "probe": "sine_4000Hz_-12dBFS",
+    "training": false,
+    "error_db": -21.624585461585923,
+    "previous_color_model_error_db": -21.624585461585923,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Gold",
+    "probe": "sine_8000Hz_-12dBFS",
+    "training": true,
+    "error_db": -23.06760998367292,
+    "previous_color_model_error_db": -23.06760998367292,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Gold",
+    "probe": "two_tone_60_7000Hz",
+    "training": false,
+    "error_db": -22.020877092387266,
+    "previous_color_model_error_db": -22.020877092387266,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Gold",
+    "probe": "two_tone_19000_20000Hz",
+    "training": true,
+    "error_db": -17.75121735631126,
+    "previous_color_model_error_db": -17.75121735631126,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Gold",
+    "probe": "hard_burst_1kHz",
+    "training": false,
+    "error_db": -21.422977195828253,
+    "previous_color_model_error_db": -21.422977195828253,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Gold",
+    "probe": "log_sweep_20_20000Hz",
+    "training": false,
+    "error_db": -26.204115389759263,
+    "previous_color_model_error_db": -26.204115389759263,
+    "improvement_db": 0.0
+  },
+  {
+    "type": "Luminescent",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-48dBFS",
+    "training": true,
+    "error_db": -30.068913404317076,
+    "previous_color_model_error_db": -11.506387345392682,
+    "improvement_db": 18.562526058924394
+  },
+  {
+    "type": "Luminescent",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-36dBFS",
+    "training": true,
+    "error_db": -30.07112494437978,
+    "previous_color_model_error_db": -11.513860239611741,
+    "improvement_db": 18.557264704768038
+  },
+  {
+    "type": "Luminescent",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-24dBFS",
+    "training": true,
+    "error_db": -30.118219830892624,
+    "previous_color_model_error_db": -11.60355012251397,
+    "improvement_db": 18.514669708378655
+  },
+  {
+    "type": "Luminescent",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-18dBFS",
+    "training": true,
+    "error_db": -30.240895981771384,
+    "previous_color_model_error_db": -11.839652324902648,
+    "improvement_db": 18.401243656868736
+  },
+  {
+    "type": "Luminescent",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-12dBFS",
+    "training": true,
+    "error_db": -30.523028319632047,
+    "previous_color_model_error_db": -12.642293251101052,
+    "improvement_db": 17.880735068530996
+  },
+  {
+    "type": "Luminescent",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-6dBFS",
+    "training": true,
+    "error_db": -29.630120947877657,
+    "previous_color_model_error_db": -15.367587270802707,
+    "improvement_db": 14.26253367707495
+  },
+  {
+    "type": "Luminescent",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-1dBFS",
+    "training": true,
+    "error_db": -24.456320460646843,
+    "previous_color_model_error_db": -21.059664796582712,
+    "improvement_db": 3.3966556640641308
+  },
+  {
+    "type": "Luminescent",
+    "color": "Sapphire",
+    "probe": "sine_62.5Hz_-12dBFS",
+    "training": false,
+    "error_db": -31.48363716001908,
+    "previous_color_model_error_db": -11.688088415787398,
+    "improvement_db": 19.79554874423168
+  },
+  {
+    "type": "Luminescent",
+    "color": "Sapphire",
+    "probe": "sine_250Hz_-12dBFS",
+    "training": true,
+    "error_db": -31.402981966746655,
+    "previous_color_model_error_db": -11.748576789039058,
+    "improvement_db": 19.654405177707595
+  },
+  {
+    "type": "Luminescent",
+    "color": "Sapphire",
+    "probe": "sine_4000Hz_-12dBFS",
+    "training": false,
+    "error_db": -20.091584889501732,
+    "previous_color_model_error_db": -17.88290813099424,
+    "improvement_db": 2.2086767585074902
+  },
+  {
+    "type": "Luminescent",
+    "color": "Sapphire",
+    "probe": "sine_8000Hz_-12dBFS",
+    "training": true,
+    "error_db": -26.50055721812018,
+    "previous_color_model_error_db": -15.106841041917171,
+    "improvement_db": 11.393716176203007
+  },
+  {
+    "type": "Luminescent",
+    "color": "Sapphire",
+    "probe": "two_tone_60_7000Hz",
+    "training": false,
+    "error_db": -23.790765747997284,
+    "previous_color_model_error_db": -23.887485663595722,
+    "improvement_db": -0.09671991559843818
+  },
+  {
+    "type": "Luminescent",
+    "color": "Sapphire",
+    "probe": "two_tone_19000_20000Hz",
+    "training": true,
+    "error_db": -12.522061646138562,
+    "previous_color_model_error_db": -7.386548786741801,
+    "improvement_db": 5.135512859396761
+  },
+  {
+    "type": "Luminescent",
+    "color": "Sapphire",
+    "probe": "hard_burst_1kHz",
+    "training": false,
+    "error_db": -25.693712997187763,
+    "previous_color_model_error_db": -19.936977200025694,
+    "improvement_db": 5.756735797162069
+  },
+  {
+    "type": "Luminescent",
+    "color": "Sapphire",
+    "probe": "log_sweep_20_20000Hz",
+    "training": false,
+    "error_db": -23.54350536234768,
+    "previous_color_model_error_db": -12.27845811720191,
+    "improvement_db": 11.265047245145771
+  },
+  {
+    "type": "Iridescent",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-48dBFS",
+    "training": true,
+    "error_db": -30.655427228593144,
+    "previous_color_model_error_db": -23.56388216087565,
+    "improvement_db": 7.091545067717494
+  },
+  {
+    "type": "Iridescent",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-36dBFS",
+    "training": true,
+    "error_db": -30.65551746537816,
+    "previous_color_model_error_db": -23.57451202807819,
+    "improvement_db": 7.081005437299972
+  },
+  {
+    "type": "Iridescent",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-24dBFS",
+    "training": true,
+    "error_db": -30.66870473340323,
+    "previous_color_model_error_db": -23.67389140365999,
+    "improvement_db": 6.994813329743241
+  },
+  {
+    "type": "Iridescent",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-18dBFS",
+    "training": true,
+    "error_db": -30.740764397708965,
+    "previous_color_model_error_db": -23.896806556820728,
+    "improvement_db": 6.843957840888237
+  },
+  {
+    "type": "Iridescent",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-12dBFS",
+    "training": true,
+    "error_db": -31.081552892655523,
+    "previous_color_model_error_db": -24.50431809844856,
+    "improvement_db": 6.577234794206962
+  },
+  {
+    "type": "Iridescent",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-6dBFS",
+    "training": true,
+    "error_db": -32.30071432361654,
+    "previous_color_model_error_db": -25.77823596399932,
+    "improvement_db": 6.522478359617217
+  },
+  {
+    "type": "Iridescent",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-1dBFS",
+    "training": true,
+    "error_db": -28.60510470204547,
+    "previous_color_model_error_db": -25.93796526356382,
+    "improvement_db": 2.667139438481648
+  },
+  {
+    "type": "Iridescent",
+    "color": "Sapphire",
+    "probe": "sine_62.5Hz_-12dBFS",
+    "training": false,
+    "error_db": -41.77256937810927,
+    "previous_color_model_error_db": -24.842360896215926,
+    "improvement_db": 16.93020848189334
+  },
+  {
+    "type": "Iridescent",
+    "color": "Sapphire",
+    "probe": "sine_250Hz_-12dBFS",
+    "training": true,
+    "error_db": -39.122364197814285,
+    "previous_color_model_error_db": -24.795756119942563,
+    "improvement_db": 14.326608077871722
+  },
+  {
+    "type": "Iridescent",
+    "color": "Sapphire",
+    "probe": "sine_4000Hz_-12dBFS",
+    "training": false,
+    "error_db": -22.982278474591958,
+    "previous_color_model_error_db": -22.069107447839453,
+    "improvement_db": 0.9131710267525044
+  },
+  {
+    "type": "Iridescent",
+    "color": "Sapphire",
+    "probe": "sine_8000Hz_-12dBFS",
+    "training": true,
+    "error_db": -22.313327740070832,
+    "previous_color_model_error_db": -11.830116940845523,
+    "improvement_db": 10.48321079922531
+  },
+  {
+    "type": "Iridescent",
+    "color": "Sapphire",
+    "probe": "two_tone_60_7000Hz",
+    "training": false,
+    "error_db": -24.539683809632283,
+    "previous_color_model_error_db": -15.84574762091033,
+    "improvement_db": 8.693936188721953
+  },
+  {
+    "type": "Iridescent",
+    "color": "Sapphire",
+    "probe": "two_tone_19000_20000Hz",
+    "training": true,
+    "error_db": -11.532012502961846,
+    "previous_color_model_error_db": -7.230712146621332,
+    "improvement_db": 4.301300356340514
+  },
+  {
+    "type": "Iridescent",
+    "color": "Sapphire",
+    "probe": "hard_burst_1kHz",
+    "training": false,
+    "error_db": -30.23450711999733,
+    "previous_color_model_error_db": -26.177297960466785,
+    "improvement_db": 4.057209159530544
+  },
+  {
+    "type": "Iridescent",
+    "color": "Sapphire",
+    "probe": "log_sweep_20_20000Hz",
+    "training": false,
+    "error_db": -23.017844509260517,
+    "previous_color_model_error_db": -17.087455619335035,
+    "improvement_db": 5.9303888899254815
+  },
+  {
+    "type": "Radiant",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-48dBFS",
+    "training": true,
+    "error_db": -40.93281651807669,
+    "previous_color_model_error_db": -41.16178297364196,
+    "improvement_db": -0.22896645556527062
+  },
+  {
+    "type": "Radiant",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-36dBFS",
+    "training": true,
+    "error_db": -40.936029761626514,
+    "previous_color_model_error_db": -41.166524661033776,
+    "improvement_db": -0.23049489940726176
+  },
+  {
+    "type": "Radiant",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-24dBFS",
+    "training": true,
+    "error_db": -40.948558078721575,
+    "previous_color_model_error_db": -41.19808606737614,
+    "improvement_db": -0.24952798865456316
+  },
+  {
+    "type": "Radiant",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-18dBFS",
+    "training": true,
+    "error_db": -40.97607898842686,
+    "previous_color_model_error_db": -41.27075075349032,
+    "improvement_db": -0.2946717650634554
+  },
+  {
+    "type": "Radiant",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-12dBFS",
+    "training": true,
+    "error_db": -41.11715940752079,
+    "previous_color_model_error_db": -41.640119361540215,
+    "improvement_db": -0.5229599540194272
+  },
+  {
+    "type": "Radiant",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-6dBFS",
+    "training": true,
+    "error_db": -40.05908463639435,
+    "previous_color_model_error_db": -40.69989776489594,
+    "improvement_db": -0.6408131285015841
+  },
+  {
+    "type": "Radiant",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-1dBFS",
+    "training": true,
+    "error_db": -29.894821142808603,
+    "previous_color_model_error_db": -24.46655872706982,
+    "improvement_db": 5.428262415738782
+  },
+  {
+    "type": "Radiant",
+    "color": "Sapphire",
+    "probe": "sine_62.5Hz_-12dBFS",
+    "training": false,
+    "error_db": -46.14228174745672,
+    "previous_color_model_error_db": -43.63017130280093,
+    "improvement_db": 2.5121104446557894
+  },
+  {
+    "type": "Radiant",
+    "color": "Sapphire",
+    "probe": "sine_250Hz_-12dBFS",
+    "training": true,
+    "error_db": -45.67741954169151,
+    "previous_color_model_error_db": -43.86843612632391,
+    "improvement_db": 1.8089834153676065
+  },
+  {
+    "type": "Radiant",
+    "color": "Sapphire",
+    "probe": "sine_4000Hz_-12dBFS",
+    "training": false,
+    "error_db": -28.36000917682846,
+    "previous_color_model_error_db": -18.833868560407918,
+    "improvement_db": 9.526140616420541
+  },
+  {
+    "type": "Radiant",
+    "color": "Sapphire",
+    "probe": "sine_8000Hz_-12dBFS",
+    "training": true,
+    "error_db": -27.874918357297794,
+    "previous_color_model_error_db": -18.810542255352093,
+    "improvement_db": 9.064376101945701
+  },
+  {
+    "type": "Radiant",
+    "color": "Sapphire",
+    "probe": "two_tone_60_7000Hz",
+    "training": false,
+    "error_db": -29.045857649811314,
+    "previous_color_model_error_db": -20.105555860296196,
+    "improvement_db": 8.940301789515118
+  },
+  {
+    "type": "Radiant",
+    "color": "Sapphire",
+    "probe": "two_tone_19000_20000Hz",
+    "training": true,
+    "error_db": -28.30020501099824,
+    "previous_color_model_error_db": -16.19623905749154,
+    "improvement_db": 12.103965953506702
+  },
+  {
+    "type": "Radiant",
+    "color": "Sapphire",
+    "probe": "hard_burst_1kHz",
+    "training": false,
+    "error_db": -31.883203105914983,
+    "previous_color_model_error_db": -26.177197609271747,
+    "improvement_db": 5.706005496643236
+  },
+  {
+    "type": "Radiant",
+    "color": "Sapphire",
+    "probe": "log_sweep_20_20000Hz",
+    "training": false,
+    "error_db": -33.812653662941926,
+    "previous_color_model_error_db": -25.677356388266617,
+    "improvement_db": 8.13529727467531
+  },
+  {
+    "type": "Luster",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-48dBFS",
+    "training": true,
+    "error_db": -44.623674598868476,
+    "previous_color_model_error_db": -30.393700806622526,
+    "improvement_db": 14.22997379224595
+  },
+  {
+    "type": "Luster",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-36dBFS",
+    "training": true,
+    "error_db": -44.63967852608154,
+    "previous_color_model_error_db": -30.397033019856124,
+    "improvement_db": 14.242645506225415
+  },
+  {
+    "type": "Luster",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-24dBFS",
+    "training": true,
+    "error_db": -44.97197702174948,
+    "previous_color_model_error_db": -30.44220574477805,
+    "improvement_db": 14.529771276971431
+  },
+  {
+    "type": "Luster",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-18dBFS",
+    "training": true,
+    "error_db": -46.86619402843717,
+    "previous_color_model_error_db": -30.488424552505883,
+    "improvement_db": 16.377769475931288
+  },
+  {
+    "type": "Luster",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-12dBFS",
+    "training": true,
+    "error_db": -37.116972164944684,
+    "previous_color_model_error_db": -31.98227726130531,
+    "improvement_db": 5.1346949036393745
+  },
+  {
+    "type": "Luster",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-6dBFS",
+    "training": true,
+    "error_db": -27.97353021239742,
+    "previous_color_model_error_db": -25.19201970998184,
+    "improvement_db": 2.781510502415582
+  },
+  {
+    "type": "Luster",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-1dBFS",
+    "training": true,
+    "error_db": -19.833566154587004,
+    "previous_color_model_error_db": -19.508021256885492,
+    "improvement_db": 0.32554489770151207
+  },
+  {
+    "type": "Luster",
+    "color": "Sapphire",
+    "probe": "sine_62.5Hz_-12dBFS",
+    "training": false,
+    "error_db": -36.57301457114215,
+    "previous_color_model_error_db": -35.45998643063126,
+    "improvement_db": 1.1130281405108917
+  },
+  {
+    "type": "Luster",
+    "color": "Sapphire",
+    "probe": "sine_250Hz_-12dBFS",
+    "training": true,
+    "error_db": -36.60143418995006,
+    "previous_color_model_error_db": -35.18955589093374,
+    "improvement_db": 1.4118782990163226
+  },
+  {
+    "type": "Luster",
+    "color": "Sapphire",
+    "probe": "sine_4000Hz_-12dBFS",
+    "training": false,
+    "error_db": -46.77791318484979,
+    "previous_color_model_error_db": -11.788423330793318,
+    "improvement_db": 34.98948985405647
+  },
+  {
+    "type": "Luster",
+    "color": "Sapphire",
+    "probe": "sine_8000Hz_-12dBFS",
+    "training": true,
+    "error_db": -33.07860833629502,
+    "previous_color_model_error_db": -7.732074805002661,
+    "improvement_db": 25.34653353129236
+  },
+  {
+    "type": "Luster",
+    "color": "Sapphire",
+    "probe": "two_tone_60_7000Hz",
+    "training": false,
+    "error_db": -30.99639659308891,
+    "previous_color_model_error_db": -9.61219554254332,
+    "improvement_db": 21.38420105054559
+  },
+  {
+    "type": "Luster",
+    "color": "Sapphire",
+    "probe": "two_tone_19000_20000Hz",
+    "training": true,
+    "error_db": -15.398660518116136,
+    "previous_color_model_error_db": -8.06263522309651,
+    "improvement_db": 7.336025295019626
+  },
+  {
+    "type": "Luster",
+    "color": "Sapphire",
+    "probe": "hard_burst_1kHz",
+    "training": false,
+    "error_db": -17.37112637091778,
+    "previous_color_model_error_db": -18.261490068258112,
+    "improvement_db": -0.8903636973403337
+  },
+  {
+    "type": "Luster",
+    "color": "Sapphire",
+    "probe": "log_sweep_20_20000Hz",
+    "training": false,
+    "error_db": -28.526933794664053,
+    "previous_color_model_error_db": -15.417785633065513,
+    "improvement_db": 13.10914816159854
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-48dBFS",
+    "training": true,
+    "error_db": -42.07345908936347,
+    "previous_color_model_error_db": -32.81881567174068,
+    "improvement_db": 9.254643417622788
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-36dBFS",
+    "training": true,
+    "error_db": -42.089650533761485,
+    "previous_color_model_error_db": -32.82367671796506,
+    "improvement_db": 9.265973815796428
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-24dBFS",
+    "training": true,
+    "error_db": -42.507318657806,
+    "previous_color_model_error_db": -32.8901741570092,
+    "improvement_db": 9.617144500796805
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-18dBFS",
+    "training": true,
+    "error_db": -44.983076722646146,
+    "previous_color_model_error_db": -33.24424182246911,
+    "improvement_db": 11.73883490017704
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-12dBFS",
+    "training": true,
+    "error_db": -35.54922079221892,
+    "previous_color_model_error_db": -37.10336635979348,
+    "improvement_db": -1.5541455675745652
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-6dBFS",
+    "training": true,
+    "error_db": -28.177958627263948,
+    "previous_color_model_error_db": -29.261589888889134,
+    "improvement_db": -1.083631261625186
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Sapphire",
+    "probe": "sine_1000Hz_-1dBFS",
+    "training": true,
+    "error_db": -23.382522784266122,
+    "previous_color_model_error_db": -21.75410557387486,
+    "improvement_db": 1.6284172103912624
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Sapphire",
+    "probe": "sine_62.5Hz_-12dBFS",
+    "training": false,
+    "error_db": -34.90195838058695,
+    "previous_color_model_error_db": -43.733499241871044,
+    "improvement_db": -8.831540861284097
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Sapphire",
+    "probe": "sine_250Hz_-12dBFS",
+    "training": true,
+    "error_db": -34.937684877837626,
+    "previous_color_model_error_db": -42.94906765063623,
+    "improvement_db": -8.011382772798605
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Sapphire",
+    "probe": "sine_4000Hz_-12dBFS",
+    "training": false,
+    "error_db": -42.67747609659808,
+    "previous_color_model_error_db": -13.426135317774017,
+    "improvement_db": 29.25134077882406
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Sapphire",
+    "probe": "sine_8000Hz_-12dBFS",
+    "training": true,
+    "error_db": -29.042889251058853,
+    "previous_color_model_error_db": -10.407666360818911,
+    "improvement_db": 18.63522289023994
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Sapphire",
+    "probe": "two_tone_60_7000Hz",
+    "training": false,
+    "error_db": -28.8626022142994,
+    "previous_color_model_error_db": -12.430686704361884,
+    "improvement_db": 16.431915509937518
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Sapphire",
+    "probe": "two_tone_19000_20000Hz",
+    "training": true,
+    "error_db": -17.858065912199347,
+    "previous_color_model_error_db": -10.48116656888512,
+    "improvement_db": 7.376899343314227
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Sapphire",
+    "probe": "hard_burst_1kHz",
+    "training": false,
+    "error_db": -20.521313203970287,
+    "previous_color_model_error_db": -20.49005522197742,
+    "improvement_db": 0.03125798199286578
+  },
+  {
+    "type": "DarkEssence",
+    "color": "Sapphire",
+    "probe": "log_sweep_20_20000Hz",
+    "training": false,
+    "error_db": -29.013647685802965,
+    "previous_color_model_error_db": -18.03470233173504,
+    "improvement_db": 10.978945354067925
+  }
+]
