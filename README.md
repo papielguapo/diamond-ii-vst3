@@ -10,7 +10,9 @@ A C++20 / JUCE 8 parallel tape-colour processor, with the supplied silver-metal 
 
 For input/output gains `gi`, `go` and Process `p` in [0,1]:
 
-`dry = gi*x; wet = Hpost(f(Hpre(dry))); y = go*(dry + p*(wet-dry))`.
+`dry = gi*x; wet = Hpost(f(Hpre(dry))); residual = wet-dry; y = go*(dry + p*residual + correction)`.
+
+For Luster and Dark Essence in Gold only, `correction = 4*p*(1-p)*(a*dry+b*residual)`, using the measured coefficients in `processCorrection`. It vanishes at Process 0 and 100. Other combinations use zero correction. The coefficients were fitted to original 50% captures using the original 100% endpoints, then checked at 25% and 75%. This is a small empirical correction, not the recovered original control law.
 
 Each of the 15 Type/Brightness combinations has its own fitted pre-shelf, nonlinear curve and post-shelf:
 
@@ -18,11 +20,11 @@ $$f(u)=\frac{g u}{(1+|k u|^q)^{1/q}}.$$
 
 The exact fitted coefficients are in [Source/CalibrationData.h](Source/CalibrationData.h) and [Calibration/all-colors-48k-fit.json](Calibration/all-colors-48k-fit.json). This odd-symmetric curve replaces the prototype's invented even-harmonic additions. Cubic Hermite tables with 8192 intervals over [0,32] evaluate it during audio processing; the table input magnitude clamps at 32. Tables are built once at module load. No per-sample transcendental calls, allocations, oversampling, lookahead or added latency are used.
 
-The high-shelf implementation uses `K=tan(pi*fc/fs)`, `V=10^(dB/20)` and `N=1/(1+sqrt(2)*K+K*K)`. Its coefficients are `(b0,b1,b2)=N*(V+sqrt(2*V)*K+K*K, 2*(K*K-V), V-sqrt(2*V)*K+K*K)` and `(a1,a2)=N*(2*(K*K-1),1-sqrt(2)*K+K*K)`.
+The high-shelf implementation uses `K=tan(pi*fc/fs)`, `V=10^(dB/20)`, damping `d` and `N=1/(1+d*K+K*K)`. Its coefficients are `(b0,b1,b2)=N*(V+sqrt(V)*d*K+K*K, 2*(K*K-V), V-sqrt(V)*d*K+K*K)` and `(a1,a2)=N*(2*(K*K-1),1-d*K+K*K)`. Damping remains sqrt(2) except in the refined Luster/Opal pre/post shelves. This adds two measured shape parameters without extra filter stages or latency.
 
 At exactly 0 dB Input, 0% Process and 0 dB Output, the processor returns the original float directly, preserving its bit pattern including signed zero. The wet filters keep running while dry. Input/output gain and Process transitions are smoothed over 15 ms; exact unity requests take effect immediately. Type and Brightness changes crossfade processing states over 5 ms. Rapid repeated changes are not guaranteed artifact-free. Output is not limited: allow headroom.
 
-**Calibration boundaries:** comparison to the original currently covers 48 kHz mono, zero input trim and full Process. Other sample rates recalculate shelves but have not been matched to original captures. Process remains parallel interpolation: two additional original 50% captures show that this is not an exact reconstruction of the original control law. Stereo interaction, music material, input-trim sweeps and realtime versus AudioSuite equivalence remain unmeasured. Existing sessions retain parameter IDs and the skin, but their processed sound changes with this calibration.
+**Calibration boundaries:** comparison to the original currently covers 48 kHz mono, zero input trim and full Process. Other sample rates recalculate shelves but have not been matched to original captures. Process uses parallel interpolation with the limited measured correction described above. All five Gold modes were captured at 50%; Luster and Dark Essence also at 25% and 75%. Other intermediate settings remain unmeasured, and the control law is not exact. Stereo interaction, music material, input-trim sweeps and realtime versus AudioSuite equivalence remain unmeasured. Existing sessions retain parameter IDs and the skin, but their processed sound changes with this calibration.
 
 ### Requested prototype equations: historical appendix
 
@@ -72,7 +74,7 @@ Find plugins under `build/DiamondII_artefacts/Release/VST3/` and the executable 
 
 ## Verification
 
-`DspVerificationTest` tests the actual AudioProcessor, not a separate mock. The finite randomized null test covers all 5 types × 3 brightness settings × 5 sample rates (44.1, 48, 88.2, 96 and 192 kHz), including positive and negative zero, using bitwise IEEE-754 comparisons. Thirty additional captured-reference checks cover two synthetic probes across all 15 combinations. Per-case regression limits equal the measured baseline relative RMS times 1.10 plus 0.001; passing them guards this approximation against regression, not against all audible differences. Additional tests stress maximum trims (+10 dB input / +6 dB output) and full processing, channel isolation, reset silence, active nonlinearity, rational unit slopes, UI resize bounds, state round-trip, and exact unity after an active wet state. Release checks throw on failure; they do not depend on disabled `assert()` macros. Passing a finite test suite does not prove every possible input or host is supported.
+`DspVerificationTest` tests the actual AudioProcessor, not a separate mock. The finite randomized null test covers all 5 types × 3 brightness settings × 5 sample rates (44.1, 48, 88.2, 96 and 192 kHz), including positive and negative zero, using bitwise IEEE-754 comparisons. Thirty captured-reference checks cover two synthetic probes across all 15 combinations at full Process; 18 more cover intermediate Gold Process values. Per-case regression limits equal the measured baseline relative RMS times 1.10 plus 0.001; passing them guards this approximation against regression, not against all audible differences. Additional tests stress maximum trims (+10 dB input / +6 dB output) and full processing, channel isolation, reset silence, active nonlinearity, rational unit slopes, UI resize bounds, state round-trip, and exact unity after an active wet state. Release checks throw on failure; they do not depend on disabled `assert()` macros. Passing a finite test suite does not prove every possible input or host is supported.
 
 `GeneratePluginScreenshot` initializes `ScopedJuceInitialiser_GUI`, instantiates the actual processor/editor, sets +2.50 dB / 48% / −1.20 dB / Gold / Iridescent, and captures a 980×300 logical component at 2×. The reference skin fits proportionally with narrow black letterboxing because its aspect ratio differs slightly from 1960×600. The tool fails unless the PNG is 1960×600 and exceeds 50 KiB. Additional PNGs record each resize preset. It is an offscreen render of the real component, not a photograph of a DAW window. Host resize negotiation and interaction in third-party DAWs have not been tested.
 

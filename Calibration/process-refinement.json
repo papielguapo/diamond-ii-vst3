@@ -1,0 +1,74 @@
+{
+  "coefficients": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0.05020053748472577,
+      -0.10794967764359283
+    ],
+    [
+      0.029016315141057195,
+      -0.06438708517288097
+    ]
+  ],
+  "comparisons": [
+    {
+      "type": "Luster",
+      "process": 25,
+      "before_relative_rms": 0.05463770950093326,
+      "after_relative_rms": 0.03345225586613897,
+      "improvement_db": 4.261341496651883,
+      "coefficient_fit": false
+    },
+    {
+      "type": "Luster",
+      "process": 50,
+      "before_relative_rms": 0.07326992077765496,
+      "after_relative_rms": 0.05063021252375117,
+      "improvement_db": 3.210319431832498,
+      "coefficient_fit": true
+    },
+    {
+      "type": "Luster",
+      "process": 75,
+      "before_relative_rms": 0.062085768562879805,
+      "after_relative_rms": 0.05389827526697966,
+      "improvement_db": 1.2283438712498869,
+      "coefficient_fit": false
+    },
+    {
+      "type": "DarkEssence",
+      "process": 25,
+      "before_relative_rms": 0.02664371080410546,
+      "after_relative_rms": 0.018179392102646387,
+      "improvement_db": 3.320307085206577,
+      "coefficient_fit": false
+    },
+    {
+      "type": "DarkEssence",
+      "process": 50,
+      "before_relative_rms": 0.03598668742134443,
+      "after_relative_rms": 0.028838683918275224,
+      "improvement_db": 1.9233286918594052,
+      "coefficient_fit": true
+    },
+    {
+      "type": "DarkEssence",
+      "process": 75,
+      "before_relative_rms": 0.04324264426258428,
+      "after_relative_rms": 0.04150670458341444,
+      "improvement_db": 0.3558797785144769,
+      "coefficient_fit": false
+    }
+  ]
+}

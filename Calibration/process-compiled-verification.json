@@ -1,0 +1,56 @@
+[
+  {
+    "type": "Luminescent",
+    "process": 50,
+    "before_relative_rms": 0.034102574253327876,
+    "after_relative_rms": 0.03410257719041464
+  },
+  {
+    "type": "Iridescent",
+    "process": 50,
+    "before_relative_rms": 0.035058433033233846,
+    "after_relative_rms": 0.03505843290598757
+  },
+  {
+    "type": "Radiant",
+    "process": 50,
+    "before_relative_rms": 0.019799384231215543,
+    "after_relative_rms": 0.019799385749097065
+  },
+  {
+    "type": "Luster",
+    "process": 25,
+    "before_relative_rms": 0.05463770950093326,
+    "after_relative_rms": 0.033452256788145444
+  },
+  {
+    "type": "Luster",
+    "process": 50,
+    "before_relative_rms": 0.07326992077765496,
+    "after_relative_rms": 0.05063020943778787
+  },
+  {
+    "type": "Luster",
+    "process": 75,
+    "before_relative_rms": 0.062085768562879805,
+    "after_relative_rms": 0.05389827165050023
+  },
+  {
+    "type": "DarkEssence",
+    "process": 25,
+    "before_relative_rms": 0.02664371080410546,
+    "after_relative_rms": 0.018179391390911633
+  },
+  {
+    "type": "DarkEssence",
+    "process": 50,
+    "before_relative_rms": 0.03598668742134443,
+    "after_relative_rms": 0.02883868179436503
+  },
+  {
+    "type": "DarkEssence",
+    "process": 75,
+    "before_relative_rms": 0.04324264426258428,
+    "after_relative_rms": 0.04150670361995072
+  }
+]

@@ -20,7 +20,7 @@ test 1
 1: PASS: captured reference probe 0, type 0, brightness 0, relative RMS 0.140471
 1: PASS: captured reference probe 0, type 1, brightness 0, relative RMS 0.142991
 1: PASS: captured reference probe 0, type 2, brightness 0, relative RMS 0.055388
-1: PASS: captured reference probe 0, type 3, brightness 0, relative RMS 0.160981
+1: PASS: captured reference probe 0, type 3, brightness 0, relative RMS 0.0489134
 1: PASS: captured reference probe 0, type 4, brightness 0, relative RMS 0.111271
 1: PASS: captured reference probe 0, type 0, brightness 1, relative RMS 0.0435781
 1: PASS: captured reference probe 0, type 1, brightness 1, relative RMS 0.053107
@@ -35,7 +35,7 @@ test 1
 1: PASS: captured reference probe 1, type 0, brightness 0, relative RMS 0.0952097
 1: PASS: captured reference probe 1, type 1, brightness 0, relative RMS 0.119449
 1: PASS: captured reference probe 1, type 2, brightness 0, relative RMS 0.111542
-1: PASS: captured reference probe 1, type 3, brightness 0, relative RMS 0.25926
+1: PASS: captured reference probe 1, type 3, brightness 0, relative RMS 0.237117
 1: PASS: captured reference probe 1, type 4, brightness 0, relative RMS 0.190085
 1: PASS: captured reference probe 1, type 0, brightness 1, relative RMS 0.0547512
 1: PASS: captured reference probe 1, type 1, brightness 1, relative RMS 0.0531945
@@ -47,8 +47,26 @@ test 1
 1: PASS: captured reference probe 1, type 2, brightness 2, relative RMS 0.0254589
 1: PASS: captured reference probe 1, type 3, brightness 2, relative RMS 0.135345
 1: PASS: captured reference probe 1, type 4, brightness 2, relative RMS 0.0941747
-1: PASS: 1581894 checks, 100% passed. Null difference exactly 0.0f (-inf dBFS); signed zero preserved.
-1/2 Test #1: DSP ..............................   Passed    2.54 sec
+1: PASS: Process reference 0, type 0, amount 50, relative RMS 0.0360632
+1: PASS: Process reference 1, type 0, amount 50, relative RMS 0.0256894
+1: PASS: Process reference 2, type 1, amount 50, relative RMS 0.0411835
+1: PASS: Process reference 3, type 1, amount 50, relative RMS 0.0260419
+1: PASS: Process reference 4, type 2, amount 50, relative RMS 0.0294049
+1: PASS: Process reference 5, type 2, amount 50, relative RMS 0.0204289
+1: PASS: Process reference 6, type 3, amount 25, relative RMS 0.046207
+1: PASS: Process reference 7, type 3, amount 25, relative RMS 0.0260185
+1: PASS: Process reference 8, type 3, amount 50, relative RMS 0.0539244
+1: PASS: Process reference 9, type 3, amount 50, relative RMS 0.0356154
+1: PASS: Process reference 10, type 3, amount 75, relative RMS 0.021351
+1: PASS: Process reference 11, type 3, amount 75, relative RMS 0.0612665
+1: PASS: Process reference 12, type 4, amount 25, relative RMS 0.0173933
+1: PASS: Process reference 13, type 4, amount 25, relative RMS 0.0127391
+1: PASS: Process reference 14, type 4, amount 50, relative RMS 0.014794
+1: PASS: Process reference 15, type 4, amount 50, relative RMS 0.0257169
+1: PASS: Process reference 16, type 4, amount 75, relative RMS 0.0403951
+1: PASS: Process reference 17, type 4, amount 75, relative RMS 0.0500248
+1: PASS: 1581935 checks, 100% passed. Null difference exactly 0.0f (-inf dBFS); signed zero preserved.
+1/2 Test #1: DSP ..............................   Passed    2.64 sec
 test 2
     Start 2: Screenshot
 
@@ -56,8 +74,8 @@ test 2
 2: Working Directory: ./build
 2: Test timeout computed to be: 10000000
 2: .\assets\screenshot.png 1960x600 455848 bytes
-2/2 Test #2: Screenshot .......................   Passed    3.16 sec
+2/2 Test #2: Screenshot .......................   Passed    2.47 sec
 
 100% tests passed out of 2
 
-Total Test time (real) =   5.83 sec
+Total Test time (real) =   5.25 sec

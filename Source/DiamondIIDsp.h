@@ -12,11 +12,11 @@ struct Biquad {
     double b0=1,b1=0,b2=0,a1=0,a2=0,z1=0,z2=0;
     void reset() { z1=z2=0; }
     double tick(double x) { auto y=b0*x+z1; z1=b1*x-a1*y+z2; z2=b2*x-a2*y; return y; }
-    void shelf(double fs, double fc, double db) {
+    void shelf(double fs, double fc, double db, double damping=std::sqrt(2.)) {
         const double k=std::tan(std::numbers::pi*fc/fs), v=std::pow(10.,db/20.);
-        const double q=std::sqrt(2.), n=1./(1.+q*k+k*k);
-        b0=(v+std::sqrt(2.*v)*k+k*k)*n;
-        b1=2.*(k*k-v)*n; b2=(v-std::sqrt(2.*v)*k+k*k)*n;
+        const double q=damping, n=1./(1.+q*k+k*k);
+        b0=(v+std::sqrt(v)*q*k+k*k)*n;
+        b1=2.*(k*k-v)*n; b2=(v-std::sqrt(v)*q*k+k*k)*n;
         a1=2.*(k*k-1.)*n; a2=(1.-q*k+k*k)*n;
     }
 };
@@ -39,8 +39,8 @@ struct Engine {
         type=std::clamp(type,0,4); if(type==activeType) return;
         activeType=type; const auto& p=modelCalibration[static_cast<size_t>(brightness*5+type)];
         for(auto& c:channels) {
-            c.modelPre.shelf(rate,std::min(p.preFrequency,rate*.45),p.preDb);
-            c.modelPost.shelf(rate,std::min(p.postFrequency,rate*.45),p.postDb);
+            c.modelPre.shelf(rate,std::min(p.preFrequency,rate*.45),p.preDb,p.preDamping);
+            c.modelPost.shelf(rate,std::min(p.postFrequency,rate*.45),p.postDb,p.postDamping);
         }
     }
     double residual(double x, Channel& c, int type) {
@@ -59,7 +59,12 @@ struct Engine {
         const auto wet=residual(dry,c,type);
         // Direct return preserves every finite input bit, including negative zero.
         if(unity) return input;
-        return static_cast<float>((dry+process*wet)*outGain);
+        double result=dry+process*wet;
+        if(brightness==1 && type>=3) {
+            const auto& correction=processCorrection[static_cast<size_t>(type)];
+            result+=4.*process*(1.-process)*(correction.dry*dry+correction.wet*wet);
+        }
+        return static_cast<float>(result*outGain);
     }
 };
 }

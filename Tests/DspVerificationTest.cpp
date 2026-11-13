@@ -4,6 +4,7 @@
 #include <random>
 #include <stdexcept>
 #include <vector>
+#include "ProcessReferenceLimits.h"
 int checks=0;
 void require(bool ok,const char* what) { ++checks; if(!ok) throw std::runtime_error(what); }
 void set(DiamondIIAudioProcessor& p,const char* id,float v) { auto* a=p.state.getParameter(id); a->setValueNotifyingHost(a->convertTo0to1(v)); }
@@ -122,8 +123,8 @@ int main(int argc,char** argv) { try {
     require(std::string(magic,4)=="PHX2" && reference.readInt()==48000,"reference fixture format");
     const int fixtures=reference.readInt(); require(fixtures==2,"reference probe count");
     constexpr double referenceLimits[2][15] = {
-        {0.15551807,0.15829065,0.06192682,0.17807889,0.12339848,0.04893586,0.05941771,0.07217557,0.08921372,0.09221277,0.10981809,0.07897973,0.04301406,0.00607210,0.00912961},
-        {0.10573072,0.13239419,0.12369613,0.28618602,0.21009385,0.06122627,0.05951394,0.04740780,0.11922403,0.09437784,0.05810933,0.03485847,0.02900480,0.14988000,0.10459219}
+        {0.15551807,0.15829065,0.06192682,0.05480476,0.12339848,0.04893586,0.05941771,0.07217557,0.08921372,0.09221277,0.10981809,0.07897973,0.04301406,0.00607210,0.00912961},
+        {0.10573072,0.13239419,0.12369613,0.26182888,0.21009385,0.06122627,0.05951394,0.04740780,0.11922403,0.09437784,0.05810933,0.03485847,0.02900480,0.14988000,0.10459219}
     };
     for(int probe=0;probe<fixtures;++probe) {
         const int count=reference.readInt(); require(count>0 && count<=480000,"reference frame count");
@@ -145,6 +146,34 @@ int main(int argc,char** argv) { try {
         }
     }
     require(reference.getPosition()==(juce::int64)content.getSize(),"complete reference fixture read");
+    {
+        const auto processFixture=fixture.getSiblingFile("process-reference-fixtures.bin.gz");
+        juce::FileInputStream compressed(processFixture); require(compressed.openedOk(),"intermediate Process fixture present");
+        juce::GZIPDecompressorInputStream decoded(&compressed,false,juce::GZIPDecompressorInputStream::gzipFormat);
+        juce::MemoryBlock bytes; decoded.readIntoMemoryBlock(bytes);
+        require(bytes.getSize()>12 && bytes.getSize()<24000000,"Process fixture size");
+        juce::MemoryInputStream data(bytes,false); char signature[4]; data.read(signature,4);
+        require(std::string(signature,4)=="PHXP" && data.readInt()==48000,"Process fixture format");
+        const int cases=data.readInt(); require(cases==18,"Process reference count");
+        for(int index=0;index<cases;++index) {
+            const int type=data.readInt(),brightness=data.readInt(); const float amount=data.readFloat(); const int count=data.readInt();
+            require(type>=0 && type<5 && brightness==1 && amount>0 && amount<100 && count>0 && count<=120000,"Process fixture metadata");
+            std::vector<float> input(static_cast<size_t>(count)),target(static_cast<size_t>(count));
+            for(auto& value:input) value=data.readFloat(); for(auto& value:target) value=data.readFloat();
+            DiamondIIAudioProcessor measured; set(measured,"process",amount); set(measured,"type",(float)type); set(measured,"brightness",(float)brightness); measured.prepareToPlay(48000,256);
+            juce::AudioBuffer<float> block(2,256); juce::MidiBuffer midi; double error=0,energy=0;
+            for(int start=0;start<count;start+=256) {
+                const int size=std::min(256,count-start); block.setSize(2,size,false,false,true); block.clear();
+                for(int n=0;n<size;++n) block.setSample(0,n,input[static_cast<size_t>(start+n)]);
+                measured.processBlock(block,midi);
+                for(int n=0;n<size;++n) { const double expected=target[static_cast<size_t>(start+n)],difference=block.getSample(0,n)-expected; error+=difference*difference; energy+=expected*expected; }
+            }
+            const double relative=std::sqrt(error/energy);
+            require(std::isfinite(relative) && relative<processReferenceLimits[static_cast<size_t>(index)],"intermediate Process reference regression");
+            std::cout<<"PASS: Process reference "<<index<<", type "<<type<<", amount "<<amount<<", relative RMS "<<relative<<'\n';
+        }
+        require(data.getPosition()==(juce::int64)bytes.getSize(),"complete Process fixture read");
+    }
     std::cout<<"PASS: "<<checks<<" checks, 100% passed. Null difference exactly 0.0f (-inf dBFS); signed zero preserved.\n";
     return 0;
 } catch(const std::exception& e) { std::cerr<<"FAIL after "<<checks<<" checks: "<<e.what()<<'\n'; return 1; } }

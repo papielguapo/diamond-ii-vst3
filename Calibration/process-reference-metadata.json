@@ -1,0 +1,65 @@
+[
+  {
+    "file": "PhoenixII_48k_DarkEssence_Gold_P025_In0_Outm6.wav",
+    "sha256": "04984c79ae70811e0d1803625306772ce818bc78ddf210d2567e858d4b2b8870",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000
+  },
+  {
+    "file": "PhoenixII_48k_DarkEssence_Gold_P050_In0_Outm6.wav",
+    "sha256": "fa0d601d5d139890545cf8257fbc9a2af20366ed3d2c28d6e0522a98780a24f5",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000
+  },
+  {
+    "file": "PhoenixII_48k_DarkEssence_Gold_P075_In0_Outm6.wav",
+    "sha256": "17846c4cee1338614a5b9cef7f36725c20421d9ff2ef5f59cb49508f973883bc",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000
+  },
+  {
+    "file": "PhoenixII_48k_Iridescent_Gold_P050_In0_Outm6.wav",
+    "sha256": "9ad43279f0f4de07ae32f227d8c2277fca6ede83b03580da1244983bb70a695d",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000
+  },
+  {
+    "file": "PhoenixII_48k_Luminescent_Gold_P050_In0_Outm6.wav",
+    "sha256": "8879bce2efbcc2d25db343dbb8419c5af53cace4c462a2e90e673e3638bdb17a",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000
+  },
+  {
+    "file": "PhoenixII_48k_Luster_Gold_P025_In0_Outm6.wav",
+    "sha256": "7d227b7eb8ba695e92f1183d2830cc3145fa9dbb6d157e342c731fdb61bf968f",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000
+  },
+  {
+    "file": "PhoenixII_48k_Luster_Gold_P050_In0_Outm6.wav",
+    "sha256": "9dcf6d892dbdfdb91712e507f7bcc0c312b9d843941335b33d68fca82acd9faa",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000
+  },
+  {
+    "file": "PhoenixII_48k_Luster_Gold_P075_In0_Outm6.wav",
+    "sha256": "3c20cd84cccc3cb3f03f50b1e837a729600e12cdc9ce1736d11b326e34974f61",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000
+  },
+  {
+    "file": "PhoenixII_48k_Radiant_Gold_P050_In0_Outm6.wav",
+    "sha256": "9975b0fffca2a24964169522d1e5209b607fb42d44b1a03b48c97401b9d6e091",
+    "sampleRate": 48000,
+    "format": "mono PCM24",
+    "alignmentSamples": 96000
+  }
+]
