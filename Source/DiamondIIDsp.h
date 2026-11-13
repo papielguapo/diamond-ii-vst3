@@ -41,8 +41,8 @@ struct Engine {
         for(auto& c:channels) {
             c.modelPre.shelf(rate,std::min(p.preFrequency,rate*.45),p.preDb,p.preDamping);
             c.modelPost.shelf(rate,std::min(p.postFrequency,rate*.45),p.postDb,p.postDamping);
-            if(p.residualModel) {
-                const auto& legacy=lowAmountDarkGold;
+            if(p.residualCurveIndex>=0) {
+                const auto& legacy=lowAmountCalibration[static_cast<size_t>(p.residualCurveIndex)];
                 c.lowAmountPre.shelf(rate,std::min(legacy.preFrequency,rate*.45),legacy.preDb,legacy.preDamping);
                 c.lowAmountPost.shelf(rate,std::min(legacy.postFrequency,rate*.45),legacy.postDb,legacy.postDamping);
             }
@@ -56,8 +56,9 @@ struct Engine {
         const double corrected=shaped+modelCalibration[index].phaseMemory*(square/(1.+square))*(shaped-c.previousShaped);
         c.previousShaped=shaped;
         const double filtered=c.modelPost.tick(corrected);
-        if(modelCalibration[index].residualModel) {
-            const double legacy=c.lowAmountPost.tick(lowAmountDarkGoldCurve.evaluate(c.lowAmountPre.tick(x)))-x;
+        if(modelCalibration[index].residualCurveIndex>=0) {
+            const auto curveIndex=static_cast<size_t>(modelCalibration[index].residualCurveIndex);
+            const double legacy=c.lowAmountPost.tick(lowAmountCurves[curveIndex].evaluate(c.lowAmountPre.tick(x)))-x;
             const double blend=std::clamp((static_cast<double>(process)-.75)*4.,0.,1.);
             return legacy+blend*(filtered-legacy);
         }

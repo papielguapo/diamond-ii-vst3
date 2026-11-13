@@ -124,8 +124,8 @@ int main(int argc,char** argv) { try {
     require(std::string(magic,4)=="PHX2" && reference.readInt()==48000,"reference fixture format");
     const int fixtures=reference.readInt(); require(fixtures==2,"reference probe count");
     constexpr double referenceLimits[2][15] = {
-        {0.15551807,0.15829065,0.06192682,0.05480476,0.12339848,0.04893586,0.05941771,0.07217557,0.08921372,0.04095324,0.10981809,0.03328399,0.04301406,0.00607210,0.00912961},
-        {0.10573072,0.13239419,0.12369613,0.26182888,0.21009385,0.06122627,0.05951394,0.04740780,0.11922403,0.02365397,0.05810933,0.03055741,0.02900480,0.14988000,0.10459219}
+        {0.15551807,0.15829065,0.06192682,0.05480476,0.12339848,0.04893586,0.05941771,0.07217557,0.05684109,0.04095324,0.10981809,0.03328399,0.04301406,0.00607210,0.00912961},
+        {0.10573072,0.13239419,0.12369613,0.26182888,0.21009385,0.06122627,0.05951394,0.04740780,0.03317178,0.02365397,0.05810933,0.03055741,0.02900480,0.14988000,0.10459219}
     };
     for(int probe=0;probe<fixtures;++probe) {
         const int count=reference.readInt(); require(count>0 && count<=480000,"reference frame count");
@@ -183,10 +183,10 @@ int main(int argc,char** argv) { try {
         require(bytes.getSize()>12 && bytes.getSize()<24000000,"trim fixture size");
         juce::MemoryInputStream data(bytes,false); char signature[4]; data.read(signature,4);
         require(std::string(signature,4)=="PHXT" && data.readInt()==48000,"trim fixture format");
-        const int countCases=data.readInt(); require(countCases==15,"trim reference count");
+        const int countCases=data.readInt(); require(countCases==30,"trim reference count");
         for(int index=0;index<countCases;++index) {
             const int type=data.readInt(),brightness=data.readInt(); const float amount=data.readFloat(),inputDb=data.readFloat(); const int count=data.readInt();
-            require(type==4 && brightness==1 && amount>=0 && amount<=100 && inputDb>=-10 && inputDb<=10 && count>0 && count<=120000,"trim fixture metadata");
+            require((type==3 || type==4) && brightness==1 && amount>=0 && amount<=100 && inputDb>=-10 && inputDb<=10 && count>0 && count<=120000,"trim fixture metadata");
             std::vector<float> input(static_cast<size_t>(count)),target(static_cast<size_t>(count));
             for(auto& value:input) value=data.readFloat(); for(auto& value:target) value=data.readFloat();
             DiamondIIAudioProcessor measured; set(measured,"process",amount); set(measured,"type",(float)type); set(measured,"brightness",(float)brightness); set(measured,"input",inputDb); measured.prepareToPlay(48000,256);

@@ -1,0 +1,57 @@
+[
+  {
+    "file": "PhoenixII_48k_Luster_Gold_P100_Inm6_Outm6.wav",
+    "sha256": "3a7feafd503b7ecd6db98449e8e5dc1963b23b3a179bfdd4d7c2761be25af183",
+    "sample_rate": 48000,
+    "channels": 1,
+    "format": "PCM24",
+    "alignment_samples": 96000,
+    "input_db": -6,
+    "output_db": -6,
+    "process": 100
+  },
+  {
+    "file": "PhoenixII_48k_Luster_Gold_P100_In0_Outm6.wav",
+    "sha256": "2ec8864cd9d69fed1b08ac119f9e29c92553e80b8125c60cb331de1917159e78",
+    "sample_rate": 48000,
+    "channels": 1,
+    "format": "PCM24",
+    "alignment_samples": 96000,
+    "input_db": 0,
+    "output_db": -6,
+    "process": 100
+  },
+  {
+    "file": "PhoenixII_48k_Luster_Gold_P100_In3_Outm6.wav",
+    "sha256": "9070272de13d4c8c8ad7f83bb8f8006a5992941ed0b8f6830d12e09bc64aa938",
+    "sample_rate": 48000,
+    "channels": 1,
+    "format": "PCM24",
+    "alignment_samples": 96000,
+    "input_db": 3,
+    "output_db": -6,
+    "process": 100
+  },
+  {
+    "file": "PhoenixII_48k_Luster_Gold_P100_In6_Outm6.wav",
+    "sha256": "09af535c58f26047587551ee06436b8f3ae684f84e29d4c02eb95e63fbbc4dc8",
+    "sample_rate": 48000,
+    "channels": 1,
+    "format": "PCM24",
+    "alignment_samples": 96000,
+    "input_db": 6,
+    "output_db": -6,
+    "process": 100
+  },
+  {
+    "file": "PhoenixII_48k_Luster_Gold_P087_50_In0_Outm6.wav",
+    "sha256": "fe40e86fa9e2acd6cc71e0810e5e2ef3966edd9792a751f25220b911705fbeea",
+    "sample_rate": 48000,
+    "channels": 1,
+    "format": "PCM24",
+    "alignment_samples": 96000,
+    "input_db": 0,
+    "output_db": -6,
+    "process": 87.5
+  }
+]

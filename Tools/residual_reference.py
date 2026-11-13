@@ -41,7 +41,7 @@ def fit(reference_dir,initial):
     source=read(reference_dir/'01_probe_48k.wav');segments=json.loads((reference_dir/'segments.json').read_text())['segments']
     inputs=[];expected=[];weights=[]
     for trim in (0,6):
-        target=read(reference_dir/f'PhoenixII_48k_DarkEssence_Gold_P100_In{trim}_Outm6.wav')[96000:96000+len(source)]*10**(.3)
+        target=read(reference_dir/f"PhoenixII_48k_{initial['type']}_{initial['color']}_P100_In{trim}_Outm6.wav")[96000:96000+len(source)]*10**(.3)
         prior=legacy_model(source*10**(trim/20),initial['low_amount_legacy_parameters'])
         for s in segments:
             if not ((s['kind']=='sine' and s['frequency_hz'] in (1000,250,8000)) or s['name']=='two_tone_19000_20000Hz'): continue

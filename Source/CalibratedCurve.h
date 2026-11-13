@@ -13,9 +13,10 @@ struct CurveTable {
     static constexpr double maximum=32.,step=maximum/intervals;
     std::array<float,intervals+1> values{},slopes{};
     explicit CurveTable(const ModelCalibration& p) {
-        if(p.residualModel) {
-            std::copy(darkGoldResidualValues.begin(),darkGoldResidualValues.end(),values.begin());
-            std::copy(darkGoldResidualSlopes.begin(),darkGoldResidualSlopes.end(),slopes.begin());
+        if(p.residualCurveIndex>=0) {
+            const auto index=static_cast<size_t>(p.residualCurveIndex);
+            std::copy(measuredResidualValues[index].begin(),measuredResidualValues[index].end(),values.begin());
+            std::copy(measuredResidualSlopes[index].begin(),measuredResidualSlopes[index].end(),slopes.begin());
             return;
         }
         for(size_t i=0;i<=intervals;++i) {
@@ -50,5 +51,5 @@ inline const std::array<CurveTable,15> calibratedCurves{
     CurveTable(modelCalibration[12]),
     CurveTable(modelCalibration[13]),
     CurveTable(modelCalibration[14])};
-inline const CurveTable lowAmountDarkGoldCurve(lowAmountDarkGold);
+inline const std::array<CurveTable,2> lowAmountCurves{CurveTable(lowAmountCalibration[0]),CurveTable(lowAmountCalibration[1])};
 }

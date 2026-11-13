@@ -107,3 +107,24 @@ Tools/residual_reference.py permite ajustar candidatos del modelo residual con S
 Se añaden 15 tests con referencias originales sin metadatos BWF: tres señales (1 kHz/-1 dBFS, 4 kHz y ráfaga) por cada una de cinco condiciones. trim-reference-fixtures.bin.gz tiene formato little-endian: PHXT, uint32 frecuencia 48000, uint32 casos 15; por caso uint32 Type, uint32 Brightness, float32 Process en porcentaje, float32 Input dB, uint32 muestras, entrada float32[muestras] y referencia float32[muestras] normalizada por +6 dB de salida. Tests/TrimReferenceLimits.h fija los límites baseline*1.10+0.001. Se estrechan también los dos límites existentes de Dark Essence/Gold a Process 100.
 
 La mejora no certifica equivalencia 1:1: quedan errores medibles, música y señales nuevas sin medir, estéreo del original, otras frecuencias de muestreo, más trims, colores/modos y posiciones de Process. La identidad bit-accurate sigue aplicando exclusivamente a la ruta seca unitaria de DIAMOND II, no al procesamiento húmedo del original. La sesión de Pro Tools queda con el clip seco seleccionado, Input 0, Output -6 y Process 87.5.
+
+
+## Extensión de la rama residual a Luster/Gold
+
+Se repitió el procedimiento con Luster/Gold: nuevas capturas Input +6/-6/+3 a Process 100 y Process 87.5/Input 0, todas a Output -6, 48 kHz mono PCM24 y sin recorte. El ajuste usa únicamente las capturas Input 0/+6 y las ventanas especificadas en la revisión anterior. Los parámetros se congelaron antes de capturar +3 y 87.5; no se reajustaron con ellas. Se conservan los coeficientes y la transición de Process entre 75 y 100.
+
+| Input | Process | Error RMS total anterior | Nuevo |
+|---|---:|---:|---:|
+| -6 dB | 100% | 3.606% | 2.791% |
+| +0 dB | 100% | 7.025% | 4.379% |
+| +3 dB | 100% | 13.751% | 5.280% |
+| +6 dB | 100% | 25.433% | 5.717% |
+| +0 dB | 87.5% | 5.784% | 3.867% |
+
+Mejoran las quince señales individuales a Input 0/+3/+6. A Input -6 mejora el error total, pero empeoran ligeramente el bitono 19/20 kHz (~0.12 dB) y el barrido (~2.03 dB). No se presenta como una mejora uniforme ni como un clon perfecto. Los detalles están en luster-residual-compiled-verification.json y los hashes en luster-trim-reference-metadata.json. Process 25/50/75 conserva el render anterior con diferencia máxima inferior a 1e-6.
+
+Source/ResidualCalibration.h ahora agrupa dos tablas: índice 0 Dark Essence/Gold e índice 1 Luster/Gold. ModelCalibration.residualCurveIndex es -1 para una curva paramétrica y 0/1 para esas ramas. Cada rama residual selecciona también su curva y filtros anteriores para el tramo de Process bajo. Los parámetros de Luster están en residual-luster-gold.json. La ampliación no cambia los identificadores de parámetros, la skin ni la geometría redimensionable.
+
+trim-reference-fixtures.bin.gz conserva los 15 casos anteriores y añade otros 15 de Luster/Gold con el mismo formato PHXT y cabecera actualizada a 30 casos. Los límites nuevos se fijan en TrimReferenceLimits.h; los límites existentes de Luster/Gold a Process 100 se estrechan. Las referencias contienen salida del original sobre señales sintéticas propias, no salida generada por el nuevo DSP. Tools/residual_reference.py selecciona ahora el modo/color del archivo de coeficientes inicial.
+
+Esta es una versión de evaluación musical. La validación técnica no prueba preferencia auditiva ni disposición a pagar. Para evaluar utilidad hay que comparar con nivel igualado sobre voces, bajos, percusión y mezclas reales, comprobar problemas de automatización/estado en varios DAW y recoger opiniones de usuarios externos. La fidelidad medida no se traduce en un porcentaje global de parecido.
