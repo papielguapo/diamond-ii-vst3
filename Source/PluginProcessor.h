@@ -28,4 +28,7 @@ private:
     std::array<std::atomic<float>*,5> values;
     juce::SmoothedValue<double> inputGain,outputGain;
     juce::SmoothedValue<float> amount;
+    diamond::Engine previousEngine;
+    juce::SmoothedValue<float> characterFade;
+    int currentType=0,currentBrightness=1,previousType=0;
 };

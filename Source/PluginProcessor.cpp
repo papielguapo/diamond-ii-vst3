@@ -15,17 +15,31 @@ DiamondIIAudioProcessor::DiamondIIAudioProcessor():AudioProcessor(BusesPropertie
 void DiamondIIAudioProcessor::prepareToPlay(double fs,int) {
     engine.prepare(fs); inputGain.reset(fs,.015); outputGain.reset(fs,.015); amount.reset(fs,.015);
     inputGain.setCurrentAndTargetValue(std::pow(10.,values[0]->load()/20.)); outputGain.setCurrentAndTargetValue(std::pow(10.,values[2]->load()/20.)); amount.setCurrentAndTargetValue(values[1]->load()*.01f);
+    currentType=juce::roundToInt(values[4]->load()); currentBrightness=juce::roundToInt(values[3]->load());
+    engine.setBrightness(currentBrightness); previousEngine=engine; previousType=currentType;
+    characterFade.reset(fs,.005); characterFade.setCurrentAndTargetValue(1);
 }
 bool DiamondIIAudioProcessor::isBusesLayoutSupported(const BusesLayout& l) const { return l.getMainInputChannelSet()==l.getMainOutputChannelSet() && (l.getMainOutputChannelSet()==juce::AudioChannelSet::mono() || l.getMainOutputChannelSet()==juce::AudioChannelSet::stereo()); }
 void DiamondIIAudioProcessor::processBlock(juce::AudioBuffer<float>& b,juce::MidiBuffer&) {
     juce::ScopedNoDenormals guard;
     const float in=values[0]->load(),p=values[1]->load()*.01f,out=values[2]->load();
-    engine.setBrightness(juce::roundToInt(values[3]->load())); const int t=juce::roundToInt(values[4]->load());
+    const int brightness=juce::roundToInt(values[3]->load()),t=juce::roundToInt(values[4]->load());
+    if(t!=currentType || brightness!=currentBrightness) {
+        previousEngine=engine; previousType=currentType; currentType=t; currentBrightness=brightness;
+        engine.setBrightness(brightness); characterFade.setCurrentAndTargetValue(0); characterFade.setTargetValue(1);
+    }
     inputGain.setTargetValue(std::pow(10.,in/20.)); outputGain.setTargetValue(std::pow(10.,out/20.)); amount.setTargetValue(p);
     const bool unity=in==0 && p==0 && out==0;
     for(int n=0;n<b.getNumSamples();++n) {
         const auto ig=inputGain.getNextValue(),og=outputGain.getNextValue(); const float mix=amount.getNextValue();
-        for(int c=0;c<b.getNumChannels();++c) b.setSample(c,n,engine.tickGained(b.getSample(c,n),c,ig,mix,og,t,unity));
+        const bool transitioning=characterFade.isSmoothing(); const float fade=characterFade.getNextValue();
+        for(int c=0;c<b.getNumChannels();++c) {
+            const float input=b.getSample(c,n),next=engine.tickGained(input,c,ig,mix,og,t,unity);
+            if(transitioning) {
+                const float old=previousEngine.tickGained(input,c,ig,mix,og,previousType,unity);
+                b.setSample(c,n,unity?input:old+(next-old)*fade);
+            } else b.setSample(c,n,next);
+        }
     }
 }
 juce::AudioProcessorEditor* DiamondIIAudioProcessor::createEditor() { return new DiamondIIAudioProcessorEditor(*this); }
@@ -35,6 +49,6 @@ void DiamondIIAudioProcessor::getStateInformation(juce::MemoryBlock& b) {
 void DiamondIIAudioProcessor::setStateInformation(const void* d,int n) {
     auto xml=getXmlFromBinary(d,n); if(!xml || !xml->hasTagName("DiamondII")) return;
     auto s=juce::ValueTree::fromXml(*xml); state.replaceState(s);
-    editorWidth=juce::jlimit(751,2504,(int)s.getProperty("width",1252)); editorHeight=juce::roundToInt(editorWidth.load()*380./1252.);
+    editorWidth=juce::jlimit(313,2504,(int)s.getProperty("width",1252)); editorHeight=juce::roundToInt(editorWidth.load()*380./1252.);
 }
 juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter() { return new DiamondIIAudioProcessor; }

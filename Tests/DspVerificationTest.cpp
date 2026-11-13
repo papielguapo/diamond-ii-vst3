@@ -11,6 +11,11 @@ juce::Slider* findSlider(juce::Component& root,const juce::String& name) {
     for(auto* child:root.getChildren()) if(auto* slider=findSlider(*child,name)) return slider;
     return nullptr;
 }
+juce::Button* findButton(juce::Component& root,const juce::String& id) {
+    if(auto* button=dynamic_cast<juce::Button*>(&root); button && button->getComponentID()==id) return button;
+    for(auto* child:root.getChildren()) if(auto* button=findButton(*child,id)) return button;
+    return nullptr;
+}
 int main() { try {
     juce::ScopedJuceInitialiser_GUI gui;
     std::mt19937 rng(2026); std::uniform_real_distribution<float> noise(-1,1);
@@ -65,7 +70,8 @@ int main() { try {
     }
     DiamondIIAudioProcessor p; set(p,"input",2.5f); set(p,"process",48); set(p,"output",-1.2f); set(p,"type",1);
     { DiamondIIAudioProcessorEditor ed(p); require(ed.isResizable(),"resizable");
-      for(int w:{751,939,1252,1565,1878,2504}) { ed.setSize(w,juce::roundToInt(w*380./1252.)); require(p.editorWidth==w,"resize persisted"); }
+      require(ed.getConstrainer()->getMinimumWidth()==313,"25 percent minimum");
+      for(int w:{313,417,626,751,939,1252,1565,1878,2504}) { ed.setSize(w,juce::roundToInt(w*380./1252.)); require(p.editorWidth==w,"resize persisted"); }
       auto* brightness=findSlider(ed,"brightness"); auto* type=findSlider(ed,"type");
       require(brightness && type,"skin choice knobs present");
       brightness->setValue(2,juce::sendNotificationSync); type->setValue(4,juce::sendNotificationSync);
@@ -73,11 +79,32 @@ int main() { try {
       require(p.state.getRawParameterValue("type")->load()==4,"type knob updates DSP");
       require(brightness->getTextFromValue(2)=="Sapphire" && type->getTextFromValue(4)=="DarkEssnc","skin choice readouts");
       set(p,"type",2); require(type->getValue()==2,"automation updates skin knob");
+      require(type->getRotaryParameters().stopAtEnd,"type stops at ends");
+      require(DiamondIIAudioProcessorEditor::typePointerAngle(4)-DiamondIIAudioProcessorEditor::typePointerAngle(0)<juce::MathConstants<float>::pi,"type sweep below half turn");
+      for(int i=0;i<5;++i) {
+          auto* row=findButton(ed,"type-row-"+juce::String(i)); require(row && row->onClick,"clickable type row"); row->onClick();
+          require(type->getValue()==i && p.state.getRawParameterValue("type")->load()==i,"row selects matching DSP and knob");
+          float y=195.5f-61.5f/std::tan(DiamondIIAudioProcessorEditor::typePointerAngle(i));
+          require(std::abs(y-(134.f+26*i))<.001f,"type pointer aims at label");
+      }
+      type->setValue(99,juce::sendNotificationSync); require(type->getValue()==4,"type upper clamp");
+      type->setValue(-99,juce::sendNotificationSync); require(type->getValue()==0,"type lower clamp");
     }
     juce::MemoryBlock state; p.getStateInformation(state); DiamondIIAudioProcessor restored; restored.setStateInformation(state.getData(),(int)state.getSize());
     require(restored.editorWidth==2504,"restore width"); require(restored.state.getRawParameterValue("process")->load()==48,"restore parameter");
     juce::MemoryBlock again; restored.getStateInformation(again);
     require(state==again,"state round trip");
+    { DiamondIIAudioProcessor tiny; tiny.editorWidth=313; tiny.editorHeight=95; juce::MemoryBlock data; tiny.getStateInformation(data);
+      DiamondIIAudioProcessor copy; copy.setStateInformation(data.getData(),(int)data.getSize()); DiamondIIAudioProcessorEditor editor(copy);
+      require(editor.getWidth()==313 && editor.getHeight()==95,"25 percent state restores"); }
+    {
+        DiamondIIAudioProcessor fade; set(fade,"process",100); fade.prepareToPlay(48000,2048); juce::MidiBuffer midi;
+        juce::AudioBuffer<float> signal(2,2048); for(int c=0;c<2;++c) for(int n=0;n<2048;++n) signal.setSample(c,n,.5f); fade.processBlock(signal,midi);
+        auto oldEngine=fade.engine,newEngine=fade.engine;
+        float oldSample=oldEngine.tickGained(.5f,0,1,1,1,0,false),newSample=newEngine.tickGained(.5f,0,1,1,1,4,false);
+        set(fade,"type",4); signal.setSize(2,1); signal.setSample(0,0,.5f); signal.setSample(1,0,.5f); fade.processBlock(signal,midi);
+        require(std::abs(signal.getSample(0,0)-(oldSample+(newSample-oldSample)/240.f))<1e-6f,"5 ms type crossfade starts smoothly");
+    }
     // Warm state must not leak into a later exact-unity block.
     p.prepareToPlay(48000,64); juce::AudioBuffer<float> b(2,64); juce::MidiBuffer m;
     for(int c=0;c<2;++c) for(int n=0;n<64;++n) b.setSample(c,n,.6f); p.processBlock(b,m);

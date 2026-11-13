@@ -18,7 +18,10 @@ void DiamondLook::drawRotarySlider(juce::Graphics& g,int,int,int,int,float pos,f
     const float neutral=(float)slider.getProperties()["neutral"],sweep=(float)slider.getProperties()["sweep"];
     juce::Graphics::ScopedSaveState save(g); juce::Path clip;
     clip.addEllipse(cx-52.5f,cy-52.5f,105.f,105.f); g.reduceClipRegion(clip);
-    g.addTransform(juce::AffineTransform::rotation((pos-neutral)*sweep,cx,cy));
+    const float rotation=slider.getName()=="type"
+        ? DiamondIIAudioProcessorEditor::typePointerAngle(juce::roundToInt(pos*4))-std::atan2(21.5f,25.5f)
+        : (pos-neutral)*sweep;
+    g.addTransform(juce::AffineTransform::rotation(rotation,cx,cy));
     g.drawImageAt(skin,-juce::roundToInt(sx),-143);
 }
 DiamondIIAudioProcessorEditor::DiamondIIAudioProcessorEditor(DiamondIIAudioProcessor& p):AudioProcessorEditor(p),processor(p) {
@@ -45,9 +48,18 @@ DiamondIIAudioProcessorEditor::DiamondIIAudioProcessorEditor(DiamondIIAudioProce
         k.setDoubleClickReturnValue(true,i==3?1:0);
         k.setTooltip("Drag to adjust; double-click to reset. Right-click the panel for interface size.");
     }
-    setResizable(true,true); setResizeLimits(751,228,2504,760); getConstrainer()->setFixedAspectRatio(1252./380.);
+    const juce::StringArray typeNames{"Luminescent","Iridescent","Radiant","Luster","Dark Essence"};
+    for(int i=0;i<5;++i) {
+        auto& row=typeRows[i]; panel.addAndMakeVisible(row); row.setName(typeNames[i]); row.setComponentID("type-row-"+juce::String(i));
+        row.setTooltip("Select "+typeNames[i]); row.onClick=[this,i] {
+            auto* parameter=processor.state.getParameter("type"); parameter->beginChangeGesture(); parameter->setValueNotifyingHost(parameter->convertTo0to1((float)i)); parameter->endChangeGesture();
+        };
+    }
+    knobs[4].setRotaryParameters(typePointerAngle(0)+juce::MathConstants<float>::twoPi,typePointerAngle(4)+juce::MathConstants<float>::twoPi,true);
+    knobs[4].setMouseDragSensitivity(140);
+    setResizable(true,true); setResizeLimits(313,95,2504,760); getConstrainer()->setFixedAspectRatio(1252./380.);
     int width=p.editorWidth.load();
-    if(auto* display=juce::Desktop::getInstance().getDisplays().getPrimaryDisplay()) width=juce::jlimit(751,2504,juce::jmin(width,display->userArea.getWidth()-40,juce::roundToInt((display->userArea.getHeight()-80)*1252./380.)));
+    if(auto* display=juce::Desktop::getInstance().getDisplays().getPrimaryDisplay()) width=juce::jlimit(313,2504,juce::jmin(width,display->userArea.getWidth()-40,juce::roundToInt((display->userArea.getHeight()-80)*1252./380.)));
     setSize(width,juce::roundToInt(width*380./1252.));
 }
 DiamondIIAudioProcessorEditor::~DiamondIIAudioProcessorEditor() { setLookAndFeel(nullptr); }
@@ -56,6 +68,7 @@ void DiamondIIAudioProcessorEditor::resized() {
     const float scale=juce::jmin(getWidth()/1252.f,getHeight()/380.f);
     panel.setTransform(juce::AffineTransform::scale(scale).translated((getWidth()-1252*scale)*.5f,(getHeight()-380*scale)*.5f));
     const int xs[]={92,324,556,788,992}; for(int i=0;i<5;++i) knobs[i].setBounds(xs[i],143,140,223);
+    for(int i=0;i<5;++i) typeRows[i].setBounds(1121,123+i*26,128,25);
 }
 void DiamondIIAudioProcessorEditor::paint(juce::Graphics& g) {
     g.fillAll(juce::Colours::black); juce::Graphics::ScopedSaveState saved(g);
@@ -71,9 +84,9 @@ void DiamondIIAudioProcessorEditor::paint(juce::Graphics& g) {
 void DiamondIIAudioProcessorEditor::mouseDown(const juce::MouseEvent& event) {
     if(!event.mods.isPopupMenu()) return;
     juce::PopupMenu menu; menu.addSectionHeader("Interface size");
-    const int percentages[]={60,75,100,125,150,200}; for(int i=0;i<6;++i) menu.addItem(i+1,juce::String(percentages[i])+" %");
+    const int percentages[]={25,33,50,60,75,100,125,150,200}; for(int i=0;i<9;++i) menu.addItem(i+1,juce::String(percentages[i])+" %");
     menu.showMenuAsync(juce::PopupMenu::Options().withTargetComponent(this),[safe=juce::Component::SafePointer<DiamondIIAudioProcessorEditor>(this)](int result) {
-        if(!safe || result<1 || result>6) return; const double sizes[]={.6,.75,1,1.25,1.5,2};
+        if(!safe || result<1 || result>9) return; const double sizes[]={.25,1./3.,.5,.6,.75,1,1.25,1.5,2};
         safe->setSize(juce::roundToInt(1252*sizes[result-1]),juce::roundToInt(380*sizes[result-1]));
     });
 }
